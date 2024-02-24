@@ -40,6 +40,6 @@ jobs:
           path: '.'
       - name: Deploy to GitHub Pages
         env: # Or as an environment variable
-          REACT_APP_TEST2: ${{ secrets.TEST1 }}
+          REACT_APP_TEST2: "HEllo one two three"
         id: deployment
         uses: actions/deploy-pages@v4
