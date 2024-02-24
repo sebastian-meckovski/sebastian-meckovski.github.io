@@ -42,6 +42,6 @@ jobs:
         with: # Set the secret as an input
           ENV_VAR_TEST: ${{ secrets.ENV_VAR_TEST }}
         env: # Or as an environment variable
-          TEST1: ${{ secrets.TEST1 }}
+          REACT_APP_TEST1: ${{ secrets.TEST1 }}
         id: deployment
         uses: actions/deploy-pages@v4
