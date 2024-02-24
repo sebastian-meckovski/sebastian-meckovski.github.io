@@ -39,8 +39,6 @@ jobs:
           # Upload entire repository
           path: '.'
       - name: Deploy to GitHub Pages
-        with: # Set the secret as an input
-          REACT_APP_TEST1: ${{ secrets.TEST1 }}
         env: # Or as an environment variable
           REACT_APP_TEST2: ${{ secrets.TEST1 }}
         id: deployment
