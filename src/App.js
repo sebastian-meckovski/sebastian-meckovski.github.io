@@ -8,8 +8,6 @@ import { Contact } from './pages/Contact';
 
 
 function App() {
-  console.log('testing 7...')
-  console.log(process.env);
   return (
     <>
       <BrowserRouter>
@@ -21,6 +19,9 @@ function App() {
           <Route path="contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <TawkMessengerReact
+          propertyId={process.env.REACT_APP_PROPERTY_ID}
+          widgetId={process.env.REACT_APP_WIDGET_ID} />
       </BrowserRouter>
     </>
   );
