@@ -9,8 +9,8 @@ jobs:
   deploy-react-to-gh-pages:
     runs-on: ubuntu-latest
     env:
-      REACT_APP_PROPERTY_ID: ${{ secrets.REACT_APP_PROPERTY_ID }} # environment variable
-      REACT_APP_WIDGET_ID: ${{ secrets.REACT_APP_WIDGET_ID }} # environment variable
+      REACT_APP_PROPERTY_ID: ${{ secrets.REACT_APP_PROPERTY_ID }}
+      REACT_APP_WIDGET_ID: ${{ secrets.REACT_APP_WIDGET_ID }}
 
     steps:
       # checkout the repository content to github runner
