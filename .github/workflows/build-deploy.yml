@@ -9,7 +9,7 @@ jobs:
   deploy-react-to-gh-pages:
     runs-on: ubuntu-latest
     env:
-      REACT_APP_EXAMPLE: TEST # environment variable
+      REACT_APP_EXAMPLE: ${{ secrets.SEB_TEST }} # environment variable
 
     steps:
       # checkout the repository content to github runner
