@@ -1,5 +1,5 @@
 import './App.scss';
-import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
