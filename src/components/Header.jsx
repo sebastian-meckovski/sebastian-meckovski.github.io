@@ -10,10 +10,16 @@ export const Header = () => {
                 <div className='App-header-left'>
                     <h3>Sebastian</h3>
                     <h3>Meckovski</h3>
-                    <button className="burger-button" onClick={() => {
+                    <button type="button" className="burger-button" onClick={() => {
                         setShowItems((prev) => { return (!prev) })
                     }}>
-                        X
+                        {!showItems &&
+                            <>
+                                <div className="burger-button-stripe"></div>
+                                <div className="burger-button-stripe"></div>
+                                <div className="burger-button-stripe"></div>
+                            </>
+                        }
                     </button>
                 </div>
                 <div className='App-header-right'>
@@ -23,7 +29,7 @@ export const Header = () => {
                     <NavLink to="contact">Contact</NavLink>
                 </div>
                 {showItems &&
-                    <div className="App-header-mobile">
+                    <div className="App-header-mobile" onClick={() => { setShowItems(false) }}>
                         <NavLink to='/#'>Home</NavLink>
                         <NavLink to="about-me">About me</NavLink>
                         <NavLink to="skills">Skills</NavLink>

@@ -30,10 +30,11 @@ body {
 main {
   max-width: 45rem;
   margin: auto;
+  padding: 0rem 1rem;
 }
 
 h3 {
-  margin: 0;
+  margin: 5px 0px 0px 0px;
 }
 
 a {
@@ -59,7 +60,6 @@ header {
   width: 100%;
   background-color: $nav-color;
   color: white;
-
 }
 
 footer {
@@ -77,14 +77,34 @@ footer {
 
 .burger-button {
   position: absolute;
-  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem 0rem;
+  justify-content: space-between;
+  right: 1rem;
+  align-items: center;
+  background-color: $transparent-color;
+  color: $accent-color;
+  border: none;
+  width: 2rem;
+  border-radius: 0.2rem;
+  height: 2rem;
 
   @media (min-width: 600px) {
     display: none;
   }
+
+  &-stripe {
+    width: 100%;
+    height: 0.07rem;
+    border-radius: 0.2rem;
+    border: 0.05rem solid $accent-color;
+    background-color: $accent-color;
+  }
 }
 
 nav {
+  padding: 0rem 1rem;
   margin: auto;
   min-height: 4rem;
   align-items: center;
@@ -106,8 +126,8 @@ nav {
   }
 
   @media (max-width: 600px) {
-    align-items: flex-end;
-    min-height: 3rem;
+    align-items: center;
+    min-height: 4rem;
   }
 
   :nth-child(2) {
@@ -118,7 +138,7 @@ nav {
 .App-header-right {
   display: flex;
   gap: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 
   @media (max-width: 600px) {
     display: none;
@@ -128,8 +148,14 @@ nav {
 .App-header-mobile {
   display: flex;
   flex-direction: column;
-  max-width: 50%;
   margin: auto;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  min-width: 10rem;
+  font-size: 1.8rem;
+  background-color: $nav-color;
+  padding: 0rem 0.5rem 0.20rem 0.5rem;
 
   @media (min-width: 600px) {
     display: none;
