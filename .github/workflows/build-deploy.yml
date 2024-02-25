@@ -3,7 +3,7 @@ name: React App Deployment # name of the workflo
 on:
   push:
     branches:
-      - gh-pages # branch name
+      - rework # branch name
 
 jobs:
   deploy-react-to-gh-pages:
