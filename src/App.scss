@@ -4,6 +4,7 @@ $background-color: #121113;
 $nav-color: #070507;
 $accent-color: #0ffff8;
 $font-color: white;
+$transparent-color: #ffffff00;
 
 html {
   height: 100%;
@@ -26,6 +27,11 @@ body {
   }
 }
 
+main {
+  max-width: 45rem;
+  margin: auto;
+}
+
 h3 {
   margin: 0;
 }
@@ -33,10 +39,18 @@ h3 {
 a {
   text-decoration: none;
   color: white;
+  border-bottom: 2px solid $transparent-color;
+
+  &:hover {
+    color: $accent-color;
+    border-bottom: 2px solid $accent-color;
+    transition: 0.7s;
+  }
 }
 
-a:active {
-  color: #0ffff8
+.active {
+  color: $accent-color;
+  border-bottom: 2px solid $accent-color;
 }
 
 header {
@@ -45,6 +59,7 @@ header {
   width: 100%;
   background-color: $nav-color;
   color: white;
+
 }
 
 footer {
@@ -60,19 +75,40 @@ footer {
   font-size: small;
 }
 
+.burger-button {
+  position: absolute;
+  right: 0.5rem;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
 nav {
-  display: flex;
-  align-items: center;
   margin: auto;
+  min-height: 4rem;
+  align-items: center;
   justify-content: space-between;
   max-width: 45rem;
-  height: 4rem;
+
+  @media (min-width: 600px) {
+    display: flex;
+  }
 }
 
 
 .App-header-left {
   display: flex;
   gap: 3px;
+
+  @media (min-width: 600px) {
+    position: relative;
+  }
+
+  @media (max-width: 600px) {
+    align-items: flex-end;
+    min-height: 3rem;
+  }
 
   :nth-child(2) {
     color: $accent-color;
@@ -83,4 +119,19 @@ nav {
   display: flex;
   gap: 1rem;
   font-size: 1.2rem;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
+
+.App-header-mobile {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin: auto;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 }
