@@ -8,7 +8,6 @@ import { Contact } from './pages/Contact';
 
 
 function App() {
-  console.log(process.env)
   return (
     <>
       <BrowserRouter>
