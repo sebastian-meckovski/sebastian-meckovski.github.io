@@ -8,7 +8,7 @@ import { Contact } from './pages/Contact';
 
 
 function App() {
-  console.log('testing...')
+  console.log('testing 1...')
   console.log(process.env);
   return (
     <>
