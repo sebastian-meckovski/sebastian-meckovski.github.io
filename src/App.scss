@@ -33,7 +33,7 @@ main {
   padding: 0rem 1rem;
 }
 
-h3 {
+h1, h2, h3, h4, h5, h6 {
   margin: 5px 0px 0px 0px;
 }
 
@@ -45,6 +45,7 @@ a {
   &:hover {
     color: $accent-color;
     transition: 0.7s;
+
     @media (min-width: 40rem) {
       border-bottom: 2px solid $accent-color;
     }
@@ -53,6 +54,7 @@ a {
 
 .active {
   color: $accent-color;
+
   @media (min-width: 40rem) {
     border-bottom: 2px solid $accent-color;
   }
@@ -110,6 +112,7 @@ footer {
     background-color: $accent-color;
     transform-origin: 0.19rem;
   }
+
   &-stripe-2-closed {
     opacity: 100%;
     transition: opacity 0.3s;
@@ -128,13 +131,16 @@ footer {
     background-color: $accent-color;
     transform-origin: 0.19rem;
   }
+
   &-stripe-1-open {
     transform: rotate(45deg);
   }
+
   &-stripe-2-open {
     transition: opacity 0.3s;
     opacity: 0%;
   }
+
   &-stripe-3-open {
     transform: rotate(-45deg);
   }
@@ -151,6 +157,13 @@ nav {
   @media (min-width: 40rem) {
     display: flex;
   }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
 }
 
 .App-header-left {
@@ -198,7 +211,154 @@ nav {
     display: none;
   }
 }
+
 .App-header-mobile-closed {
   @extend .App-header-mobile-open;
   display: none;
 }
+
+.about-me-image {
+  max-width: 20rem;
+  border-radius: 100%;
+  box-shadow: 0 0 0.75rem $accent-color;
+  transition: 0.4s ease-in-out;
+  margin: 0 0 1rem 0;
+
+  &:hover {
+    box-shadow: 0 0 2rem $accent-color;
+  }
+}
+
+
+@keyframes typing {
+  1.2347%, 2.4691% { content: "W" }
+  2.4692%, 3.7037% { content: "We" }
+  3.7038%, 4.9383% { content: "Web" }
+  4.9384%, 6.1728% { content: "Web " }
+  6.1729%, 7.4074% { content: "Web D" }
+  7.4075%, 8.6420% { content: "Web De" }
+  8.6421%, 9.8765% { content: "Web Dev" }
+  9.8766%, 11.1111% { content: "Web Deve" }
+  11.1112%, 12.3457% { content: "Web Devel" }
+  12.3458%, 13.5802% { content: "Web Develo" }
+  13.5803%, 14.8148% { content: "Web Develop" }
+  14.8149%, 16.0494% { content: "Web Develope" }
+  16.0495%, 17.2840% { content: "Web Developer" }
+  17.2841%, 18.5185% { content: "Web Develope" }
+  18.5186%, 19.7531% { content: "Web Develop" }
+  19.7532%, 20.9877% { content: "Web Develo" }
+  20.9878%, 22.2222% { content: "Web Devel" }
+  22.2223%, 23.4568% { content: "Web Deve" }
+  23.4569%, 24.6914% { content: "Web Dev" }
+  24.6915%, 25.9259% { content: "Web De" }
+  25.9260%, 27.1605% { content: "Web D" }
+  27.1606%, 28.3951% { content: "Web " }
+  28.3952%, 29.6296% { content: "Web" }
+  29.6297%, 30.8642% { content: "We" }
+  30.8643%, 32.0988% { content: "W" }
+  32.0989%, 33.3333% { content: "" }
+  33.3334%, 34.5679% { content: "S" }
+  34.5680%, 35.8025% { content: "So" }
+  35.8026%, 37.0370% { content: "Sof" }
+  37.0371%, 38.2716% { content: "Soft" }
+  38.2717%, 39.5062% { content: "Softw" }
+  39.5063%, 40.7407% { content: "Softwa" }
+  40.7408%, 41.9753% { content: "Softwar" }
+  41.9754%, 43.2099% { content: "Software" }
+  43.2100%, 44.4444% { content: "Software " }
+  44.4445%, 45.6790% { content: "Software E" }
+  45.6791%, 46.9136% { content: "Software En" }
+  46.9137%, 48.1481% { content: "Software Eng" }
+  48.1482%, 49.3827% { content: "Software Engi" }
+  49.3828%, 50.6173% { content: "Software Engin" }
+  50.6174%, 51.8519% { content: "Software Engine" }
+  51.8520%, 53.0864% { content: "Software Enginee" }
+  53.0865%, 54.3210% { content: "Software Engineer" }
+  54.3211%, 55.5556% { content: "Software Enginee" }
+  55.5557%, 56.7901% { content: "Software Engine" }
+  56.7902%, 58.0247% { content: "Software Engin" }
+  58.0248%, 59.2593% { content: "Software Engi" }
+  59.2594%, 60.4938% { content: "Software Eng" }
+  60.4939%, 61.7284% { content: "Software En" }
+  61.7285%, 62.9630% { content: "Software E" }
+  62.9631%, 64.1975% { content: "Software " }
+  64.1976%, 65.4321% { content: "Software" }
+  65.4322%, 66.6667% { content: "Softwar" }
+  66.6668%, 67.9012% { content: "Softwa" }
+  67.9013%, 69.1358% { content: "Softw" }
+  69.1359%, 70.3704% { content: "Soft" }
+  70.3705%, 71.6049% { content: "Sof" }
+  71.6050%, 72.8395% { content: "So" }
+  72.8396%, 74.0741% { content: "S" }
+  74.0742%, 75.3086% { content: "" }
+  75.3087%, 76.5432% { content: "P" }
+  76.5433%, 77.7778% { content: "Pr" }
+  77.7779%, 79.0123% { content: "Pro" }
+  79.0124%, 80.2469% { content: "Prog" }
+  80.2470%, 81.4815% { content: "Progr" }
+  81.4816%, 82.7160% { content: "Progra" }
+  82.7161%, 83.9506% { content: "Program" }
+  83.9507%, 85.1852% { content: "Programm" }
+  85.1853%, 86.4198% { content: "Programme" }
+  86.4199%, 87.6543% { content: "Programmer" }
+  87.6544%, 88.8889% { content: "Programme" }
+  88.8890%, 90.1235% { content: "Programm" }
+  90.1236%, 91.3580% { content: "Program" }
+  91.3581%, 92.5926% { content: "Progra" }
+  92.5927%, 93.8272% { content: "Progr" }
+  93.8273%, 95.0617% { content: "Prog" }
+  95.0618%, 96.2963% { content: "Pro" }
+  96.2964%, 97.5309% { content: "Pr" }
+  97.5310%, 98.7654% { content: "P" }
+  98.7655%, 100.0000% { content: "" }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+  color: $accent-color;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "developer"; }
+    25% { content: "writer"; }
+    50% { content: "reader"; }
+    75% { content: "human"; }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/**/
