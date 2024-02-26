@@ -1,0 +1,14 @@
+$background-color: #121113;
+$nav-color: #070507;
+$accent-color: #0ffff8;
+$font-color: white;
+$transparent-color: #ffffff00;
+
+.custom-button {
+    border-radius: 1rem;
+    padding: 0.3rem 1.25rem;
+    margin: 0.5rem;
+    background-color: $accent-color;
+    color: $font-color;
+    border: none;
+}

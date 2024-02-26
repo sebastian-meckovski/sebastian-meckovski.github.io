@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap';
 
 $background-color: #121113;
-$nav-color: #070507;
+$nav-color: #00000069;
 $accent-color: #0ffff8;
 $font-color: white;
 $transparent-color: #ffffff00;
@@ -37,21 +37,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 5px 0px 0px 0px;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-  border-bottom: 2px solid $transparent-color;
-
-  &:hover {
-    color: $accent-color;
-    transition: 0.7s;
-
-    @media (min-width: 40rem) {
-      border-bottom: 2px solid $accent-color;
-    }
-  }
-}
-
 .active {
   color: $accent-color;
 
@@ -66,6 +51,22 @@ header {
   width: 100%;
   background-color: $nav-color;
   color: white;
+  backdrop-filter: blur(10px);
+  
+a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid $transparent-color;
+
+    &:hover {
+      color: $accent-color;
+      transition: 0.7s;
+
+      @media (min-width: 40rem) {
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+  }
 }
 
 footer {
@@ -146,6 +147,8 @@ footer {
   }
 }
 
+
+
 nav {
   padding: 0rem 1rem;
   margin: auto;
@@ -163,7 +166,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  text-align: center;
 }
 
 .App-header-left {
@@ -216,6 +220,8 @@ section {
   @extend .App-header-mobile-open;
   display: none;
 }
+
+
 
 .about-me-image {
   max-width: 20rem;
@@ -361,4 +367,22 @@ section {
   }
 }
 
-/**/
+.icons-container {
+  display: flex;
+  margin: 0.5rem;
+  gap: 1rem;
+}
+
+.icon-class {
+  border: 2px solid $accent-color;
+  border-radius: 100%;
+  padding: 0.35rem;
+  color: $accent-color;
+  transition: 0.4s ease-in-out;
+  &:hover{
+    background-color: #0ffff8;
+    box-shadow: 0 0 1.2rem $accent-color;
+    color: white;
+    scale: 1.25;
+  }
+}
