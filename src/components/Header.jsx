@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export const Header = () => {
     const [showItems, setShowItems] = useState(false)
+
     return (
         <header className="App-header">
             <nav>
@@ -13,13 +14,11 @@ export const Header = () => {
                     <button type="button" className="burger-button" onClick={() => {
                         setShowItems((prev) => { return (!prev) })
                     }}>
-                        {!showItems &&
-                            <>
-                                <div className="burger-button-stripe"></div>
-                                <div className="burger-button-stripe"></div>
-                                <div className="burger-button-stripe"></div>
-                            </>
-                        }
+                        <>
+                            <div className={`burger-button-stripe-1-${showItems ? 'open' : 'closed'}`}></div>
+                            <div className={`burger-button-stripe-2-${showItems ? 'open' : 'closed'}`}></div>
+                            <div className={`burger-button-stripe-3-${showItems ? 'open' : 'closed'}`}></div>
+                        </>
                     </button>
                 </div>
                 <div className='App-header-right'>
@@ -28,14 +27,12 @@ export const Header = () => {
                     <NavLink to="skills">Skills</NavLink>
                     <NavLink to="contact">Contact</NavLink>
                 </div>
-                {showItems &&
-                    <div className="App-header-mobile" onClick={() => { setShowItems(false) }}>
-                        <NavLink to='/#'>Home</NavLink>
-                        <NavLink to="about-me">About me</NavLink>
-                        <NavLink to="skills">Skills</NavLink>
-                        <NavLink to="contact">Contact</NavLink>
-                    </div>
-                }
+                <div className={`App-header-mobile-${showItems ? 'open' : 'closed'}`} onClick={() => { setShowItems(false) }}>
+                    <NavLink to='/#'>Home</NavLink>
+                    <NavLink to="about-me">About me</NavLink>
+                    <NavLink to="skills">Skills</NavLink>
+                    <NavLink to="contact">Contact</NavLink>
+                </div>
             </nav>
         </header>
     )

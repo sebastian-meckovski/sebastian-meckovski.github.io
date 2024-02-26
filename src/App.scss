@@ -28,7 +28,7 @@ body {
 }
 
 main {
-  max-width: 45rem;
+  max-width: 60rem;
   margin: auto;
   padding: 0rem 1rem;
 }
@@ -44,14 +44,18 @@ a {
 
   &:hover {
     color: $accent-color;
-    border-bottom: 2px solid $accent-color;
     transition: 0.7s;
+    @media (min-width: 40rem) {
+      border-bottom: 2px solid $accent-color;
+    }
   }
 }
 
 .active {
   color: $accent-color;
-  border-bottom: 2px solid $accent-color;
+  @media (min-width: 40rem) {
+    border-bottom: 2px solid $accent-color;
+  }
 }
 
 header {
@@ -90,16 +94,49 @@ footer {
   border-radius: 0.2rem;
   height: 2rem;
 
-  @media (min-width: 600px) {
+  @media (min-width: 40rem) {
     display: none;
   }
 
-  &-stripe {
+  &-stripe-1-closed,
+  &-stripe-2-closed,
+  &-stripe-3-closed {
+    transition-duration: 0.8s;
+    transition-property: transform;
     width: 100%;
     height: 0.07rem;
     border-radius: 0.2rem;
     border: 0.05rem solid $accent-color;
     background-color: $accent-color;
+    transform-origin: 0.19rem;
+  }
+  &-stripe-2-closed {
+    opacity: 100%;
+    transition: opacity 0.3s;
+  }
+
+
+  &-stripe-1-open,
+  &-stripe-2-open,
+  &-stripe-3-open {
+    transition-duration: 0.8s;
+    transition-property: transform;
+    width: 100%;
+    height: 0.07rem;
+    border-radius: 0.2rem;
+    border: 0.05rem solid $accent-color;
+    background-color: $accent-color;
+    transform-origin: 0.19rem;
+  }
+  &-stripe-1-open {
+    transform: rotate(45deg);
+  }
+  &-stripe-2-open {
+    transition: opacity 0.3s;
+    opacity: 0%;
+  }
+  &-stripe-3-open {
+    transform: rotate(-45deg);
   }
 }
 
@@ -109,23 +146,22 @@ nav {
   min-height: 4rem;
   align-items: center;
   justify-content: space-between;
-  max-width: 45rem;
+  max-width: 60rem;
 
-  @media (min-width: 600px) {
+  @media (min-width: 40rem) {
     display: flex;
   }
 }
-
 
 .App-header-left {
   display: flex;
   gap: 3px;
 
-  @media (min-width: 600px) {
+  @media (min-width: 40rem) {
     position: relative;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 40rem) {
     align-items: center;
     min-height: 4rem;
   }
@@ -140,12 +176,12 @@ nav {
   gap: 1rem;
   font-size: 1.4rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 40rem) {
     display: none;
   }
 }
 
-.App-header-mobile {
+.App-header-mobile-open {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -156,8 +192,13 @@ nav {
   font-size: 1.8rem;
   background-color: $nav-color;
   padding: 0rem 0.5rem 0.20rem 0.5rem;
+  transition: right 0.5s, display 0.5s, ease-out;
 
-  @media (min-width: 600px) {
+  @media (min-width: 40rem) {
     display: none;
   }
+}
+.App-header-mobile-closed {
+  @extend .App-header-mobile-open;
+  display: none;
 }
