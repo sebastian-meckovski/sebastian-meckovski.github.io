@@ -58,7 +58,6 @@ section {
 
 .active {
   color: $accent-color;
-
   @media (min-width: 48rem) {
     border-bottom: 2px solid $accent-color;
   }
@@ -108,6 +107,10 @@ header {
         @media (min-width: 48rem) {
           border-bottom: 2px solid $accent-color;
         }
+      }
+
+      &:active{
+        border: 2px solid yellow;
       }
     }
   }

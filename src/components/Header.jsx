@@ -6,29 +6,6 @@ export const Header = () => {
     const [showItems, setShowItems] = useState(false)
     const location = useLocation()
 
-    // function addSmoothScrolling(e) {
-    //     e.preventDefault();
-    //     document.querySelector(this.getAttribute('href')).scrollIntoView({
-    //         behavior: 'smooth'
-    //     });
-    // }
-
-    // useEffect(
-    //     () => {
-    //         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //             anchor.addEventListener('click', addSmoothScrolling)
-
-    //             return (
-    //                 () => {
-    //                     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    //                         anchor.removeEventListener('click', addSmoothScrolling)
-    //                     })
-    //                 }
-    //             )
-    //         })
-    //     }, [location]
-    // )
-
     const hrefName = {
         "": "Home",
         "about-me": "About me",
@@ -38,7 +15,7 @@ export const Header = () => {
 
     const returnLink = (href) => {
         if (location.pathname === '/') {
-            return (<a href={`#${href}`}>{hrefName[href]}</a>)
+            return (<a href={`#${href}`} className={`#${href}` === location.hash || href === location.hash ? 'active' : ''}>{hrefName[href]}</a>)
         } else {
             return (<NavLink to={href}>{hrefName[href]}</NavLink>)
         }
@@ -61,7 +38,6 @@ export const Header = () => {
                     </button>
                 </div>
                 <div className='App-header-right'>
-                    {/* <NavLink to='/#'>Home</NavLink> */}
                     {returnLink('')}
                     {returnLink('about-me')}
                     {returnLink('tech-stack')}
