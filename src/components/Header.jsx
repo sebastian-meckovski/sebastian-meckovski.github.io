@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-// import { HashLink } from "react-router-hash-link";
 
 
 export const Header = () => {
     const [showItems, setShowItems] = useState(false)
     const location = useLocation()
 
-    function addSmoothScrolling(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
+    // function addSmoothScrolling(e) {
+    //     e.preventDefault();
+    //     document.querySelector(this.getAttribute('href')).scrollIntoView({
+    //         behavior: 'smooth'
+    //     });
+    // }
 
-    useEffect(
-        () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', addSmoothScrolling)
+    // useEffect(
+    //     () => {
+    //         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //             anchor.addEventListener('click', addSmoothScrolling)
 
-                return (
-                    () => {
-                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                            anchor.removeEventListener('click', addSmoothScrolling)
-                        })
-                    }
-                )
-            })
-        }, [location]
-    )
+    //             return (
+    //                 () => {
+    //                     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    //                         anchor.removeEventListener('click', addSmoothScrolling)
+    //                     })
+    //                 }
+    //             )
+    //         })
+    //     }, [location]
+    // )
 
     const hrefName = {
+        "": "Home",
         "about-me": "About me",
         "tech-stack": "Tech Stack",
         "portfolio": "Portfolio",
@@ -61,14 +61,15 @@ export const Header = () => {
                     </button>
                 </div>
                 <div className='App-header-right'>
-                    <NavLink to='/#'>Home</NavLink>
+                    {/* <NavLink to='/#'>Home</NavLink> */}
+                    {returnLink('')}
                     {returnLink('about-me')}
                     {returnLink('tech-stack')}
                     {returnLink('portfolio')}
                     <NavLink to="contact">Contact</NavLink>
                 </div>
                 <div className={`App-header-mobile-${showItems ? 'open' : 'closed'}`} onClick={() => { setShowItems(false) }}>
-                    <NavLink to='/#'>Home</NavLink>
+                    {returnLink('')}
                     {returnLink('about-me')}
                     {returnLink('tech-stack')}
                     {returnLink('portfolio')}

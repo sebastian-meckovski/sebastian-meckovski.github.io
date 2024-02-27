@@ -1,48 +1,31 @@
 import React from "react";
 import sebImage from '../assets/PXL_20240226_132844396.NIGHT.jpg'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faFacebook, faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
 import { Button } from "../components/Button/Button";
+import { Links } from "../components/Links";
 
 export const MainPage = () => {
     return (
         <>
-            <section>
+            <section id="/">
                 <img className="about-me-image" src={sebImage} alt="Sebastian" />
                 <h1>Hi, Seb here</h1>
                 <h2 className="placeholder">
                     I am a&nbsp;
                     <span className="typewriter"></span>
                 </h2>
-            </section>
-            <section>
-                <p> A versatile software developer with 3 years of experience in frontend, backend, testing, and web technologies. Passionate about learning and implementing new technologies.</p>
-            </section>
-            <section>
-                <div className="icons-container">
-                    <Link target="_blank" to={'https://www.linkedin.com/in/sebastian-meckovski/'}>
-                        <FontAwesomeIcon className="icon-class" icon={faLinkedin} />
-                    </Link>
-                    <Link target="_blank" to={'https://www.facebook.com/sebastian.meckovski'}>
-                        <FontAwesomeIcon className="icon-class" icon={faFacebook} />
-                    </Link>
-                    <Link target="_blank" to={'https://www.instagram.com/sebastian_meckovski/'}>
-                        <FontAwesomeIcon className="icon-class" icon={faInstagram} />
-                    </Link>
-                    <Link target="_blank" to={'https://github.com/sebastian-meckovski'}>
-                        <FontAwesomeIcon className="icon-class" icon={faGithub} />
-                    </Link>
-                </div>
+
+                <p> A versatile software developer with 3 years of experience in frontend, backend, testing,
+                    and web technologies. Passionate about learning and implementing new technologies.</p>
+                <Links />
                 <Button />
             </section>
-            <section style={{height: '100vh', padding: '4rem 0'}} id="about-me">
+            <section id="about-me">
                 About me
             </section>
-            <section style={{height: '100vh', padding: '4rem 0'}} id="tech-stack">
+            <section id="tech-stack">
                 My Tech Stack
             </section>
-            <section style={{height: '100vh', padding: '4rem 0'}} id="portfolio">
+            <section id="portfolio">
                 Portfolio
             </section>
         </>

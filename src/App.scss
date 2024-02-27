@@ -8,6 +8,7 @@ $transparent-color: #ffffff00;
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -21,8 +22,7 @@ body {
   background-color: $background-color;
   height: 100%;
   color: $font-color;
-
-  * {
+* {
     font-family: "Oxanium", sans-serif;
   }
 }
@@ -31,14 +31,27 @@ main {
   max-width: 60rem;
   margin: auto;
   padding: 0rem 1rem 1rem 1rem;
+  section:not(:first-child) {
+    padding-top: 5rem
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0.75rem 0 0 0;
 }
 
 section {
-  h1, h2, h3, h4, h5, h6, img, p, button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: calc(100vh - 4rem);
+  h1, h2, h3, h4, h5, h6, img, p, button, div {
     margin: 1rem 0 0 0;
   }
 }
@@ -103,7 +116,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 3.5rem;
+  min-height: 4rem;
   background-color: $nav-color;
   color: white;
   display: flex;
@@ -192,15 +205,6 @@ nav {
   }
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  div {
-    margin: 1rem 0rem 0.0rem 0rem;
-  }
-}
 
 .App-header-left {
   display: flex;
