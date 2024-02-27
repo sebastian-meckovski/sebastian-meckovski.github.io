@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 
-
 export const Header = () => {
     const [showItems, setShowItems] = useState(false)
     const location = useLocation()
@@ -9,8 +8,9 @@ export const Header = () => {
     const hrefName = {
         "": "Home",
         "about-me": "About me",
-        "tech-stack": "Tech Stack",
+        "tech-stack": "Tech stack",
         "portfolio": "Portfolio",
+        "contact": "Contact"
     }
 
     const returnLink = (href) => {
@@ -42,14 +42,14 @@ export const Header = () => {
                     {returnLink('about-me')}
                     {returnLink('tech-stack')}
                     {returnLink('portfolio')}
-                    <NavLink to="contact">Contact</NavLink>
+                    {returnLink('contact')}
                 </div>
                 <div className={`App-header-mobile-${showItems ? 'open' : 'closed'}`} onClick={() => { setShowItems(false) }}>
                     {returnLink('')}
                     {returnLink('about-me')}
                     {returnLink('tech-stack')}
                     {returnLink('portfolio')}
-                    <NavLink to="contact">Contact</NavLink>
+                    {returnLink('contact')}
                 </div>
             </nav>
         </header>

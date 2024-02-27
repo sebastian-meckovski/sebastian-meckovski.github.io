@@ -52,7 +52,7 @@ section {
   text-align: center;
   min-height: calc(100vh - 4rem);
   h1, h2, h3, h4, h5, h6, img, p, button, div {
-    margin: 1rem 0 0 0;
+    margin: 0.5rem 0 0 0;
   }
 }
 
@@ -107,10 +107,6 @@ header {
         @media (min-width: 48rem) {
           border-bottom: 2px solid $accent-color;
         }
-      }
-
-      &:active{
-        border: 2px solid yellow;
       }
     }
   }
@@ -386,7 +382,7 @@ nav {
 
 .icons-container {
   display: flex;
-  margin: 0.75rem 0 0 0;
+  margin: 0.75rem 0 0.75rem 0;
   gap: 1rem;
 }
 
@@ -404,7 +400,13 @@ nav {
   }
 }
 
-// .about-me-section{
-// }
-// .tech-stack-section{
-// }
+#about-me{
+  display: flex;
+  flex-direction: row;
+  .about-me-left{
+    text-align: left;
+  }
+  @media (max-width: 48rem) {
+    flex-direction: column;
+  }
+}
