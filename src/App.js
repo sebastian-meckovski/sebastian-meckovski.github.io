@@ -3,8 +3,10 @@ import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { AppRoutes } from './components/AppRoutes';
+// import { useEffect } from 'react';
 
 function App() {
+
   return (
     <>
       <Header />

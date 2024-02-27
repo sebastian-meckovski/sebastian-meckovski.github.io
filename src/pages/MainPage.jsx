@@ -5,7 +5,7 @@ import { faLinkedin, faFacebook, faInstagram, faGithub } from "@fortawesome/free
 import { Link } from "react-router-dom";
 import { Button } from "../components/Button/Button";
 
-export const AboutMe = () => {
+export const MainPage = () => {
     return (
         <>
             <section>
@@ -17,8 +17,9 @@ export const AboutMe = () => {
                 </h2>
             </section>
             <section>
-
                 <p> A versatile software developer with 3 years of experience in frontend, backend, testing, and web technologies. Passionate about learning and implementing new technologies.</p>
+            </section>
+            <section>
                 <div className="icons-container">
                     <Link target="_blank" to={'https://www.linkedin.com/in/sebastian-meckovski/'}>
                         <FontAwesomeIcon className="icon-class" icon={faLinkedin} />
@@ -34,6 +35,15 @@ export const AboutMe = () => {
                     </Link>
                 </div>
                 <Button />
+            </section>
+            <section style={{height: '100vh', padding: '4rem 0'}} id="about-me">
+                About me
+            </section>
+            <section style={{height: '100vh', padding: '4rem 0'}} id="tech-stack">
+                My Tech Stack
+            </section>
+            <section style={{height: '100vh', padding: '4rem 0'}} id="portfolio">
+                Portfolio
             </section>
         </>
     )

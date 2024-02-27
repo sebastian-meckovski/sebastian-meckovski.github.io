@@ -1,10 +1,11 @@
-import React from "react";
+    import React from "react";
 
 export const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
         <footer>
             <p>
-                Sebastian Meckovski | All Rights Reserved
+                Sebastian Meckovski | {currentYear}
             </p>
         </footer>
     )

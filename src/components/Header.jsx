@@ -1,9 +1,48 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+// import { HashLink } from "react-router-hash-link";
 
 
 export const Header = () => {
     const [showItems, setShowItems] = useState(false)
+    const location = useLocation()
+
+    function addSmoothScrolling(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    useEffect(
+        () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', addSmoothScrolling)
+
+                return (
+                    () => {
+                        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                            anchor.removeEventListener('click', addSmoothScrolling)
+                        })
+                    }
+                )
+            })
+        }, [location]
+    )
+
+    const hrefName = {
+        "about-me": "About me",
+        "tech-stack": "Tech Stack",
+        "portfolio": "Portfolio",
+    }
+
+    const returnLink = (href) => {
+        if (location.pathname === '/') {
+            return (<a href={`#${href}`}>{hrefName[href]}</a>)
+        } else {
+            return (<NavLink to={href}>{hrefName[href]}</NavLink>)
+        }
+    }
 
     return (
         <header className="App-header">
@@ -23,14 +62,16 @@ export const Header = () => {
                 </div>
                 <div className='App-header-right'>
                     <NavLink to='/#'>Home</NavLink>
-                    <NavLink to="about-me">About me</NavLink>
-                    <NavLink to="skills">Skills</NavLink>
+                    {returnLink('about-me')}
+                    {returnLink('tech-stack')}
+                    {returnLink('portfolio')}
                     <NavLink to="contact">Contact</NavLink>
                 </div>
                 <div className={`App-header-mobile-${showItems ? 'open' : 'closed'}`} onClick={() => { setShowItems(false) }}>
                     <NavLink to='/#'>Home</NavLink>
-                    <NavLink to="about-me">About me</NavLink>
-                    <NavLink to="skills">Skills</NavLink>
+                    {returnLink('about-me')}
+                    {returnLink('tech-stack')}
+                    {returnLink('portfolio')}
                     <NavLink to="contact">Contact</NavLink>
                 </div>
             </nav>

@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap';
 
 $background-color: #121113;
-$nav-color: #00000069;
+$nav-color: #000000bb;
 $accent-color: #0ffff8;
 $font-color: white;
 $transparent-color: #ffffff00;
@@ -30,17 +30,23 @@ body {
 main {
   max-width: 60rem;
   margin: auto;
-  padding: 0rem 1rem;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 5px 0px 0px 0px;
+  margin: 0.75rem 0 0 0;
+}
+
+section {
+  h1, h2, h3, h4, h5, h6, img, p, button {
+    margin: 1rem 0 0 0;
+  }
 }
 
 .active {
   color: $accent-color;
 
-  @media (min-width: 40rem) {
+  @media (min-width: 48rem) {
     border-bottom: 2px solid $accent-color;
   }
 }
@@ -51,23 +57,47 @@ header {
   width: 100%;
   background-color: $nav-color;
   color: white;
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
+  .App-header-mobile-open {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    min-width: 10rem;
+    font-size: 1.8rem;
+    background-color: $nav-color;
+    // backdrop-filter: blur(10px);
+    padding: 0rem 0.5rem 0.20rem 0.5rem;
+    border-radius: 0 0 0 1rem;
+    transition: right 0.5s, display 0.5s, ease-out;
   
-a {
-  text-decoration: none;
-  color: white;
-  border-bottom: 2px solid $transparent-color;
-
-    &:hover {
-      color: $accent-color;
-      transition: 0.7s;
-
-      @media (min-width: 40rem) {
-        border-bottom: 2px solid $accent-color;
+    @media (min-width: 48rem) {
+      display: none;
+    }
+  }
+  
+  .App-header-mobile-closed {
+    @extend .App-header-mobile-open;
+    display: none;
+  }
+  
+  a {
+      text-decoration: none;
+      color: white;
+      border-bottom: 2px solid $transparent-color;
+  
+      &:hover {
+        color: $accent-color;
+        transition: 0.7s;
+  
+        @media (min-width: 48rem) {
+          border-bottom: 2px solid $accent-color;
+        }
       }
     }
   }
-}
 
 footer {
   position: absolute;
@@ -97,7 +127,7 @@ footer {
   border-radius: 0.2rem;
   height: 2rem;
 
-  @media (min-width: 40rem) {
+  @media (min-width: 48rem) {
     display: none;
   }
 
@@ -157,7 +187,7 @@ nav {
   justify-content: space-between;
   max-width: 60rem;
 
-  @media (min-width: 40rem) {
+  @media (min-width: 48rem) {
     display: flex;
   }
 }
@@ -166,19 +196,21 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   text-align: center;
+  div {
+    margin: 1rem 0rem 0.0rem 0rem;
+  }
 }
 
 .App-header-left {
   display: flex;
   gap: 3px;
 
-  @media (min-width: 40rem) {
+  @media (min-width: 48rem) {
     position: relative;
   }
 
-  @media (max-width: 40rem) {
+  @media (max-width: 48rem) {
     align-items: center;
     min-height: 4rem;
   }
@@ -193,33 +225,11 @@ section {
   gap: 1rem;
   font-size: 1.4rem;
 
-  @media (max-width: 40rem) {
+  @media (max-width: 48rem) {
     display: none;
   }
 }
 
-.App-header-mobile-open {
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  position: absolute;
-  top: 3rem;
-  right: 0;
-  min-width: 10rem;
-  font-size: 1.8rem;
-  background-color: $nav-color;
-  padding: 0rem 0.5rem 0.20rem 0.5rem;
-  transition: right 0.5s, display 0.5s, ease-out;
-
-  @media (min-width: 40rem) {
-    display: none;
-  }
-}
-
-.App-header-mobile-closed {
-  @extend .App-header-mobile-open;
-  display: none;
-}
 
 
 
@@ -228,7 +238,7 @@ section {
   border-radius: 100%;
   box-shadow: 0 0 0.75rem $accent-color;
   transition: 0.4s ease-in-out;
-  margin: 0 0 1rem 0;
+  margin: 1rem 0;
 
   &:hover {
     box-shadow: 0 0 2rem $accent-color;
@@ -369,7 +379,7 @@ section {
 
 .icons-container {
   display: flex;
-  margin: 0.5rem;
+  margin: 0.75rem 0 0 0;
   gap: 1rem;
 }
 
@@ -386,3 +396,8 @@ section {
     scale: 1.25;
   }
 }
+
+// .about-me-section{
+// }
+// .tech-stack-section{
+// }

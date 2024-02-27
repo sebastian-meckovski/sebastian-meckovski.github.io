@@ -1,15 +1,16 @@
 import React from "react";
 import { Routes, Route } from "react-router";
 import { Contact } from "../pages/Contact";
-import { AboutMe } from "../pages/AboutMe";
+import { MainPage } from "../pages/MainPage";
 
 export const AppRoutes = () => {
     return (
         <main>
             <Routes>
-                <Route index element={<AboutMe />} />
+                <Route index element={<MainPage />} />
                 <Route path="about-me" element={<p>about me</p>} />
-                <Route path="skills" element={<p>skills</p>} />
+                <Route path="tech-stack" element={<p>tech-stack</p>} />
+                <Route path="portfolio" element={<p>Portfolio</p>} />
                 <Route path="contact" element={<Contact />} />
             </Routes>
         </main>
