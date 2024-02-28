@@ -9,7 +9,7 @@ export const AppRoutes = () => {
             <Routes>
                 <Route index element={<MainPage />} />
                 <Route path="about-me" element={<p>about me</p>} />
-                <Route path="tech-stack" element={<p>tech-stack</p>} />
+                <Route path="expertise" element={<p>tech-stack</p>} />
                 <Route path="portfolio" element={<p>Portfolio</p>} />
                 <Route path="contact" element={<Contact />} />
             </Routes>

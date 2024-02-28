@@ -2,8 +2,8 @@ import React from "react";
 import './Button.scss'
 
 
-export const Button = () =>{
+export const Button = ({ children, href }) => {
     return (
-        <button className="custom-button"> Hire Me </button>
+        <a href={href} className="custom-button"> {children} </a>
     )
 }

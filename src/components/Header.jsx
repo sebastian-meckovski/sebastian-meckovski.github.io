@@ -8,7 +8,7 @@ export const Header = () => {
     const hrefName = {
         "": "Home",
         "about-me": "About me",
-        "tech-stack": "Tech stack",
+        "expertise": "Expertise",
         "portfolio": "Portfolio",
         "contact": "Contact"
     }
@@ -40,14 +40,14 @@ export const Header = () => {
                 <div className='App-header-right'>
                     {returnLink('')}
                     {returnLink('about-me')}
-                    {returnLink('tech-stack')}
+                    {returnLink('expertise')}
                     {returnLink('portfolio')}
                     {returnLink('contact')}
                 </div>
                 <div className={`App-header-mobile-${showItems ? 'open' : 'closed'}`} onClick={() => { setShowItems(false) }}>
                     {returnLink('')}
                     {returnLink('about-me')}
-                    {returnLink('tech-stack')}
+                    {returnLink('expertise')}
                     {returnLink('portfolio')}
                     {returnLink('contact')}
                 </div>

@@ -3,6 +3,9 @@ import sebImage from '../assets/PXL_20240226_132844396.NIGHT.jpg'
 import { Links } from "../components/Links";
 import '../components/Button/Button.scss'
 import { Link } from "react-router-dom";
+import { ContentCard } from "../components/ContentCard/ContentCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from "@fortawesome/free-solid-svg-icons";
 
 export const MainPage = () => {
     return (
@@ -49,9 +52,26 @@ export const MainPage = () => {
                     <img className="about-me-image" src={sebImage} alt="Sebastian" />
                 </div>
             </section>
-            <section id="tech-stack">
+            <section id="expertise">
                 <div className="section-container">
-                    My Tech Stack
+                    <div className="contentCards-container">
+                        <ContentCard buttonText={'Read more'} text={"I know javascript"}>
+                            <FontAwesomeIcon icon={faCode} />
+                            <h1>Web Development</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit placeat non ratione. Perferendis debitis optio alias atque explicabo labore, numquam nulla hic autem.</p>
+                        </ContentCard>
+                        <ContentCard buttonText={'Read more'} text={"I know javascript"}>
+                            <FontAwesomeIcon icon={faCode} />
+                            <h1>Web Development</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, adipisci animi. Excepturi dolores cumque facere voluptatum sapiente assumenda unde consequatur.</p>
+                        </ContentCard>
+                        <ContentCard buttonText={'Read more'} text={"I know javascript"}>
+                            <FontAwesomeIcon icon={faCode} />
+                            <h1>Web Development</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia molestiae fuga adipisci assumenda corporis quae maxime delectus at quos magnam Manam Bunak Oglom.</p>
+                        </ContentCard>
+                      
+                    </div>
                 </div>
             </section>
             <section id="portfolio">
