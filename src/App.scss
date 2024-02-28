@@ -22,38 +22,94 @@ body {
   background-color: $background-color;
   height: 100%;
   color: $font-color;
-* {
+  * {
     font-family: "Oxanium", sans-serif;
   }
 }
 
 main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   max-width: 60rem;
   margin: auto;
-  padding: 0rem 1rem 1rem 1rem;
-  section:not(:first-child) {
-    padding-top: 5rem
-  }
-}
+  padding: 1rem 1rem 1rem 1rem;
+  gap: 1rem;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0.75rem 0 0 0;
+  section:not(:first-child) {
+    padding-top: 4rem;
+  }
+
+  @media (max-width: 48rem) {
+    padding: 0.5rem 1rem 1rem 1rem;
+    section:not(:first-child) {
+      padding-top: 3rem
+    }
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 80%
+  }
 }
 
 section {
   display: flex;
-  flex-direction: column;
   align-items: center;
   text-align: center;
-  min-height: calc(100vh - 4rem);
-  h1, h2, h3, h4, h5, h6, img, p, button, div {
-    margin: 0.5rem 0 0 0;
+  gap: 0rem;
+  min-height: calc(100vh - 7rem);
+
+  @media (min-width: 1920px) {
+    max-width: 80%;
+    min-height: none;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  img,
+  p,
+  button,
+  div {
+    margin: 0.75rem 0 0 0;
+
+    @media (max-width: 48rem) {
+      margin: 1.5rem 0 0 0;
+    }
+  }
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+#about-me {
+  flex-direction: row;
+  gap: 2rem;
+
+  .about-me-left {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 48rem) {
+    flex-direction: column;
+  }
+
+  p {
+    margin: 0.5rem 0;
+
+    @media (max-width: 48rem) {}
+  }
+
 }
 
 .active {
@@ -69,7 +125,6 @@ header {
   width: 100%;
   background-color: $nav-color;
   color: white;
-  // backdrop-filter: blur(10px);
   .App-header-mobile-open {
     display: flex;
     flex-direction: column;
@@ -84,32 +139,32 @@ header {
     padding: 0rem 0.5rem 0.20rem 0.5rem;
     border-radius: 0 0 0 1rem;
     transition: right 0.5s, display 0.5s, ease-out;
-  
+
     @media (min-width: 48rem) {
       display: none;
     }
   }
-  
+
   .App-header-mobile-closed {
     @extend .App-header-mobile-open;
     display: none;
   }
-  
+
   a {
-      text-decoration: none;
-      color: white;
-      border-bottom: 2px solid $transparent-color;
-  
-      &:hover {
-        color: $accent-color;
-        transition: 0.7s;
-  
-        @media (min-width: 48rem) {
-          border-bottom: 2px solid $accent-color;
-        }
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid $transparent-color;
+
+    &:hover {
+      color: $accent-color;
+      transition: 0.7s;
+
+      @media (min-width: 48rem) {
+        border-bottom: 2px solid $accent-color;
       }
     }
   }
+}
 
 footer {
   position: absolute;
@@ -122,6 +177,7 @@ footer {
   align-items: center;
   flex-direction: column;
   font-size: small;
+  padding: 1.25rem 0rem 0rem 0rem;
 }
 
 .burger-button {
@@ -202,12 +258,26 @@ nav {
   @media (min-width: 48rem) {
     display: flex;
   }
+
+  @media (min-width: 1920px) {
+    max-width: 80%
+  }
+
 }
 
 
 .App-header-left {
   display: flex;
   gap: 3px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.5rem 0rem;
+  }
 
   @media (min-width: 48rem) {
     position: relative;
@@ -220,6 +290,21 @@ nav {
 
   :nth-child(2) {
     color: $accent-color;
+  }
+}
+
+.About-me-header {
+  @extend .App-header-left;
+  min-height: 1rem;
+  margin-top: 0;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.25rem 0rem;
   }
 }
 
@@ -241,10 +326,14 @@ nav {
   border-radius: 100%;
   box-shadow: 0 0 0.75rem $accent-color;
   transition: 0.4s ease-in-out;
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
 
   &:hover {
     box-shadow: 0 0 2rem $accent-color;
+  }
+
+  @media (max-width: 30rem) {
+    max-width: 90%;
   }
 }
 
@@ -332,9 +421,17 @@ nav {
   98.7655%, 100.0000% { content: "" }
 }
 
+
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .typewriter {
@@ -366,13 +463,7 @@ nav {
   .typewriter::after {
     animation: none;
   }
-  
-  @keyframes sequencePopup {
-    0%, 100% { content: "developer"; }
-    25% { content: "writer"; }
-    50% { content: "reader"; }
-    75% { content: "human"; }
-  }
+
 
   .typewriter::before {
     content: "developer";
@@ -382,7 +473,6 @@ nav {
 
 .icons-container {
   display: flex;
-  margin: 0.75rem 0 0.75rem 0;
   gap: 1rem;
 }
 
@@ -392,21 +482,11 @@ nav {
   padding: 0.35rem;
   color: $accent-color;
   transition: 0.4s ease-in-out;
-  &:hover{
+
+  &:hover {
     background-color: #0ffff8;
     box-shadow: 0 0 1.2rem $accent-color;
     color: white;
     scale: 1.25;
-  }
-}
-
-#about-me{
-  display: flex;
-  flex-direction: row;
-  .about-me-left{
-    text-align: left;
-  }
-  @media (max-width: 48rem) {
-    flex-direction: column;
   }
 }
