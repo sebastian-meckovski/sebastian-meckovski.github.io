@@ -1,12 +1,16 @@
 import React from "react";
 import sebImage from "../assets/PXL_20240226_132844396.NIGHT.jpg";
 import { Links } from "../components/Links";
-import "../components/Button/Button.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faRotate, faServer, faVial } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCode,
+  faRotate,
+  faServer,
+  faVial,
+} from "@fortawesome/free-solid-svg-icons";
 import { ContentCard } from "seb-components-library";
-import { Button } from "../components/Button/Button";
+import { LinkButton } from "seb-components-library";
 
 export const MainPage = () => {
   return (
@@ -21,14 +25,13 @@ export const MainPage = () => {
           </h2>
 
           <p>
-            {" "}
             A versatile software developer with 3 years of experience in
             frontend, backend, testing, and web technologies. Passionate about
             learning and implementing new technologies.
           </p>
           <Links />
           <div>
-            <a className="custom-button" href="#contact">
+            <a className="link-button" href="#contact">
               Hire Me
             </a>
           </div>
@@ -36,7 +39,7 @@ export const MainPage = () => {
       </section>
       <section id="about-me">
         <div className="section-container">
-          <div className="about-me-left">
+          <article className="about-me-left">
             <div className="About-me-header">
               <h1>About</h1>
               <h1>Me</h1>
@@ -56,11 +59,11 @@ export const MainPage = () => {
               and implement new technologies.
             </p>
             <div style={{ margin: "0.75rem 0" }}>
-              <Link to="about-me" className="custom-button">
+              <Link to="about-me" className="link-button">
                 Read More
               </Link>
             </div>
-          </div>
+          </article>
         </div>
         <div>
           <img className="about-me-image" src={sebImage} alt="Sebastian" />
@@ -73,45 +76,41 @@ export const MainPage = () => {
               <FontAwesomeIcon icon={faCode} />
               <h1>Web Development</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-                placeat non ratione. Perferendis debitis optio alias atque
-                explicabo labore, numquam nulla hic autem.
+                Crafting interactive web experiences using React, HTML5, and
+                CSS3. Integrating RESTful APIs for seamless functionality.
               </p>
               <br />
-              <Button href={"test"}> Read more </Button>
+              <LinkButton href={"web-development"}> Read more </LinkButton>
             </ContentCard>
             <ContentCard buttonText={"Read more"}>
               <FontAwesomeIcon icon={faServer} />
               <h1>Back-end Development</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
-                adipisci animi. Excepturi dolores cumque facere voluptatum
-                sapiente assumenda unde consequatur.
+                Building robust APIs with ASP.NET Core and Entity Framework
+                Core. Manipulating data efficiently for web applications.
               </p>
               <br />
-              <Button href={"test"}> Read more </Button>
+              <LinkButton href={"back-end-development"}> Read more </LinkButton>
             </ContentCard>
             <ContentCard buttonText={"Read more"}>
               <FontAwesomeIcon icon={faVial} />
               <h1>Testing</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                molestiae fuga adipisci assumenda corporis quae maxime delectus
-                at quos magnam Manam Bunak Oglom.
+                Ensuring code quality with Cypress and Jest. Rigorous unit,
+                integration, and end-to-end testing for reliable software.
               </p>
               <br />
-              <Button href={"test"}> Read more </Button>
+              <LinkButton href={"Testing"}> Read more </LinkButton>
             </ContentCard>
             <ContentCard buttonText={"Read more"}>
               <FontAwesomeIcon icon={faRotate} />
               <h1>CI/CD</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                molestiae fuga adipisci assumenda corporis quae maxime delectus
-                at quos magnam Manam Bunak Oglom.
+                Automating deployment pipelines using GitLab CI/CD. Streamlining
+                development-to-production workflows.
               </p>
               <br />
-              <Button href={"test"}> Read more </Button>
+              <LinkButton href={"ci-cd"}> Read more </LinkButton>
             </ContentCard>
           </div>
         </div>
