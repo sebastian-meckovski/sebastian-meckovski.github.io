@@ -171,17 +171,18 @@ header {
 }
 
 footer {
+  gap: 0.5rem;
   position: absolute;
   bottom: 0;
   width: 100%;
-  min-height: 4rem;
+  height: 4rem;
   background-color: $nav-color;
   color: white;
   display: flex;
   align-items: center;
   flex-direction: column;
   font-size: small;
-  padding: 1.25rem 0rem 0rem 0rem;
+  padding: 1rem 0rem 0rem 0rem;
 }
 
 .burger-button {
