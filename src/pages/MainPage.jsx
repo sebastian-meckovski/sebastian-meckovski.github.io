@@ -23,7 +23,6 @@ export const MainPage = () => {
             I am a&nbsp;
             <span className="typewriter"></span>
           </h2>
-
           <p>
             A versatile software developer with 3 years of experience in
             frontend, backend, testing, and web technologies. Passionate about
