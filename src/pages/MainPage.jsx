@@ -77,7 +77,7 @@ export const MainPage = () => {
                 Crafting interactive web experiences using JS, HTML5, and CSS3.
                 Integrating RESTful APIs for seamless functionality.
               </p>
-              <HashLink className="link-button" to="/expertise#web-development">
+              <HashLink className="link-button" to="/expertise#">
                 Read more
               </HashLink>
             </ContentCard>
@@ -126,18 +126,40 @@ export const MainPage = () => {
           <div className="contentCards-container">
             <ContentCard>
               <h1>Currency Converter</h1>
+              <p>
+                A ReactJS currency converter app that fetches real-time exchange
+                rates, allowing users to convert between different currencies.
+              </p>
+              <HashLink className="link-button" to="/portfolio#">
+                Read more
+              </HashLink>
             </ContentCard>
             <ContentCard>
               <h1>Greenspark Product Cards</h1>
+              <HashLink
+                className="link-button"
+                to="/portfolio#greenspark-product-cards"
+              >
+                Read more
+              </HashLink>
             </ContentCard>
             <ContentCard>
               <h1>Shape Lamp</h1>
+              <HashLink className="link-button" to="/portfolio#shape-lamp">
+                Read more
+              </HashLink>
             </ContentCard>
             <ContentCard>
               <h1>CNC File Editor</h1>
+              <HashLink className="link-button" to="/portfolio#cnc-file-editor">
+                Read more
+              </HashLink>
             </ContentCard>
             <ContentCard>
               <h1>Canvas Snow</h1>
+              <HashLink className="link-button" to="/portfolio#canvas-snow">
+                Read more
+              </HashLink>
             </ContentCard>
           </div>
         </div>
