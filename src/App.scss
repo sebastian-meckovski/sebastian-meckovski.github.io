@@ -90,6 +90,7 @@ section {
 
 #about-me {
   flex-direction: row;
+  gap: 1.25rem;
 
   .about-me-left {
     text-align: left;
@@ -317,6 +318,7 @@ nav {
   box-shadow: 0 0 0.75rem $accent-color;
   transition: 0.4s ease-in-out;
   margin: 0 0 1rem 0;
+  // align-self: center;
 
   &:hover {
     box-shadow: 0 0 2rem $accent-color;

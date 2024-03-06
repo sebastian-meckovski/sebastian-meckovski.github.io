@@ -64,26 +64,24 @@ export const MainPage = () => {
             </div>
           </article>
         </div>
-        <div>
-          <img className="about-me-image" src={sebImage} alt="Sebastian" />
-        </div>
+        <img className="about-me-image" src={sebImage} alt="Sebastian" />
       </section>
       <section id="expertise">
         <div className="section-container-left-align">
           <h1>Expertise</h1>
           <div className="contentCards-container">
-            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+            <ContentCard>
               <FontAwesomeIcon icon={faCode} />
               <h1>Web Development</h1>
               <p>
-                Crafting interactive web experiences using JS, HTML5,
-                and CSS3. Integrating RESTful APIs for seamless functionality.
+                Crafting interactive web experiences using JS, HTML5, and CSS3.
+                Integrating RESTful APIs for seamless functionality.
               </p>
               <HashLink className="link-button" to="/expertise#web-development">
                 Read more
               </HashLink>
             </ContentCard>
-            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+            <ContentCard>
               <FontAwesomeIcon icon={faServer} />
               <h1>Back-end Development</h1>
               <p>
@@ -97,7 +95,7 @@ export const MainPage = () => {
                 Read more
               </HashLink>
             </ContentCard>
-            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+            <ContentCard>
               <FontAwesomeIcon icon={faVial} />
               <h1>Testing</h1>
               <p>
@@ -108,7 +106,7 @@ export const MainPage = () => {
                 Read more
               </HashLink>
             </ContentCard>
-            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+            <ContentCard>
               <FontAwesomeIcon icon={faRotate} />
               <h1>CI/CD</h1>
               <p>
