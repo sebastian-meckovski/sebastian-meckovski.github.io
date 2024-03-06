@@ -33,18 +33,15 @@ main {
   flex-direction: column;
   max-width: 60rem;
   margin: auto;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   gap: 1rem;
 
-  section:not(:first-child) {
-    padding-top: 4rem;
+  section:first-of-type {
+    align-items: flex-start;
+    margin-top: 1.5rem;
   }
-
-  @media (max-width: 48rem) {
-    padding: 0.5rem 1rem 1rem 1rem;
-    section:not(:first-child) {
-      padding-top: 4rem;
-    }
+  section:not(:first-child) {
+    padding-top: 4.5rem;
   }
 
   @media (min-width: 1920px) {
@@ -74,11 +71,7 @@ section {
   p,
   button,
   div {
-    margin: 0.75rem 0 0 0;
-
-    @media (max-width: 48rem) {
-      margin: 1.25rem 0 0 0;
-    }
+    margin: 0 0 0 0;
   }
 }
 
@@ -86,10 +79,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
+  margin: 0 0 0 0;
+  gap: 1rem;
   &-left-align {
     @extend .section-container;
     align-items: flex-start;
+    gap: 0rem;
   }
 }
 
@@ -295,7 +290,6 @@ nav {
 .About-me-header {
   @extend .App-header-left;
   min-height: 1rem;
-  margin-top: 1.25rem;
 
   h1,
   h2,

@@ -72,51 +72,77 @@ export const MainPage = () => {
         <div className="section-container-left-align">
           <h1>Expertise</h1>
           <div className="contentCards-container">
-            <ContentCard>
+            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
               <FontAwesomeIcon icon={faCode} />
               <h1>Web Development</h1>
               <p>
-                Crafting interactive web experiences using JavaScript, HTML5,
+                Crafting interactive web experiences using JS, HTML5,
                 and CSS3. Integrating RESTful APIs for seamless functionality.
               </p>
-              <br />
-              <HashLink className="link-button" to="/expertise#web-development">Read more</HashLink>
+              <HashLink className="link-button" to="/expertise#web-development">
+                Read more
+              </HashLink>
             </ContentCard>
-            <ContentCard>
+            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
               <FontAwesomeIcon icon={faServer} />
               <h1>Back-end Development</h1>
               <p>
                 Building robust APIs with ASP.NET Core and Entity Framework
                 Core. Manipulating data efficiently for web applications.
               </p>
-              <br />
-              <HashLink className="link-button" to="/expertise#back-end-development">Read more</HashLink>
+              <HashLink
+                className="link-button"
+                to="/expertise#back-end-development"
+              >
+                Read more
+              </HashLink>
             </ContentCard>
-            <ContentCard>
+            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
               <FontAwesomeIcon icon={faVial} />
               <h1>Testing</h1>
               <p>
                 Ensuring code quality with Cypress and Jest. Rigorous unit,
                 integration, and end-to-end testing for reliable software.
               </p>
-              <br />
-              <HashLink className="link-button" to="/expertise#testing">Read more</HashLink>
+              <HashLink className="link-button" to="/expertise#testing">
+                Read more
+              </HashLink>
             </ContentCard>
-            <ContentCard>
+            <ContentCard style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
               <FontAwesomeIcon icon={faRotate} />
               <h1>CI/CD</h1>
               <p>
                 Automating deployment pipelines using GitLab CI/CD. Streamlining
                 development-to-production workflows.
               </p>
-              <br />
-              <HashLink className="link-button" to="/expertise#ci-cd">Read more</HashLink>
+              <HashLink className="link-button" to="/expertise#ci-cd">
+                Read more
+              </HashLink>
             </ContentCard>
           </div>
         </div>
       </section>
       <section id="portfolio">
-        <div className="section-container">Portfolio</div>
+        <div className="section-container-left-align">
+          <h1>Portfolio</h1>
+          <div className="contentCards-container">
+            <ContentCard>
+              <h1>Currency Converter</h1>
+            </ContentCard>
+            <ContentCard>
+              <h1>Greenspark Product Cards</h1>
+            </ContentCard>
+            <ContentCard>
+              <h1>Shape Lamp</h1>
+            </ContentCard>
+            <ContentCard>
+              <h1>CNC File Editor</h1>
+            </ContentCard>
+            <ContentCard>
+              <h1>Canvas Snow</h1>
+            </ContentCard>
+          </div>
+        </div>
       </section>
       <section id="contact">
         <div className="section-container">Contact</div>
