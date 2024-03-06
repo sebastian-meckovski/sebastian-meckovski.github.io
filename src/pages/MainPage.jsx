@@ -10,7 +10,7 @@ import {
   faVial,
 } from "@fortawesome/free-solid-svg-icons";
 import { ContentCard } from "seb-components-library";
-import { LinkButton } from "seb-components-library";
+import { HashLink } from "react-router-hash-link";
 
 export const MainPage = () => {
   return (
@@ -70,19 +70,20 @@ export const MainPage = () => {
         </div>
       </section>
       <section id="expertise">
-        <div className="section-container">
+        <div className="section-container-left-align">
+          <h1>Expertise</h1>
           <div className="contentCards-container">
-            <ContentCard buttonText={"Read more"}>
+            <ContentCard>
               <FontAwesomeIcon icon={faCode} />
               <h1>Web Development</h1>
               <p>
-                Crafting interactive web experiences using React, HTML5, and
-                CSS3. Integrating RESTful APIs for seamless functionality.
+                Crafting interactive web experiences using JavaScript, HTML5,
+                and CSS3. Integrating RESTful APIs for seamless functionality.
               </p>
               <br />
-              <LinkButton href={"web-development"}> Read more </LinkButton>
+              <HashLink className="link-button" to="/expertise#web-development">Read more</HashLink>
             </ContentCard>
-            <ContentCard buttonText={"Read more"}>
+            <ContentCard>
               <FontAwesomeIcon icon={faServer} />
               <h1>Back-end Development</h1>
               <p>
@@ -90,9 +91,9 @@ export const MainPage = () => {
                 Core. Manipulating data efficiently for web applications.
               </p>
               <br />
-              <LinkButton href={"back-end-development"}> Read more </LinkButton>
+              <HashLink className="link-button" to="/expertise#back-end-development">Read more</HashLink>
             </ContentCard>
-            <ContentCard buttonText={"Read more"}>
+            <ContentCard>
               <FontAwesomeIcon icon={faVial} />
               <h1>Testing</h1>
               <p>
@@ -100,9 +101,9 @@ export const MainPage = () => {
                 integration, and end-to-end testing for reliable software.
               </p>
               <br />
-              <LinkButton href={"Testing"}> Read more </LinkButton>
+              <HashLink className="link-button" to="/expertise#testing">Read more</HashLink>
             </ContentCard>
-            <ContentCard buttonText={"Read more"}>
+            <ContentCard>
               <FontAwesomeIcon icon={faRotate} />
               <h1>CI/CD</h1>
               <p>
@@ -110,7 +111,7 @@ export const MainPage = () => {
                 development-to-production workflows.
               </p>
               <br />
-              <LinkButton href={"ci-cd"}> Read more </LinkButton>
+              <HashLink className="link-button" to="/expertise#ci-cd">Read more</HashLink>
             </ContentCard>
           </div>
         </div>

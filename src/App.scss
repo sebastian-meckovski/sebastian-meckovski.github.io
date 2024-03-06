@@ -87,6 +87,10 @@ section {
   flex-direction: column;
   align-items: center;
   margin: 0;
+  &-left-align {
+    @extend .section-container;
+    align-items: flex-start;
+  }
 }
 
 #about-me {
@@ -723,4 +727,8 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+.section-heading {
+  text-align: left;
 }
