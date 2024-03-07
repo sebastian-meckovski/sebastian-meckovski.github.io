@@ -136,6 +136,11 @@ export const MainPage = () => {
             </ContentCard>
             <ContentCard>
               <h1>Greenspark Product Cards</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Deleniti impedit reprehenderit illum officiis ad libero omnis
+                odit.
+              </p>
               <HashLink
                 className="link-button"
                 to="/portfolio#greenspark-product-cards"
@@ -145,18 +150,30 @@ export const MainPage = () => {
             </ContentCard>
             <ContentCard>
               <h1>Shape Lamp</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Maiores ipsa unde doloremque cumque hic quae.
+              </p>
               <HashLink className="link-button" to="/portfolio#shape-lamp">
                 Read more
               </HashLink>
             </ContentCard>
             <ContentCard>
               <h1>CNC File Editor</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolorum, eos. Officiis repellat, nam iste commodi eaque.
+              </p>
               <HashLink className="link-button" to="/portfolio#cnc-file-editor">
                 Read more
               </HashLink>
             </ContentCard>
             <ContentCard>
               <h1>Canvas Snow</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Veritatis sunt porro recusandae eum sapiente delectus illo?
+              </p>
               <HashLink className="link-button" to="/portfolio#canvas-snow">
                 Read more
               </HashLink>
@@ -171,7 +188,9 @@ export const MainPage = () => {
           corporis dolore? Nesciunt, blanditiis beatae optio fugiat, mollitia
           sunt sit quaerat est fuga placeat consequatur accusamus.
         </p>
-        <Link to="contact" className="link-button">More contact options</Link>
+        <Link to="contact" className="link-button">
+          More contact options
+        </Link>
         <div className="section-container-left-align">
           <form className="contact-me-form">
             <Textbox placeholder="Your name" />
