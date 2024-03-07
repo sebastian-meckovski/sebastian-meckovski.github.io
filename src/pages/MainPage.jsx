@@ -9,7 +9,7 @@ import {
   faServer,
   faVial,
 } from "@fortawesome/free-solid-svg-icons";
-import { ContentCard } from "seb-components-library";
+import { Button, ContentCard, Textarea, Textbox } from "seb-components-library";
 import { HashLink } from "react-router-hash-link";
 
 export const MainPage = () => {
@@ -165,7 +165,22 @@ export const MainPage = () => {
         </div>
       </section>
       <section id="contact">
-        <div className="section-container">Contact</div>
+        <h1>Contact me</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
+          corporis dolore? Nesciunt, blanditiis beatae optio fugiat, mollitia
+          sunt sit quaerat est fuga placeat consequatur accusamus.
+        </p>
+        <Link to="contact" className="link-button">More contact options</Link>
+        <div className="section-container-left-align">
+          <form className="contact-me-form">
+            <Textbox placeholder="Your name" />
+            <Textbox placeholder="Your email" />
+            <Textbox placeholder="Subject" />
+            <Textarea placeholder="Your message" />
+            <Button type="submit">Send a message</Button>
+          </form>
+        </div>
       </section>
     </>
   );
