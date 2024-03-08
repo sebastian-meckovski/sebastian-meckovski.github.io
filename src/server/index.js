@@ -56,6 +56,8 @@ app.post("/send-mail", validate(schema), (req, res) => {
   let transporter = nodemailer.createTransport({
     host: process.env.REACT_APP_HOST,
     port: process.env.PORT,
+    requireTLS: true,
+    secure: false,
     auth: {
       user: process.env.REACT_APP_EMAIL_LOGIN,
       pass: process.env.REACT_APP_EMAIL_PASS,
