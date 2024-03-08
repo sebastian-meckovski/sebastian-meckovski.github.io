@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import sebImage from "../assets/PXL_20240226_132844396.NIGHT.jpg";
 import { Links } from "../components/Links";
 import { Link } from "react-router-dom";
@@ -11,8 +11,54 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Button, ContentCard, Textarea, Textbox } from "seb-components-library";
 import { HashLink } from "react-router-hash-link";
+import axios from "axios";
+
+const initialData = {
+  name: "",
+  subject: "",
+  email: "",
+  message: "",
+};
 
 export const MainPage = () => {
+  const [formData, setFormData] = useState(initialData);
+
+  const handleHandleSubmit = (e) => {
+    e.preventDefault();
+
+    let config = {
+      method: "post",
+      maxBodyLength: Infinity,
+      url: "https://sebastian-meckovski-email-serice.onrender.com/send-mail",
+      // url: "http://192.168.0.253:8000/send-mail",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: formData,
+    };
+
+    axios
+      .request(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    console.log("submitted", formData);
+    // setFormData(initialData);
+  };
+
+  const handleChange = (e) => {
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
   return (
     <>
       <section id="/">
@@ -192,11 +238,36 @@ export const MainPage = () => {
           More contact options
         </Link>
         <div className="section-container-left-align">
-          <form className="contact-me-form">
-            <Textbox placeholder="Your name" />
-            <Textbox placeholder="Your email" />
-            <Textbox placeholder="Subject" />
-            <Textarea placeholder="Your message" />
+          <form onSubmit={handleHandleSubmit} className="contact-me-form">
+            <Textbox
+              required
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+            />
+            <Textbox
+              required
+              name="email"
+              type="email"
+              onChange={handleChange}
+              value={formData.email}
+              placeholder="Your email"
+            />
+            <Textbox
+              required
+              name="subject"
+              onChange={handleChange}
+              value={formData.subject}
+              placeholder="Subject"
+            />
+            <Textarea
+              required
+              name="message"
+              onChange={handleChange}
+              value={formData.message}
+              placeholder="Your message"
+            />
             <Button type="submit">Send a message</Button>
           </form>
         </div>
