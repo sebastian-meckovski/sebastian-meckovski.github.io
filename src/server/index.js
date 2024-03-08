@@ -2,26 +2,13 @@ const PORT = 8000;
 const express = require("express");
 const yup = require("yup");
 require("dotenv").config();
-const cors = require("cors");
+// const cors = require("cors");
 // const axios = require("axios");
 
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://sebastian-meckovski.com/",
+  "https://sebastian-meckovski.com",
   "https://sebastian-meckovski.github.com",
 ];
-
-const corsOptions = {
-  origin: allowedOrigins,
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Access-Control-Allow-Methods",
-    "Access-Control-Request-Headers",
-  ],
-  credentials: true,
-  enablePreflight: true,
-};
 
 const app = express();
 app.use(express.json());
