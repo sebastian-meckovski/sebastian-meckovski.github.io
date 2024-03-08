@@ -32,7 +32,7 @@
     "start": "react-scripts start",
     "start:backend:dev": "nodemon src/server/index.js",
     "start:backend": "node src/server/index.js",
-    "build:backend": "react-scripts build",
+    "build:backend": "npm install",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
