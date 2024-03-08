@@ -232,7 +232,7 @@ export const MainPage = () => {
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
           corporis dolore? Nesciunt, blanditiis beatae optio fugiat, mollitia
-          sunt sit quaerat est fuga placeat consequatur accusamus.
+          sunt sit quaerat est fuga placeab consequatur accusamus.
         </p>
         <Link to="contact" className="link-button">
           More contact options
