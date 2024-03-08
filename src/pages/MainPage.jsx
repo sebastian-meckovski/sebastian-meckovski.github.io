@@ -47,7 +47,7 @@ export const MainPage = () => {
       });
 
     console.log("submitted", formData);
-    // setFormData(initialData);
+    setFormData(initialData);
   };
 
   const handleChange = (e) => {
