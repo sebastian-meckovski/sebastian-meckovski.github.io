@@ -11,15 +11,22 @@ const allowedOrigins = [
   "https://sebastian-meckovski.github.com",
 ];
 
+const corsOptions = {
+  origin: allowedOrigins,
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "Access-Control-Allow-Methods",
+    "Access-Control-Request-Headers",
+  ],
+  credentials: true,
+  enablePreflight: true,
+};
+
 const app = express();
 app.use(express.json());
-app.use(
-  cors({
-    origin: allowedOrigins,
-  })
-);
-
-app.options("/send-mail", cors()); 
+app.use(cors(corsOptions));
+app.options("/send-mail", cors(corsOptions));
 
 const schema = yup
   .object({
