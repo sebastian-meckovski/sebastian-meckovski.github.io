@@ -29,8 +29,8 @@ export const MainPage = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://sebastian-meckovski-email-serice.onrender.com/send-mail",
-      // url: "http://192.168.0.253:8000/send-mail",
+      // url: "https://sebastian-meckovski-email-serice.onrender.com/send-mail",
+      url: "http://192.168.0.253:8000/send-mail",
       headers: {
         "Content-Type": "application/json",
       },
