@@ -5,17 +5,17 @@ require("dotenv").config();
 const cors = require("cors");
 // const axios = require("axios");
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://sebastian-meckovski.com/",
-  "https://sebastian-meckovski.github.com",
-];
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "https://sebastian-meckovski.com/",
+//   "https://sebastian-meckovski.github.com",
+// ];
 
 const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: "https://sebastian-meckovski.com/",
   })
 );
 
