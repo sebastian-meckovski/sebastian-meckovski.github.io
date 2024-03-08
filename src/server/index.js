@@ -53,21 +53,17 @@ const validate = (schema) => async (req, res, next) => {
 
 app.post("/send-mail", validate(schema), (req, res) => {
   console.log("sending email...");
-  console.log(process.env.REACT_APP_HOST)
-  console.log(process.env.REACT_APP_EMAIL_PASS)
-  console.log(process.env.REACT_APP_EMAIL_LOGIN)
-  console.log(process.env.REACT_APP_PORT)
-  console.log(process.env.REACT_APP_FROM)
   let transporter = nodemailer.createTransport({
+    pool: true,
     host: process.env.REACT_APP_HOST,
     port: process.env.PORT,
+    secure: true,
     auth: {
       user: process.env.REACT_APP_EMAIL_LOGIN,
-      pass: process.env.REACT_APP_EMAIL_PASS
+      pass: process.env.REACT_APP_EMAIL_PASS,
     },
   });
 
-  console.log(transporter)
   var mailOptions = {
     from: process.env.REACT_APP_EMAIL_LOGIN,
     to: req.body.email,
