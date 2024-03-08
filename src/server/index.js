@@ -52,32 +52,39 @@ const validate = (schema) => async (req, res, next) => {
 };
 
 app.post("/send-mail", validate(schema), (req, res) => {
-  console.log("sending email...");
-  let transporter = nodemailer.createTransport({
-    host: process.env.REACT_APP_HOST,
-    port: process.env.PORT,
-    requireTLS: true,
-    secure: false,
-    auth: {
-      user: process.env.REACT_APP_EMAIL_LOGIN,
-      pass: process.env.REACT_APP_EMAIL_PASS,
-    },
-  });
-
-  var mailOptions = {
-    from: process.env.REACT_APP_EMAIL_LOGIN,
-    to: req.body.email,
-    subject: req.body.subject,
-    // text: req.body.message,
-    html: `<h1>Hello, ${req.body.name}! </h1> Thanks for reaching out! 
-    This page is still under developemnt but I will get back to you shortly!`,
+  console.log("sending request...");
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
   };
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return console.log(error);
-    }
-    console.log("Message sent: %s", info.messageId);
-  });
+
+  fetch("https://pokeapi.co/api/v2/pokemon/ditto", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+  // let transporter = nodemailer.createTransport({
+  //   host: process.env.REACT_APP_HOST,
+  //   port: process.env.PORT,
+  //   auth: {
+  //     user: process.env.REACT_APP_EMAIL_LOGIN,
+  //     pass: process.env.REACT_APP_EMAIL_PASS,
+  //   },
+  // });
+
+  // var mailOptions = {
+  //   from: process.env.REACT_APP_EMAIL_LOGIN,
+  //   to: req.body.email,
+  //   subject: req.body.subject,
+  //   // text: req.body.message,
+  //   html: `<h1>Hello, ${req.body.name}! </h1> Thanks for reaching out!
+  //   This page is still under developemnt but I will get back to you shortly!`,
+  // };
+  // transporter.sendMail(mailOptions, (error, info) => {
+  //   if (error) {
+  //     return console.log(error);
+  //   }
+  //   console.log("Message sent: %s", info.messageId);
+  // });
 
   return res.json({ body: req.body });
 });
