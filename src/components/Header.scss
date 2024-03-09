@@ -1,0 +1,200 @@
+@import "../shared/colors.scss";
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $nav-color;
+  color: white;
+  .App-header-mobile-open {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    min-width: 10rem;
+    font-size: 1.8rem;
+    background-color: $nav-color;
+    // backdrop-filter: blur(10px);
+    padding: 0rem 0.5rem 0.2rem 0.5rem;
+    border-radius: 0 0 0 1rem;
+    animation: moveIn;
+    animation-duration: 0.5s;
+
+    @media (min-width: 48rem) {
+      display: none;
+    }
+  }
+
+  .App-header-mobile-closed {
+    @extend .App-header-mobile-open;
+    animation: moveOut;
+    animation-duration: 0.5s;
+    right: -11rem;
+    &-after-animation {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid $transparent-color;
+
+    &:hover {
+      color: $accent-color;
+      transition: 0.7s;
+
+      @media (min-width: 48rem) {
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+  }
+}
+
+@keyframes moveOut {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -11rem;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    right: -11rem;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+.App-header-left {
+  display: flex;
+  gap: 3px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.5rem 0rem;
+  }
+
+  @media (max-width: 48rem) {
+    align-items: center;
+    min-height: 4rem;
+  }
+
+  :nth-child(2) {
+    color: $accent-color;
+  }
+}
+
+.About-me-header {
+  @extend .App-header-left;
+  min-height: 1rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.25rem 0rem;
+  }
+}
+
+.App-header-right {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.4rem;
+
+  @media (max-width: 48rem) {
+    display: none;
+  }
+}
+
+.burger-button {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem 0rem;
+  justify-content: space-between;
+  right: 1rem;
+  align-items: center;
+  background-color: $transparent-color;
+  color: $accent-color;
+  border: none;
+  width: 2rem;
+  border-radius: 0.2rem;
+  height: 2rem;
+
+  @media (min-width: 48rem) {
+    display: none;
+  }
+
+  &-stripe-1-closed,
+  &-stripe-2-closed,
+  &-stripe-3-closed {
+    transition-duration: 0.8s;
+    transition-property: transform;
+    width: 100%;
+    height: 0.07rem;
+    border-radius: 0.2rem;
+    border: 0.05rem solid $accent-color;
+    background-color: $accent-color;
+    transform-origin: 0.19rem;
+  }
+
+  &-stripe-2-closed {
+    opacity: 100%;
+    transition: opacity 0.3s;
+  }
+
+  &-stripe-1-open,
+  &-stripe-2-open,
+  &-stripe-3-open {
+    transition-duration: 0.8s;
+    transition-property: transform;
+    width: 100%;
+    height: 0.07rem;
+    border-radius: 0.2rem;
+    border: 0.05rem solid $accent-color;
+    background-color: $accent-color;
+    transform-origin: 0.19rem;
+  }
+
+  &-stripe-1-open {
+    transform: rotate(45deg);
+  }
+
+  &-stripe-2-open {
+    transition: opacity 0.3s;
+    opacity: 0%;
+  }
+
+  &-stripe-3-open {
+    transform: rotate(-45deg);
+  }
+}
+
+nav {
+  padding: 0rem 1rem;
+  margin: auto;
+  min-height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 60rem;
+
+  @media (min-width: 48rem) {
+    display: flex;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 80%;
+  }
+}
