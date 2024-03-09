@@ -183,7 +183,7 @@ export const MainPage = () => {
             <ContentCard>
               <h1>Currency Converter</h1>
               <p>
-                A ReactJS currency converter app that fetches real-time exchange
+                A React JS currency converter app that fetches real-time exchange
                 rates, allowing users to convert between different currencies.
               </p>
               <HashLink className="link-button" to="/portfolio#">
@@ -193,9 +193,8 @@ export const MainPage = () => {
             <ContentCard>
               <h1>Greenspark Product Cards</h1>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Deleniti impedit reprehenderit illum officiis ad libero omnis
-                odit.
+                A React TS app demonstrating custom components, API
+                integration, accessibility, responsive design, and tests.
               </p>
               <HashLink
                 className="link-button"
