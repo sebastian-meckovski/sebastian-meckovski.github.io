@@ -4,7 +4,8 @@ const cors = require("cors");
 // const nodemailer = require("nodemailer");
 const PORT = 8000;
 require("dotenv").config();
-const emailjs = require("@emailjs/nodejs");
+// const emailjs = require("@emailjs/nodejs");
+const sgMail = require("@sendgrid/mail");
 
 var templateParams = {
   name: "James",
@@ -59,25 +60,49 @@ const validate = (schema) => async (req, res, next) => {
 
 app.post("/send-mail", validate(schema), (req, res) => {
   console.log("sending email...");
+  sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
+  const msg = {
+    to: req.body.email,
+    from: process.env.REACT_APP_FROM, // Use the email address or domain you verified above
+    subject: req.body.subject,
+    // text: req.body.message,
+    html: `<h1>Hi, ${req.body.name}!</h1> <p> Thanks for reaching out!
+    This page is still under developemnt but I will get back to you shortly </p>`,
+  };
+  //ES6
+  (async () => {
+    try {
+      await sgMail.send(msg).then((obj) => {
+        console.log("sent...");
+        console.log("status code:", obj[0].statusCode);
+      });
+    } catch (error) {
+      console.error(error);
 
-  emailjs
-    .send(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
-      templateParams,
-      {
-        publicKey: process.env.REACT_APP_PUBLIC_KEY,
-        privateKey: process.env.REACT_APP_PRIVATE_KEY, // optional, highly recommended for security reasons
+      if (error.response) {
+        console.error(error.response.body);
       }
-    )
-    .then(
-      function (response) {
-        console.log("SUCCESS!", response.status, response.text);
-      },
-      function (err) {
-        console.log("FAILED...", err);
-      }
-    );
+    }
+  })();
+
+  // emailjs
+  //   .send(
+  //     process.env.REACT_APP_SERVICE_ID,
+  //     process.env.REACT_APP_TEMPLATE_ID,
+  //     templateParams,
+  //     {
+  //       publicKey: process.env.REACT_APP_PUBLIC_KEY,
+  //       privateKey: process.env.REACT_APP_PRIVATE_KEY, // optional, highly recommended for security reasons
+  //     }
+  //   )
+  //   .then(
+  //     function (response) {
+  //       console.log("SUCCESS!", response.status, response.text);
+  //     },
+  //     function (err) {
+  //       console.log("FAILED...", err);
+  //     }
+  //   );
 
   // let transporter = nodemailer.createTransport({
   //   host: process.env.REACT_APP_HOST,
