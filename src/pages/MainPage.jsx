@@ -7,6 +7,7 @@ import {
   faCode,
   faRotate,
   faServer,
+  faSpinner,
   faVial,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button, ContentCard, Textarea, Textbox } from "seb-components-library";
@@ -22,15 +23,19 @@ const initialData = {
 
 export const MainPage = () => {
   const [formData, setFormData] = useState(initialData);
+  const [isLoading, setIsLoading] = useState(false);
+  const [emailSuccess, setEmailSuccess] = useState(false);
+  const [emailFail, setEmailFail] = useState(false);
 
   const handleHandleSubmit = (e) => {
+    setIsLoading(true);
     e.preventDefault();
 
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: "https://sebastian-meckovski-email-serice.onrender.com/send-mail",
-      // url: "http://192.168.0.253:8000/send-mail",
+      // url: "https://sebastian-meckovski-email-serice.onrender.com/send-mail",
+      url: "http://192.168.0.253:8000/send-mail",
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,15 +44,21 @@ export const MainPage = () => {
 
     axios
       .request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
+      .then((res) => {
+        if (res.request.status === 200) {
+          setEmailSuccess(true);
+          setEmailFail(false);
+          setFormData(initialData);
+        }
       })
       .catch((error) => {
         console.log(error);
+        setEmailFail(true);
+        setEmailSuccess(false);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-
-    console.log("submitted", formData);
-    setFormData(initialData);
   };
 
   const handleChange = (e) => {
@@ -230,9 +241,9 @@ export const MainPage = () => {
       <section id="contact">
         <h1>Contact me</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum,
-          corporis dolore? Nesciunt, blanditiis beatae optio fugiat, mollitia
-          sunt sit quaerat est fuga placeab consequatur accusamus.
+          Upon submitting your message, you’ll receive a confirmation email.
+          Rest assured, I’ll do my best to reply within 24 hours. Thank you for
+          reaching out!
         </p>
         <Link to="contact" className="link-button">
           More contact options
@@ -268,7 +279,32 @@ export const MainPage = () => {
               value={formData.message}
               placeholder="Your message"
             />
-            <Button type="submit">Send a message</Button>
+            {(emailSuccess || emailFail) && (
+              <div style={{ alignSelf: "center" }}>
+                {emailFail && !emailSuccess && (
+                  <p>
+                    Something went wrong. Please try again later or go to{" "}
+                    <Link to="contact">More contact options</Link>
+                  </p>
+                )}
+                {emailSuccess && !emailFail && (
+                  <p>
+                    Your message has been received. I will try to respond within
+                    24 hours!
+                  </p>
+                )}
+              </div>
+            )}
+            <Button type="submit" className="button submit-button">
+              {isLoading ? (
+                <>
+                  Loading...
+                  <FontAwesomeIcon icon={faSpinner} />
+                </>
+              ) : (
+                "Send a message"
+              )}{" "}
+            </Button>
           </form>
         </div>
       </section>

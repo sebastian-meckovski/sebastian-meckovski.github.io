@@ -61,7 +61,8 @@ app.post("/send-mail", validate(schema), (req, res) => {
     html: `
     <h1>Hi, ${req.body.name}!</h1>
     <p>Thanks for reaching out! This page is still under developemnt
-    but I will get back to you shortly </p>`,
+    but I will get back to you shortly </p>
+    `,
   };
 
   const hostMsg = {
@@ -86,15 +87,12 @@ app.post("/send-mail", validate(schema), (req, res) => {
         console.log("Host email sent...");
         console.log("Status code:", obj[0].statusCode);
       });
-    } catch (error) {
-      console.error(error);
-      if (error.response) {
-        console.error(error.response.body);
-      }
+      return res.json({ body: req.body });
+    } catch (err) {
+      console.error(err);
+      res.status(400).json({ type: err.name, message: err.message });
     }
   })();
-
-  return res.json({ body: req.body });
 });
 
 app.listen(PORT, () => {
