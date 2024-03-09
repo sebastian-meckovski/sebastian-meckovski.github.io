@@ -1,5 +1,7 @@
 const express = require("express");
 const yup = require("yup");
+const { returnHostMsg } = require("./templates/hostMsg.js");
+const { returnCustomerMsg } = require("./templates/customerMsg.js");
 const cors = require("cors");
 const PORT = 8000;
 require("dotenv").config();
@@ -55,26 +57,17 @@ app.post("/send-mail", validate(schema), (req, res) => {
   console.log("sending email...");
   sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
   const customerMsg = {
-    to: req.body.email,
     from: process.env.REACT_APP_HOST_EMAIL,
+    to: req.body.email,
     subject: req.body.subject,
-    html: `
-    <h1>Hi, ${req.body.name}!</h1>
-    <p>Thanks for reaching out! This page is still under developemnt
-    but I will get back to you shortly </p>
-    `,
+    html: returnCustomerMsg(req),
   };
 
   const hostMsg = {
-    to: process.env.REACT_APP_HOST_EMAIL,
     from: process.env.REACT_APP_HOST_EMAIL,
+    to: process.env.REACT_APP_HOST_EMAIL,
     subject: req.body.subject,
-    html: `
-    <p>from: </p>
-    <p>${req.body.name}</p>
-    <p>message:</p>
-    <p> ${req.body.message}</p>
-    `,
+    html: returnHostMsg(req),
   };
 
   (async () => {
