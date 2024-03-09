@@ -17,10 +17,10 @@ export const Header = () => {
     const outsideClick = (e) => {
       if (
         mobileHeaderRef.current &&
+        burgerButtonRef.current &&
         !mobileHeaderRef.current.contains(e.target) &&
         !burgerButtonRef.current.contains(e.target)
       ) {
-        console.log("outside...");
         setShowItems(false);
       }
     };
