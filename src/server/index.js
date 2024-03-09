@@ -54,20 +54,37 @@ const validate = (schema) => async (req, res, next) => {
 app.post("/send-mail", validate(schema), (req, res) => {
   console.log("sending email...");
   sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
-  const msg = {
+  const customerMsg = {
     to: req.body.email,
-    from: process.env.REACT_APP_FROM,
+    from: process.env.REACT_APP_HOST_EMAIL,
     subject: req.body.subject,
-    // text: req.body.message,
-    html: `<h1>Hi, ${req.body.name}!</h1> <p> Thanks for reaching out!
-    This page is still under developemnt but I will get back to you shortly </p>`,
+    html: `
+    <h1>Hi, ${req.body.name}!</h1>
+    <p>Thanks for reaching out! This page is still under developemnt
+    but I will get back to you shortly </p>`,
+  };
+
+  const hostMsg = {
+    to: process.env.REACT_APP_HOST_EMAIL,
+    from: process.env.REACT_APP_HOST_EMAIL,
+    subject: req.body.subject,
+    html: `
+    <p>from: </p>
+    <p>${req.body.name}</p>
+    <p>message:</p>
+    <p> ${req.body.message}</p>
+    `,
   };
 
   (async () => {
     try {
-      await sgMail.send(msg).then((obj) => {
-        console.log("sent...");
+      await sgMail.send(customerMsg).then((obj) => {
+        console.log("Customer message sent...");
         console.log("status code:", obj[0].statusCode);
+      });
+      await sgMail.send(hostMsg).then((obj) => {
+        console.log("Host email sent...");
+        console.log("Status code:", obj[0].statusCode);
       });
     } catch (error) {
       console.error(error);
