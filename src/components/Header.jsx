@@ -1,6 +1,7 @@
 import React, { useRef, useState, useLayoutEffect, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Header.scss";
+import { HashLink } from "react-router-hash-link";
 
 export const Header = () => {
   const [showItems, setShowItems] = useState(false);
@@ -66,39 +67,47 @@ export const Header = () => {
   return (
     <header className="App-header">
       <nav>
-        <div className="App-header-left">
-          <h3>Sebastian</h3>
-          <h3>Meckovski</h3>
-          <button
-            ref={burgerButtonRef}
-            title="burger menu button"
-            type="button"
-            className="burger-button"
-            onClick={() => {
-              setShowItems((prev) => {
-                return !prev;
-              });
-            }}
-          >
-            <>
-              <div
-                className={`burger-button-stripe-1-${
-                  showItems ? "open" : "closed"
-                }`}
-              ></div>
-              <div
-                className={`burger-button-stripe-2-${
-                  showItems ? "open" : "closed"
-                }`}
-              ></div>
-              <div
-                className={`burger-button-stripe-3-${
-                  showItems ? "open" : "closed"
-                }`}
-              ></div>
-            </>
-          </button>
-        </div>
+        <HashLink
+          aria-label={"Sebastian Meckovski web page"}
+          to={location.pathname === "/" ? "#" : "/"}
+          className="App-header-left"
+        >
+          <span>Sebastian</span>
+          <span>Meckovski</span>
+        </HashLink>
+        <button
+          aria-label={
+            showItems ? "close navigation menu" : "Open navigation menu"
+          }
+          role="navigation"
+          ref={burgerButtonRef}
+          title="burger menu button"
+          type="button"
+          className="burger-button"
+          onClick={() => {
+            setShowItems((prev) => {
+              return !prev;
+            });
+          }}
+        >
+          <>
+            <div
+              className={`burger-button-stripe-1-${
+                showItems ? "open" : "closed"
+              }`}
+            ></div>
+            <div
+              className={`burger-button-stripe-2-${
+                showItems ? "open" : "closed"
+              }`}
+            ></div>
+            <div
+              className={`burger-button-stripe-3-${
+                showItems ? "open" : "closed"
+              }`}
+            ></div>
+          </>
+        </button>
         <div className="App-header-right">
           {returnLink("")}
           {returnLink("about-me")}

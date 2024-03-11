@@ -217,8 +217,8 @@ export const MainPage = () => {
             <ContentCard>
               <h1>CNC File Editor</h1>
               <p>
-                This Windows application streamlines .hop and .txt file edits for CNC
-                machines, boosting efficiency and cutting costs.
+                This Windows application streamlines .hop and .txt file edits
+                for CNC machines, boosting efficiency and cutting costs.
               </p>
               <HashLink className="link-button" to="/portfolio#cnc-file-editor">
                 Read more
@@ -242,11 +242,12 @@ export const MainPage = () => {
         <p>
           Upon submitting your message, you’ll receive a confirmation email.
           Rest assured, I’ll do my best to reply within 24 hours. Thank you for
-          reaching out!
+          reaching out! Alternatively, check&nbsp;
+          <Link className="inline-link" to="contact">
+            other contact options
+          </Link>
         </p>
-        <Link to="contact" className="link-button">
-          More contact options
-        </Link>
+
         <div className="section-container-left-align">
           <form onSubmit={handleHandleSubmit} className="contact-me-form">
             <Textbox

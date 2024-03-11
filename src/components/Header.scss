@@ -22,8 +22,21 @@ header {
     animation: moveIn;
     animation-duration: 0.5s;
 
-    @media (min-width: 48rem) {
+    @media (min-width: 800px) {
       display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid $transparent-color;
+    transition: 0.7s;
+  }
+  .active {
+    color: $accent-color;
+    @media (min-width: 800px) {
+      border-bottom: 2px solid $accent-color;
     }
   }
 
@@ -34,21 +47,6 @@ header {
     right: -11rem;
     &-after-animation {
       display: none;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-    border-bottom: 2px solid $transparent-color;
-
-    &:hover {
-      color: $accent-color;
-      transition: 0.7s;
-
-      @media (min-width: 48rem) {
-        border-bottom: 2px solid $accent-color;
-      }
     }
   }
 }
@@ -74,19 +72,26 @@ header {
 .App-header-left {
   display: flex;
   gap: 3px;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0.5rem 0rem;
+  width: fit-content;
+  background-color: transparent;
+  span {
+    transition: 0.3s;
+  }
+  &:hover {
+    span {
+      text-shadow: 0 0 1rem $accent-color, 0 0 1.5rem $accent-color,
+        0 0 2rem $accent-color;
+    }
   }
 
-  @media (max-width: 48rem) {
+  span {
+    margin: 0.25rem 0rem 0rem 0rem;
+    font-weight: 600;
+    font-size: x-large;
+  }
+
+  @media (max-width: 799px) {
     align-items: center;
-    min-height: 4rem;
   }
 
   :nth-child(2) {
@@ -113,7 +118,17 @@ header {
   gap: 1rem;
   font-size: 1.4rem;
 
-  @media (max-width: 48rem) {
+  a {
+    &:hover {
+      color: $accent-color;
+
+      @media (min-width: 800px) {
+        border-bottom: 2px solid $accent-color;
+      }
+    }
+  }
+
+  @media (max-width: 799px) {
     display: none;
   }
 }
@@ -125,6 +140,7 @@ header {
   padding: 0.3rem 0rem;
   justify-content: space-between;
   right: 1rem;
+  top: 1rem;
   align-items: center;
   background-color: $transparent-color;
   color: $accent-color;
@@ -132,8 +148,9 @@ header {
   width: 2rem;
   border-radius: 0.2rem;
   height: 2rem;
+  cursor: pointer;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 800px) {
     display: none;
   }
 
@@ -186,11 +203,12 @@ nav {
   padding: 0rem 1rem;
   margin: auto;
   min-height: 4rem;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 60rem;
 
-  @media (min-width: 48rem) {
+  @media (min-width: 800px) {
     display: flex;
   }
 
