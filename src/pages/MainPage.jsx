@@ -183,8 +183,9 @@ export const MainPage = () => {
             <ContentCard>
               <h1>Currency Converter</h1>
               <p>
-                A React JS currency converter app that fetches real-time exchange
-                rates, allowing users to convert between different currencies.
+                A React JS currency converter app that fetches real-time
+                exchange rates, allowing users to convert between different
+                currencies.
               </p>
               <HashLink className="link-button" to="/portfolio#">
                 Read more
@@ -193,8 +194,8 @@ export const MainPage = () => {
             <ContentCard>
               <h1>Greenspark Product Cards</h1>
               <p>
-                A React TS app demonstrating custom components, API
-                integration, accessibility, responsive design, and tests.
+                A React TS app demonstrating custom components, API integration,
+                accessibility, responsive design, and tests.
               </p>
               <HashLink
                 className="link-button"
@@ -206,8 +207,8 @@ export const MainPage = () => {
             <ContentCard>
               <h1>Shape Lamp</h1>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores ipsa unde doloremque cumque hic quae.
+                An interactive 3D lamp customization web app, allowing users to
+                personalize lamps by adjusting properties.
               </p>
               <HashLink className="link-button" to="/portfolio#shape-lamp">
                 Read more
@@ -216,8 +217,8 @@ export const MainPage = () => {
             <ContentCard>
               <h1>CNC File Editor</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolorum, eos. Officiis repellat, nam iste commodi eaque.
+                This Windows application streamlines .hop and .txt file edits for CNC
+                machines, boosting efficiency and cutting costs.
               </p>
               <HashLink className="link-button" to="/portfolio#cnc-file-editor">
                 Read more
@@ -226,8 +227,8 @@ export const MainPage = () => {
             <ContentCard>
               <h1>Canvas Snow</h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Veritatis sunt porro recusandae eum sapiente delectus illo?
+                A JavaScript project that simulates a snowfall effect using HTML
+                canvas, powered by detailed math-driven animations.
               </p>
               <HashLink className="link-button" to="/portfolio#canvas-snow">
                 Read more
