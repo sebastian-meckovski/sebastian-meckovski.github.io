@@ -283,8 +283,10 @@ export const MainPage = () => {
               <div style={{ alignSelf: "center" }}>
                 {emailFail && !emailSuccess && (
                   <p>
-                    Something went wrong. Please try again later or go to{" "}
-                    <Link to="contact">More contact options</Link>
+                    Something went wrong. Please try again later or check out{" "}
+                    <Link className="inline-link" to="contact">
+                      other contact options
+                    </Link>
                   </p>
                 )}
                 {emailSuccess && !emailFail && (
@@ -298,7 +300,7 @@ export const MainPage = () => {
             <Button type="submit" className="button submit-button">
               {isLoading ? (
                 <>
-                  Loading...
+                  Sending...
                   <FontAwesomeIcon icon={faSpinner} />
                 </>
               ) : (
