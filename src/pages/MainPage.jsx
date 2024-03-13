@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import sebImage from "../assets/PXL_20240226_132844396.NIGHT.jpg";
 import sebImage2 from "../assets/IMG_4993.JPG";
 import { Links } from "../components/Links";
@@ -27,6 +27,11 @@ export const MainPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [emailSuccess, setEmailSuccess] = useState(false);
   const [emailFail, setEmailFail] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    document.title = "Sebastian Meckovski | Full Stack Developer | Portfolio";
+  }, []);
 
   const handleHandleSubmit = (e) => {
     setIsLoading(true);
@@ -75,7 +80,7 @@ export const MainPage = () => {
       <section id="/">
         <div className="section-container">
           <img className="about-me-image" src={sebImage2} alt="Sebastian" />
-          <h1>Hi, Seb here</h1>
+          <h1 style={{ marginBottom: "-6px" }}>Hi, Seb here</h1>
           <h2 className="placeholder">
             I am a&nbsp;
             <span className="typewriter"></span>
@@ -96,7 +101,7 @@ export const MainPage = () => {
       <section id="about-me">
         <div className="section-container">
           <article className="about-me-left">
-            <div className="About-me-header">
+            <div className="About-me-header" style={{ marginBottom: "-6px" }}>
               <h1>About</h1>
               <h1>Me</h1>
             </div>
@@ -114,14 +119,19 @@ export const MainPage = () => {
               thrive in collaborative environments and am always eager to learn
               and implement new technologies.
             </p>
-            <div style={{ margin: "0.75rem 0" }}>
+            <div>
               <Link to="about-me" className="link-button">
                 Read More
               </Link>
             </div>
           </article>
         </div>
-        <img className="about-me-image" src={sebImage} alt="Sebastian" />
+        <img
+          style={{ marginBottom: "0" }}
+          className="about-me-image"
+          src={sebImage}
+          alt="Sebastian"
+        />
       </section>
       <section id="expertise">
         <div className="section-container-left-align">
