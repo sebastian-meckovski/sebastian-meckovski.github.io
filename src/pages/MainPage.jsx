@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import sebImage from "../assets/PXL_20240226_132844396.NIGHT.jpg";
+import sebImage2 from "../assets/IMG_4993.JPG";
 import { Links } from "../components/Links";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -73,7 +74,7 @@ export const MainPage = () => {
     <>
       <section id="/">
         <div className="section-container">
-          <img className="about-me-image" src={sebImage} alt="Sebastian" />
+          <img className="about-me-image" src={sebImage2} alt="Sebastian" />
           <h1>Hi, Seb here</h1>
           <h2 className="placeholder">
             I am a&nbsp;
