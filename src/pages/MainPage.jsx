@@ -139,7 +139,7 @@ export const MainPage = () => {
           <div className="contentCards-container">
             <ContentCard>
               <FontAwesomeIcon icon={faCode} />
-              <h1>Web Development</h1>
+              <h2>Web Development</h2>
               <p>
                 Crafting interactive web experiences using JS, HTML5, and CSS3.
                 Integrating RESTful APIs for seamless functionality.
@@ -150,7 +150,7 @@ export const MainPage = () => {
             </ContentCard>
             <ContentCard>
               <FontAwesomeIcon icon={faServer} />
-              <h1>Back-end Development</h1>
+              <h2>Back-end Development</h2>
               <p>
                 Building robust APIs with ASP.NET Core and Entity Framework
                 Core. Manipulating data efficiently for web applications.
@@ -164,7 +164,7 @@ export const MainPage = () => {
             </ContentCard>
             <ContentCard>
               <FontAwesomeIcon icon={faVial} />
-              <h1>Testing</h1>
+              <h2>Testing</h2>
               <p>
                 Ensuring code quality with Cypress and Jest. Rigorous unit,
                 integration, and end-to-end testing for reliable software.
@@ -175,7 +175,7 @@ export const MainPage = () => {
             </ContentCard>
             <ContentCard>
               <FontAwesomeIcon icon={faRotate} />
-              <h1>CI/CD</h1>
+              <h2>CI/CD</h2>
               <p>
                 Automating deployment pipelines using GitLab CI/CD. Streamlining
                 development-to-production workflows.
@@ -192,7 +192,7 @@ export const MainPage = () => {
           <h1>Portfolio</h1>
           <div className="contentCards-container">
             <ContentCard>
-              <h1>Currency Converter</h1>
+              <h2>Currency Converter</h2>
               <p>
                 A React JS currency converter app that fetches real-time
                 exchange rates, allowing users to convert between different
@@ -203,7 +203,7 @@ export const MainPage = () => {
               </HashLink>
             </ContentCard>
             <ContentCard>
-              <h1>Greenspark Product Cards</h1>
+              <h2>Greenspark Product Cards</h2>
               <p>
                 A React TS app demonstrating custom components, API integration,
                 accessibility, responsive design, and tests.
@@ -216,7 +216,7 @@ export const MainPage = () => {
               </HashLink>
             </ContentCard>
             <ContentCard>
-              <h1>Shape Lamp</h1>
+              <h2>Shape Lamp</h2>
               <p>
                 An interactive 3D lamp customization web app, allowing users to
                 personalize lamps by adjusting properties.
@@ -226,7 +226,7 @@ export const MainPage = () => {
               </HashLink>
             </ContentCard>
             <ContentCard>
-              <h1>CNC File Editor</h1>
+              <h2>CNC File Editor</h2>
               <p>
                 This Windows application streamlines .hop and .txt file edits
                 for CNC machines, boosting efficiency and cutting costs.
@@ -236,7 +236,7 @@ export const MainPage = () => {
               </HashLink>
             </ContentCard>
             <ContentCard>
-              <h1>Canvas Snow</h1>
+              <h2>Canvas Snow</h2>
               <p>
                 A JavaScript project that simulates a snowfall effect using HTML
                 canvas, powered by detailed math-driven animations.

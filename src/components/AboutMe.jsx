@@ -15,19 +15,13 @@ export const AboutMe = () => {
         <article className="about-me-left">
           <h1>About me</h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim eaque
-            placeat provident ducimus. Consequuntur distinctio dolore optio
-            officiis sed? Voluptatibus, magnam repellat doloremque mollitia
-            voluptatum explicabo sapiente repellendus dolor? Est, velit. Alias
-            laudantium odio accusamus fugiat ducimus, deserunt cum obcaecati
-            molestias eveniet labore, optio culpa nostrum laborum impedit, magni
-            aperiam nemo adipisci. Et nulla eum, totam cumque adipisci quasi
-            consequuntur ex laborum optio officiis enim ab temporibus animi
-            fugiat ratione eius commodi pariatur velit. Corrupti repellendus
-            quae porro suscipit ipsum mollitia iusto quisquam aliquam eveniet
-            unde at blanditiis eligendi, enim voluptatem dolore sit. Officia
-            optio consequatur sit, at rem cupiditate.
+            Hello! I’m Seb, a dedicated and passionate software developer with a
+            rich 3-year journey through the tech landscapes of e-commerce,
+            healthcare, and finance. My forte lies in engineering highly
+            interactive and responsive web applications that stand out in the
+            digital realm.
           </p>
+          <h2>My Technical Canvas</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores,
             quod facere nam quos quam iure animi delectus, eligendi placeat
