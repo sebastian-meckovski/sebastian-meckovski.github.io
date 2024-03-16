@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { LinkButton } from "seb-components-library";
 import sebImage2 from "../assets/PXL_20240226_132844396.NIGHT.jpg";
+import { Link } from "react-router-dom";
 
 export const AboutMe = () => {
   useEffect(() => {
@@ -36,11 +37,12 @@ export const AboutMe = () => {
             nulla et. Reprehenderit similique sapiente a ad voluptas iusto
             commodi? Placeat temporibus ducimus quaerat mollitia? Et
             repellendus, minima molestias magnam obcaecati placeat incidunt
-            consequuntur expedita saepe quos hic cumque dolorum iste sed
             ducimus!
           </p>
           <div style={{ display: "flex", gap: "1rem" }}>
-            <LinkButton>Expertise section</LinkButton>
+            <Link to="/expertise" className="link-button">
+              Experise section
+            </Link>
             <LinkButton>Download CV</LinkButton>
           </div>
         </article>
