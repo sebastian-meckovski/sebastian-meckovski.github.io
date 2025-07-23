@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:tailwind": "npx @tailwindcss/cli -i ./assets/css/styles.css -o ./_site/assets/css/output.css --minify",
+    "build:tailwind": "npx @tailwindcss/cli -i ./src/assets/css/styles.css -o ./_site/assets/css/output.css --minify",
     "build": "npm run build:tailwind && npx @11ty/eleventy",
     "serve": "npm run build:tailwind && npx @11ty/eleventy --serve"
   },
