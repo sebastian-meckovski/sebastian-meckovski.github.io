@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:tailwind": "npx @tailwindcss/cli -i ./assets/css/styles.css -o ./assets/css/output.css --watch"
+    "build:tailwind": "npx @tailwindcss/cli -i ./assets/css/styles.css -o ./_site/assets/css/output.css --minify",
+    "build": "npm run build:tailwind && npx @11ty/eleventy",
+    "serve": "npm run build:tailwind && npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,9 @@
   },
   "homepage": "https://github.com/sebastian-meckovski/sebastian-meckovski.github.io#readme",
   "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "@tailwindcss/cli": "^4.1.11",
+    "dotenv": "^17.2.0",
     "tailwindcss": "^4.1.11"
   }
 }
