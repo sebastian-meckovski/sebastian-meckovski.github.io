@@ -19,17 +19,57 @@ body {
   font-family: "Goldman", cursive;
 }
 /* Theme color variable */
+/* Global color variables */
 :root {
   --accent-color: #22d3ee;
+  --accent-shadow: #00d1ff;
+  --btn-bg: #374151;
+  --btn-bg-hover: #4b5563;
+  --btn-text: #fff;
+  --btn-hire-text: #0a0a0a;
+  --nav-link: #d1d5db;
+  --nav-link-hover: #fff;
+  --nav-icon: #d1d5db;
+  --nav-icon-hover: #fff;
+  --footer-text: #9ca3af;
+  --text-header: #fff;
+  --text-main: #fff;
+  --icon-hover: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --accent-color: #f59e42;
+    --accent-shadow: #f59e42;
+    --btn-bg: #262626;
+    --btn-bg-hover: #404040;
+    --btn-text: #fff;
+    --btn-hire-text: #18181b;
+    --nav-link: #d1d5db;
+    --nav-link-hover: #fff;
+    --nav-icon: #d1d5db;
+    --nav-icon-hover: #fff;
+    --footer-text: #9ca3af;
+    --text-header: #fff;
+    --text-main: #fff;
+    --icon-hover: #18181b;
   }
 }
 
 /* Place this LAST for highest specificity */
 [data-theme="dark"] {
   --accent-color: #f59e42;
+  --accent-shadow: #f59e42;
+  --btn-bg: #262626;
+  --btn-bg-hover: #404040;
+  --btn-text: #fff;
+  --btn-hire-text: #18181b;
+  --nav-link: #d1d5db;
+  --nav-link-hover: #fff;
+  --nav-icon: #d1d5db;
+  --nav-icon-hover: #fff;
+  --footer-text: #9ca3af;
+  --text-header: #fff;
+  --text-main: #fff;
+  --icon-hover: #18181b;
 }
