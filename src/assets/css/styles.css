@@ -40,15 +40,9 @@ body {
 /* Global color variables */
 /* Accent color schemes */
 :root {
-  --accent-scheme: red; /* default scheme */
-  --accent-blue: #22d3ee;
-  --accent-blue-shadow: #00d1ff;
-  --accent-red: #ef4444;
-  --accent-red-shadow: #b91c1c;
-  --accent-green: #22c55e;
-  --accent-green-shadow: #059669;
-  --accent-color: var(--accent-red);
-  --accent-shadow: var(--accent-red-shadow);
+  /* Accent color (default: red) */
+  --accent: #ef4444;
+  --accent-shadow: #b91c1c;
   /* Light theme colors */
   --bg-main: #f8fafc;
   --bg-nav: #e5e7eb;
@@ -69,15 +63,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --accent-scheme: red;
-    --accent-blue: #38bdf8;
-    --accent-blue-shadow: #0ea5e9;
-    --accent-red: #f87171;
-    --accent-red-shadow: #991b1b;
-    --accent-green: #4ade80;
-    --accent-green-shadow: #059669;
-    --accent-color: var(--accent-red);
-    --accent-shadow: var(--accent-red-shadow);
+    --accent: #f87171;
+    --accent-shadow: #991b1b;
     /* Dark theme colors */
     --bg-main: #18181b;
     --bg-nav: #23272f;
@@ -98,15 +85,8 @@ body {
 }
 
 [data-theme="dark"] {
-  --accent-scheme: red;
-  --accent-blue: #38bdf8;
-  --accent-blue-shadow: #0ea5e9;
-  --accent-red: #f87171;
-  --accent-red-shadow: #991b1b;
-  --accent-green: #4ade80;
-  --accent-green-shadow: #059669;
-  --accent-color: var(--accent-red);
-  --accent-shadow: var(--accent-red-shadow);
+  --accent: #f87171;
+  --accent-shadow: #991b1b;
   /* Dark theme colors */
   --bg-main: #18181b;
   --bg-nav: #23272f;
@@ -123,31 +103,4 @@ body {
   --text-header: #fff;
   --text-main: #fff;
   --icon-hover: #18181b;
-}
-[data-theme="light"] {
-  --accent-scheme: red;
-  --accent-blue: #22d3ee;
-  --accent-blue-shadow: #00d1ff;
-  --accent-red: #ef4444;
-  --accent-red-shadow: #b91c1c;
-  --accent-green: #22c55e;
-  --accent-green-shadow: #059669;
-  --accent-color: var(--accent-red);
-  --accent-shadow: var(--accent-red-shadow);
-  /* Light theme colors */
-  --bg-main: #f8fafc;
-  --bg-nav: #e5e7eb;
-  --bg-footer: #e5e7eb;
-  --btn-bg: #e0e7ff;
-  --btn-bg-hover: #c7d2fe;
-  --btn-text: #222;
-  --btn-hire-text: #fff;
-  --nav-link: #374151;
-  --nav-link-hover: #111827;
-  --nav-icon: #374151;
-  --nav-icon-hover: #111827;
-  --footer-text: #6b7280;
-  --text-header: #111827;
-  --text-main: #222;
-  --icon-hover: #fff;
 }

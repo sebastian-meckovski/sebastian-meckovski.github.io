@@ -92,19 +92,32 @@ function setTheme(theme) {
 
 function setColorScheme(scheme) {
     const root = document.documentElement;
-    root.style.setProperty('--accent-scheme', scheme);
     let color, shadow;
     if (scheme === 'blue') {
-        color = getComputedStyle(root).getPropertyValue('--accent-blue');
-        shadow = getComputedStyle(root).getPropertyValue('--accent-blue-shadow');
+        color = '#22d3ee';
+        shadow = '#00d1ff';
     } else if (scheme === 'green') {
-        color = getComputedStyle(root).getPropertyValue('--accent-green');
-        shadow = getComputedStyle(root).getPropertyValue('--accent-green-shadow');
+        color = '#22c55e';
+        shadow = '#059669';
     } else {
-        color = getComputedStyle(root).getPropertyValue('--accent-red');
-        shadow = getComputedStyle(root).getPropertyValue('--accent-red-shadow');
+        color = '#ef4444';
+        shadow = '#b91c1c';
     }
-    root.style.setProperty('--accent-color', color);
+    // For dark theme, override with dark values
+    if (document.documentElement.getAttribute('data-theme') === 'dark' ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement.getAttribute('data-theme') !== 'light')) {
+        if (scheme === 'blue') {
+            color = '#38bdf8';
+            shadow = '#0ea5e9';
+        } else if (scheme === 'green') {
+            color = '#4ade80';
+            shadow = '#059669';
+        } else {
+            color = '#f87171';
+            shadow = '#991b1b';
+        }
+    }
+    root.style.setProperty('--accent', color);
     root.style.setProperty('--accent-shadow', shadow);
     localStorage.setItem('colorScheme', scheme);
     updateProfileImageTheme();
