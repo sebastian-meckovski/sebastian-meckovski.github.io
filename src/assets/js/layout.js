@@ -49,21 +49,104 @@ function updateProfileImageTheme() {
 document.addEventListener('DOMContentLoaded', updateProfileImageTheme);
 swup.hooks.on('page:view', updateProfileImageTheme);
 
-// If theme is toggled, update image
+// Theme dialog logic
 const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
+const themeDialog = document.getElementById('theme-dialog');
+const themeDialogClose = document.getElementById('theme-dialog-close');
+
+if (themeToggle && themeDialog) {
     themeToggle.addEventListener('click', () => {
-        const root = document.documentElement;
-        let currentTheme = root.getAttribute('data-theme');
-
-        // If no theme is set manually, check the OS preference
-        if (!currentTheme) {
-            currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-
-        // Toggle to the opposite theme
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        updateProfileImageTheme();
+        themeDialog.style.opacity = '1';
+        themeDialog.style.visibility = 'visible';
+        themeDialog.style.pointerEvents = 'auto';
+        themeDialog.classList.add('show');
     });
 }
+if (themeDialogClose && themeDialog) {
+    themeDialogClose.addEventListener('click', () => {
+        themeDialog.style.opacity = '0';
+        themeDialog.style.visibility = 'hidden';
+        themeDialog.style.pointerEvents = 'none';
+        themeDialog.classList.remove('show');
+    });
+}
+
+function setTheme(theme) {
+    const root = document.documentElement;
+    if (theme === 'default') {
+        localStorage.setItem('theme', 'default');
+        // Use OS preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            root.setAttribute('data-theme', 'dark');
+        } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+            root.setAttribute('data-theme', 'light');
+        } else {
+            root.setAttribute('data-theme', 'light');
+        }
+    } else {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+    updateProfileImageTheme();
+}
+
+function setColorScheme(scheme) {
+    const root = document.documentElement;
+    root.style.setProperty('--accent-scheme', scheme);
+    let color, shadow;
+    if (scheme === 'blue') {
+        color = getComputedStyle(root).getPropertyValue('--accent-blue');
+        shadow = getComputedStyle(root).getPropertyValue('--accent-blue-shadow');
+    } else if (scheme === 'green') {
+        color = getComputedStyle(root).getPropertyValue('--accent-green');
+        shadow = getComputedStyle(root).getPropertyValue('--accent-green-shadow');
+    } else {
+        color = getComputedStyle(root).getPropertyValue('--accent-red');
+        shadow = getComputedStyle(root).getPropertyValue('--accent-red-shadow');
+    }
+    root.style.setProperty('--accent-color', color);
+    root.style.setProperty('--accent-shadow', shadow);
+    localStorage.setItem('colorScheme', scheme);
+    updateProfileImageTheme();
+}
+
+// Theme selection
+document.querySelectorAll('.theme-choice').forEach(btn => {
+    btn.addEventListener('click', () => {
+        setTheme(btn.getAttribute('data-theme'));
+    });
+});
+// Color scheme selection
+document.querySelectorAll('.color-choice').forEach(btn => {
+    btn.addEventListener('click', () => {
+        setColorScheme(btn.getAttribute('data-color'));
+    });
+});
+
+function getInitialTheme() {
+    const saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+    if (window.matchMedia('(prefers-color-scheme: light)').matches) return 'light';
+    return 'light';
+}
+function getInitialColorScheme() {
+    const saved = localStorage.getItem('colorScheme');
+    if (saved) return saved;
+    return 'red';
+}
+
+function applyInitialThemeAndColor() {
+    setTheme(getInitialTheme());
+    setColorScheme(getInitialColorScheme());
+}
+
+function updateProfileImageTheme() {
+    const img = document.getElementById('profile-img');
+    if (!img) return;
+    let scheme = localStorage.getItem('colorScheme') || 'red';
+    img.src = scheme === 'blue' ? 'assets/seb-blue.png' : scheme === 'green' ? 'assets/seb-green.png' : 'assets/seb-red.png';
+}
+
+document.addEventListener('DOMContentLoaded', applyInitialThemeAndColor);
+swup.hooks.on('page:view', applyInitialThemeAndColor);
