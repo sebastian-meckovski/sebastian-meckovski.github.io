@@ -14,3 +14,18 @@
   font-style: normal;
   font-display: swap;
 }
+/* Theme color variable */
+:root {
+  --accent-color: #22d3ee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent-color: #f59e42;
+  }
+}
+
+/* Place this LAST for highest specificity */
+[data-theme="dark"] {
+  --accent-color: #f59e42;
+}

@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or "Sebastian Meckovski - Coming Soon" }}</title>
-    {% if env.ENVIRONMENT == "development" %}
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link href="/assets/css/styles.css" rel="stylesheet">
-    {% else %}
-      <link href="/assets/css/output.css" rel="stylesheet">
-    {% endif %}
-    <style>
-        body { font-family: 'Goldman', cursive; }
-    </style>
-</head>
-<body class="bg-gray-800 text-white flex flex-col min-h-screen">    
-    <nav class="bg-gray-800 p-4 relative">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-white text-2xl md:text-3xl font-bold">
-                <a href="/">Sebastian <span class="text-cyan-400">Meckovski</span></a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title or "Sebastian Meckovski - Coming Soon" }}</title>
+        {% if env.ENVIRONMENT == "development" %}
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="/assets/css/styles.css" rel="stylesheet">
+        {% else %}
+            <link href="/assets/css/output.css" rel="stylesheet">
+        {% endif %}
+        <style>
+            body {
+                font-family: 'Goldman', cursive;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-800 text-white flex flex-col min-h-screen">
+        <nav class="bg-gray-800 p-4 relative">
+            <div class="container mx-auto flex justify-between items-center">
+                <div class="text-white text-2xl md:text-3xl font-bold">
+                    <a href="/">Sebastian
+                        <span class="text-[var(--accent-color)]">Meckovski</span>
+                    </a>
+                    <button
+                        id="theme-toggle"
+                        class="ml-4 px-2 py-1 rounded bg-gray-700 text-white border border-cyan-400 hover:bg-gray-600 transition-colors
+                            duration-200 text-sm">
+                    Toggle Theme</button>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center justify-center">
+                    <button
+                        id="mobile-menu-button"
+                        class="text-gray-300 hover:text-white focus:outline-none focus:text-white flex items-center justify-center">
+                        <svg class="h-6 w-6 fill-current" viewbox="0 0 24 24">
+                            <path
+                                class="hidden"
+                                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1
+                                    1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
+                            <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zM4 11h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zM4 17h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Desktop menu -->
+                <div class="hidden md:flex space-x-4">
+                    {% for item in navigation %}
+                        <a href="{{ item.url }}" class="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200 {% if page.url == item.url %}bg-cyan-400/20{% endif %}">{{ item.text }}</a>
+                    {% endfor %}
+                </div>
             </div>
-            <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center justify-center">
-                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none focus:text-white flex items-center justify-center">
-                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                        <path class="hidden" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
-                        <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zM4 11h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zM4 17h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
-                    </svg>
-                </button>
+            <!-- Mobile menu -->
+            <div
+                id="mobile-menu"
+                class="md:hidden absolute top-full left-0 right-0 bg-gray-800 shadow-lg opacity-0 invisible transform -translate-y-4
+                    transition-all duration-200 ease-in-out z-50">
+                <div class="flex flex-col space-y-2 p-4">
+                    {% for item in navigation %}
+                        <a href="{{ item.url }}" class="text-gray-300 hover:text-white px-3 py-2 rounded transition-colors duration-200 {% if page.url == item.url %}bg-cyan-400/20{% endif %}">{{ item.text }}</a>
+                    {% endfor %}
+                </div>
             </div>
-            <!-- Desktop menu -->
-            <div class="hidden md:flex space-x-4">
-                {% for item in navigation %}
-                <a href="{{ item.url }}" class="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200 {% if page.url == item.url %}bg-cyan-400/20{% endif %}">{{ item.text }}</a>
-                {% endfor %}
-            </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden absolute top-full left-0 right-0 bg-gray-800 shadow-lg opacity-0 invisible transform -translate-y-4 transition-all duration-200 ease-in-out z-50">
-            <div class="flex flex-col space-y-2 p-4">
-                {% for item in navigation %}
-                <a href="{{ item.url }}" class="text-gray-300 hover:text-white px-3 py-2 rounded transition-colors duration-200 {% if page.url == item.url %}bg-cyan-400/20{% endif %}">{{ item.text }}</a>
-                {% endfor %}
-            </div>
-        </div>
-    </nav>
-    <main class="flex-grow">
-      {{ content | safe }}
-    </main>
-    <footer class="bg-gray-800 p-4 text-center text-gray-400">
-        <p>&copy; {% if env.ENVIRONMENT == "development" %}2025 Sebastian Meckovski. Development{% else %}2025 Sebastian Meckovski. All Rights Reserved.{% endif %}</p>
-    </footer>
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener('click', () => {
-              if (mobileMenu.classList.contains('opacity-0')) {
-                  // Show menu
-                  mobileMenu.classList.remove('opacity-0', 'invisible', '-translate-y-4');
-                  mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
-              } else {
-                  // Hide menu
-                  mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                  mobileMenu.classList.add('opacity-0', 'invisible', '-translate-y-4');
-              }
-          });
-        }
-    </script>
-</body>
+        </nav>
+        <main class="flex-grow">
+            {{ content | safe }}
+        </main>
+        <footer class="bg-gray-800 p-4 text-center text-gray-400">
+            <p>&copy;
+                {% if env.ENVIRONMENT == "development" %}2025 Sebastian Meckovski. Development{% else %}2025 Sebastian Meckovski. All Rights Reserved.{% endif %}
+            </p>
+        </footer>
+        <script>
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('opacity-0')) { // Show menu
+                        mobileMenu.classList.remove('opacity-0', 'invisible', '-translate-y-4');
+                        mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+                    } else { // Hide menu
+                        mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                        mobileMenu.classList.add('opacity-0', 'invisible', '-translate-y-4');
+                    }
+                });
+            }
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const root = document.documentElement;
+                    let currentTheme = root.getAttribute('data-theme');
+
+                    // If no theme is set manually, check the OS preference
+                    if (!currentTheme) {
+                        currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    }
+
+                    // Toggle to the opposite theme
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    root.setAttribute('data-theme', newTheme);
+                });
+            }
+        </script>
+    </body>
 </html>
