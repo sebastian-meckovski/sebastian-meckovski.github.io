@@ -39,8 +39,8 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --accent-color: #f59e42;
-    --accent-shadow: #f59e42;
+    --accent-color: #f87171; /* Tailwind red-400 */
+    --accent-shadow: #991b1b; /* Tailwind red-800 */
     --btn-bg: #262626;
     --btn-bg-hover: #404040;
     --btn-text: #fff;
@@ -58,8 +58,8 @@ body {
 
 /* Place this LAST for highest specificity */
 [data-theme="dark"] {
-  --accent-color: #f59e42;
-  --accent-shadow: #f59e42;
+  --accent-color: #f87171; /* Tailwind red-400 */
+  --accent-shadow: #991b1b; /* Tailwind red-800 */
   --btn-bg: #262626;
   --btn-bg-hover: #404040;
   --btn-text: #fff;

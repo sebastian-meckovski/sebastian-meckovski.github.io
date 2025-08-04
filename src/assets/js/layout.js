@@ -35,6 +35,21 @@ if (mobileMenuButton && mobileMenu) {
         }
     });
 }
+
+function updateProfileImageTheme() {
+    const img = document.getElementById('profile-img');
+    if (!img) return;
+    let theme = document.documentElement.getAttribute('data-theme');
+    if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    img.src = theme === 'dark' ? 'assets/seb-red.png' : 'assets/seb-blue.png';
+}
+
+document.addEventListener('DOMContentLoaded', updateProfileImageTheme);
+swup.hooks.on('page:view', updateProfileImageTheme);
+
+// If theme is toggled, update image
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
     themeToggle.addEventListener('click', () => {
@@ -49,5 +64,6 @@ if (themeToggle) {
         // Toggle to the opposite theme
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', newTheme);
+        updateProfileImageTheme();
     });
 }
