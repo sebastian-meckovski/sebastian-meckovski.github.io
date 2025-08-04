@@ -49,28 +49,7 @@ function updateProfileImageTheme() {
 document.addEventListener('DOMContentLoaded', updateProfileImageTheme);
 swup.hooks.on('page:view', updateProfileImageTheme);
 
-// Theme dialog logic
-const themeToggle = document.getElementById('theme-toggle');
-const themeDialog = document.getElementById('theme-dialog');
-const themeDialogClose = document.getElementById('theme-dialog-close');
-
-if (themeToggle && themeDialog) {
-    themeToggle.addEventListener('click', () => {
-        themeDialog.style.opacity = '1';
-        themeDialog.style.visibility = 'visible';
-        themeDialog.style.pointerEvents = 'auto';
-        themeDialog.classList.add('show');
-    });
-}
-if (themeDialogClose && themeDialog) {
-    themeDialogClose.addEventListener('click', () => {
-        themeDialog.style.opacity = '0';
-        themeDialog.style.visibility = 'hidden';
-        themeDialog.style.pointerEvents = 'none';
-        themeDialog.classList.remove('show');
-    });
-}
-
+// Theme selection functions (called from theme-toggle.js)
 function setTheme(theme) {
     const root = document.documentElement;
     if (theme === 'default') {
@@ -122,19 +101,6 @@ function setColorScheme(scheme) {
     localStorage.setItem('colorScheme', scheme);
     updateProfileImageTheme();
 }
-
-// Theme selection
-document.querySelectorAll('.theme-choice').forEach(btn => {
-    btn.addEventListener('click', () => {
-        setTheme(btn.getAttribute('data-theme'));
-    });
-});
-// Color scheme selection
-document.querySelectorAll('.color-choice').forEach(btn => {
-    btn.addEventListener('click', () => {
-        setColorScheme(btn.getAttribute('data-color'));
-    });
-});
 
 function getInitialTheme() {
     const saved = localStorage.getItem('theme');

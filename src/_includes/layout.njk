@@ -38,50 +38,46 @@
                         </button>
                         <div
                             id="theme-dialog"
-                            class="absolute left-1/5 mt-2 min-w-[20rem] w-max transition-all duration-300 opacity-0 invisible z-50 translate-x-1/5
-                                top-0 max-md:fixed max-md:left-1/2 max-md:translate-x-[-50%] max-md:top-5">
-                            <div class="bg-[var(--bg-nav)] rounded-xl p-6 shadow-2xl border border-[var(--accent)] w-full max-w-xs flex flex-col
-                                    items-center">
+                            class="bg-[var(--bg-nav)] rounded-xl p-4 shadow-2xl border border-[var(--accent)] flex flex-col items-center">
                                 <div class="mb-4 flex justify-center"></div>
-                                <div class="mb-4 w-full">
-                                    <div class="flex gap-4 flex-wrap justify-center">
+                                <div class="mb-3 w-full">
+                                    <div class="flex gap-2 flex-wrap justify-center">
                                         <button
-                                            class="theme-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-white shadow focus:outline-none"
+                                            class="theme-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-white shadow focus:outline-none"
                                             aria-label="Light theme"
                                             data-theme="light"></button>
                                         <button
-                                            class="theme-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#18181b] shadow focus:outline-none"
+                                            class="theme-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#18181b] shadow focus:outline-none"
                                             aria-label="Dark theme"
                                             data-theme="dark"></button>
                                         <button
-                                            class="theme-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-gradient-to-br from-white to-[#18181b]
+                                            class="theme-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-gradient-to-br from-white to-[#18181b]
                                                 shadow focus:outline-none"
                                             aria-label="System theme"
                                             data-theme="default"></button>
                                     </div>
                                 </div>
-                                <div class="mb-4 w-full">
-                                    <div class="flex gap-4 flex-wrap justify-center mt-2">
+                                <div class="mb-3 w-full">
+                                    <div class="flex gap-2 flex-wrap justify-center">
                                         <button
-                                            class="color-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#22d3ee] shadow focus:outline-none"
+                                            class="color-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#22d3ee] shadow focus:outline-none"
                                             aria-label="Blue accent"
                                             data-color="blue"></button>
                                         <button
-                                            class="color-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#ef4444] shadow focus:outline-none"
+                                            class="color-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#ef4444] shadow focus:outline-none"
                                             aria-label="Red accent"
                                             data-color="red"></button>
                                         <button
-                                            class="color-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#22c55e] shadow focus:outline-none"
+                                            class="color-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#22c55e] shadow focus:outline-none"
                                             aria-label="Green accent"
                                             data-color="green"></button>
                                     </div>
                                 </div>
                                 <button
                                     id="theme-dialog-close"
-                                    class="mt-4 px-4 py-2 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] w-full shadow hover:opacity-80
-                                        transition-opacity duration-200">
+                                    class="mt-3 px-3 py-1.5 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] w-full shadow hover:opacity-80
+                                        transition-opacity duration-200 text-sm">
                                     Close</button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,5 +125,6 @@
         </footer>
         <script src='../assets/js/swup.min.js'></script>
         <script src="../assets/js/layout.js"></script>
+        <script src="../assets/js/theme-toggle.js"></script>
     </body>
 </html>
