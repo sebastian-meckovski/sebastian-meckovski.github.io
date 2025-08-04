@@ -23,29 +23,64 @@
                     <div class="relative flex items-center" id="theme-container">
                         <button
                             id="theme-toggle"
-                            class="ml-4 px-2 py-1 rounded bg-[var(--btn-bg)] text-[var(--btn-text)] border border-[var(--accent)] hover:bg-[var(--btn-bg-hover)] transition-colors duration-200 text-sm">
-                            Theme & Color
+                            class="ml-4 px-2 py-1 rounded bg-[var(--btn-bg)] text-[var(--btn-text)] border border-[var(--accent)] hover:bg-[var(--btn-bg-hover)] transition-colors duration-200 text-sm flex items-center justify-center"
+                            aria-label="Theme and color selector">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 640" fill="currentColor" width="24" height="24">
+                                <path d="M576 320C576 320.9 576 321.8 576 322.7C575.6 359.2 542.4 384 505.9 384L408 384C381.5 384 360 405.5 360 432C360 435.4
+                                360.4 438.7 361 441.9C363.1 452.1 367.5 461.9 371.8 471.8C377.9 485.6 383.9 499.3 383.9 513.8C383.9 545.6 362.3 574.5
+                                330.5 575.8C327 575.9 323.5 576 319.9 576C178.5 576 63.9 461.4 63.9 320C63.9 178.6 178.6 64 320 64C461.4 64 576 178.6 576
+                                320zM192 352C192 334.3 177.7 320 160 320C142.3 320 128 334.3 128 352C128 369.7 142.3 384 160 384C177.7 384 192 369.7 192
+                                352zM192 256C209.7 256 224 241.7 224 224C224 206.3 209.7 192 192 192C174.3 192 160 206.3 160 224C160 241.7 174.3 256 192
+                                256zM352 160C352 142.3 337.7 128 320 128C302.3 128 288 142.3 288 160C288 177.7 302.3 192 320 192C337.7 192 352 177.7 352
+                                160zM448 256C465.7 256 480 241.7 480 224C480 206.3 465.7 192 448 192C430.3 192 416 206.3 416 224C416 241.7 430.3 256 448
+                                256z"/>
+                            </svg>
                         </button>
-                        <div id="theme-dialog" class="absolute left-1/2 mt-2 min-w-[20rem] w-max transition-all duration-300 opacity-0 invisible z-50 -translate-x-1/2 top-0">
-                            <div class="bg-[var(--bg-nav)] rounded-xl p-6 shadow-2xl border border-[var(--accent)] w-full max-w-xs flex flex-col items-center">
-                                <h2 class="text-lg font-bold mb-4 text-[var(--text-header)] text-center whitespace-normal break-words">Choose Theme &amp; Color Scheme</h2>
+                        <div
+                            id="theme-dialog"
+                            class="absolute left-1/5 mt-2 min-w-[20rem] w-max transition-all duration-300 opacity-0 invisible z-50 translate-x-1/5
+                                top-0 max-md:fixed max-md:left-1/2 max-md:translate-x-[-50%] max-md:top-5">
+                            <div class="bg-[var(--bg-nav)] rounded-xl p-6 shadow-2xl border border-[var(--accent)] w-full max-w-xs flex flex-col
+                                    items-center">
+                                <div class="mb-4 flex justify-center"></div>
                                 <div class="mb-4 w-full">
-                                    <label class="block mb-2 text-[var(--text-main)] font-semibold">Theme:</label>
-                                    <div class="flex gap-2 flex-wrap justify-center">
-                                        <button class="theme-choice px-4 py-2 rounded-lg border border-[var(--accent)] bg-[var(--btn-bg)] text-[var(--btn-text)] font-bold shadow hover:bg-[var(--btn-bg-hover)] focus:outline-none transition-colors duration-200" data-theme="light">Light</button>
-                                        <button class="theme-choice px-4 py-2 rounded-lg border border-[var(--accent)] bg-[var(--btn-bg)] text-[var(--btn-text)] font-bold shadow hover:bg-[var(--btn-bg-hover)] focus:outline-none transition-colors duration-200" data-theme="dark">Dark</button>
-                                        <button class="theme-choice px-4 py-2 rounded-lg border border-[var(--accent)] bg-[var(--btn-bg)] text-[var(--btn-text)] font-bold shadow hover:bg-[var(--btn-bg-hover)] focus:outline-none transition-colors duration-200" data-theme="default">Default</button>
+                                    <div class="flex gap-4 flex-wrap justify-center">
+                                        <button
+                                            class="theme-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-white shadow focus:outline-none"
+                                            aria-label="Light theme"
+                                            data-theme="light"></button>
+                                        <button
+                                            class="theme-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#18181b] shadow focus:outline-none"
+                                            aria-label="Dark theme"
+                                            data-theme="dark"></button>
+                                        <button
+                                            class="theme-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-gradient-to-br from-white to-[#18181b]
+                                                shadow focus:outline-none"
+                                            aria-label="System theme"
+                                            data-theme="default"></button>
                                     </div>
                                 </div>
                                 <div class="mb-4 w-full">
-                                    <label class="block mb-2 text-[var(--text-main)] font-semibold">Color Scheme:</label>
-                                    <div class="flex gap-2 flex-wrap justify-center">
-                                        <button class="color-choice px-4 py-2 rounded-lg border border-[var(--accent)] bg-[var(--btn-bg)] text-[var(--btn-text)] font-bold shadow hover:bg-[#22d3ee] hover:text-white focus:outline-none transition-colors duration-200" data-color="blue">Blue</button>
-                                        <button class="color-choice px-4 py-2 rounded-lg border border-[var(--accent)] bg-[var(--btn-bg)] text-[var(--btn-text)] font-bold shadow hover:bg-[#ef4444] hover:text-white focus:outline-none transition-colors duration-200" data-color="red">Red</button>
-                                        <button class="color-choice px-4 py-2 rounded-lg border border-[var(--accent)] bg-[var(--btn-bg)] text-[var(--btn-text)] font-bold shadow hover:bg-[#22c55e] hover:text-white focus:outline-none transition-colors duration-200" data-color="green">Green</button>
+                                    <div class="flex gap-4 flex-wrap justify-center mt-2">
+                                        <button
+                                            class="color-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#22d3ee] shadow focus:outline-none"
+                                            aria-label="Blue accent"
+                                            data-color="blue"></button>
+                                        <button
+                                            class="color-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#ef4444] shadow focus:outline-none"
+                                            aria-label="Red accent"
+                                            data-color="red"></button>
+                                        <button
+                                            class="color-choice w-8 h-8 rounded-full border-2 border-[var(--text-main)] bg-[#22c55e] shadow focus:outline-none"
+                                            aria-label="Green accent"
+                                            data-color="green"></button>
                                     </div>
                                 </div>
-                                <button id="theme-dialog-close" class="mt-2 px-4 py-2 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] font-bold w-full shadow hover:opacity-80 transition-opacity duration-200">Close</button>
+                                <button
+                                    id="theme-dialog-close"
+                                    class="mt-4 px-4 py-2 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] w-full shadow hover:opacity-80
+                                        transition-opacity duration-200">
+                                    Close</button>
                             </div>
                         </div>
                     </div>
@@ -54,7 +89,8 @@
                 <div class="md:hidden flex items-center justify-center">
                     <button
                         id="mobile-menu-button"
-                        class="text-[var(--nav-icon)] hover:text-[var(--nav-icon-hover)] focus:outline-none focus:text-[var(--nav-icon-hover)] flex items-center justify-center">
+                        class="text-[var(--nav-icon)] hover:text-[var(--nav-icon-hover)] focus:outline-none focus:text-[var(--nav-icon-hover)]
+                            flex items-center justify-center">
                         <svg class="h-6 w-6 fill-current" viewbox="0 0 24 24">
                             <path
                                 class="hidden"
@@ -74,8 +110,8 @@
             <!-- Mobile menu -->
             <div
                 id="mobile-menu"
-                class="md:hidden absolute top-full left-0 right-0 bg-[var(--bg-nav)] shadow-lg opacity-0 invisible transform -translate-y-4
-                    transition-all duration-200 ease-in-out z-50">
+                class="md:hidden absolute top-full left-0 right-0 bg-[var(--bg-nav)] shadow-lg opacity-0 invisible
+                    transform-translate-y-4 transition-all duration-200 ease-in-out z-50">
                 <div class="flex flex-col space-y-2 p-4">
                     {% for item in navigation %}
                         <a href="{{ item.url }}" class="nav-link text-[var(--nav-link)] hover:text-[var(--nav-link-hover)] px-3 py-2 rounded transition-colors duration-200 {% if page.url == item.url %}bg-[var(--accent)]/20{% endif %}">{{ item.text }}</a>
