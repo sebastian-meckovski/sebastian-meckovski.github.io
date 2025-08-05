@@ -16,7 +16,7 @@
     <body class="bg-[var(--bg-main)] text-[var(--text-main)] flex flex-col min-h-screen">
         <nav class="p-2 sm:p-4 relative">
             <div class="container mx-auto flex justify-between items-center min-w-0">
-                <div class="flex items-center text-[var(--text-header)] font-bold min-w-0 flex-shrink">
+                <div class="flex items-center text-[var(--text-header)] font-bold min-w-0 flex-shrink ">
                     <a href="/" class="text-sm sm:text-lg md:text-xl lg:text-2xl">
                         <span>Sebastian</span>
                         <span class="text-[var(--accent)]">Meckovski</span>
@@ -46,8 +46,8 @@
                         </button>
                         <div
                             id="theme-dialog"
-                            class="bg-[var(--bg-nav)] rounded-xl p-3 shadow-2xl border border-[var(--accent)] flex flex-col items-center
-                                max-w-[80vw]">
+                            class="bg-[var(--bg-nav)] rounded-l p-3 shadow-2xl border border-[var(--accent)] flex flex-col items-center fixed
+                                top-[1rem] max-w-[calc(100vw-4rem)]">
                             <div class="mb-2 w-full">
                                 <div class="text-xs text-[var(--text-header)] mb-1 text-center">Theme</div>
                                 <div class="flex flex-wrap gap-1.5 justify-center">
@@ -70,7 +70,7 @@
                             </div>
                             <div class="mb-2 w-full">
                                 <div class="text-xs text-[var(--text-header)] mb-1 text-center">Accent Color</div>
-                                <div class="flex gap-1.5 flex-wrap justify-center">
+                                <div class="flex flex-wrap  gap-1.5 justify-center">
                                     <button
                                         class="color-choice w-12 h-12 rounded-full border-2 border-[var(--text-main)] bg-[#22d3ee] shadow focus:outline-none
                                             flex-shrink-0"
@@ -88,7 +88,7 @@
                                         data-color="green"></button>
                                 </div>
                             </div>
-    <div class="mt-2 mb-1 text-[var(--footer-text)] text-xs text-center">Your preferences are saved automatically.</div>
+                            <div class="mt-2 mb-1 text-[var(--footer-text)] text-xs text-center">Your preferences are saved automatically.</div>
                             <button
                                 id="theme-dialog-close"
                                 class="sm:mt-3 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] w-full shadow
