@@ -14,18 +14,20 @@
         {% endif %}
     </head>
     <body class="bg-[var(--bg-main)] text-[var(--text-main)] flex flex-col min-h-screen">
-        <nav class="p-4 relative">
-            <div class="container mx-auto flex justify-between items-center">
-                <div class="flex items-center text-[var(--text-header)] text-2xl md:text-2xl font-bold">
-                    <a href="/">Sebastian
+        <nav class="p-2 sm:p-4 relative">
+            <div class="container mx-auto flex justify-between items-center min-w-0">
+                <div class="flex items-center text-[var(--text-header)] font-bold min-w-0 flex-shrink">
+                    <a href="/" class="text-sm sm:text-lg md:text-xl lg:text-2xl">
+                        <span>Sebastian</span>
                         <span class="text-[var(--accent)]">Meckovski</span>
                     </a>
-                    <div class="relative flex items-center" id="theme-container">
+                    <div class="relative flex items-center ml-1 xs:ml-2 sm:ml-4 flex-shrink-0" id="theme-container">
                         <button
                             id="theme-toggle"
-                            class="ml-4 px-2 py-1 rounded bg-[var(--btn-bg)] text-[var(--btn-text)] border border-[var(--accent)] hover:bg-[var(--btn-bg-hover)] transition-colors duration-200 text-sm flex items-center justify-center"
+                            class="ml-4 px-2 py-1 rounded bg-[var(--btn-bg)] text-[var(--btn-text)] border border-[var(--accent)]
+                                hover:bg-[var(--btn-bg-hover)] transition-colors duration-200 text-sm flex items-center justify-center"
                             aria-label="Theme and color selector">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 640" fill="currentColor" width="24" height="24">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 640" fill="currentColor" width="20" height="20" class="sm:w-6 sm:h-6">
                                 <path d="M576 320C576 320.9 576 321.8 576 322.7C575.6 359.2 542.4 384 505.9 384L408 384C381.5 384 360 405.5 360 432C360 435.4
                                 360.4 438.7 361 441.9C363.1 452.1 367.5 461.9 371.8 471.8C377.9 485.6 383.9 499.3 383.9 513.8C383.9 545.6 362.3 574.5
                                 330.5 575.8C327 575.9 323.5 576 319.9 576C178.5 576 63.9 461.4 63.9 320C63.9 178.6 178.6 64 320 64C461.4 64 576 178.6 576
@@ -38,46 +40,45 @@
                         </button>
                         <div
                             id="theme-dialog"
-                            class="bg-[var(--bg-nav)] rounded-xl p-4 shadow-2xl border border-[var(--accent)] flex flex-col items-center">
-                                <div class="mb-4 flex justify-center"></div>
-                                <div class="mb-3 w-full">
-                                    <div class="flex gap-2 flex-wrap justify-center">
-                                        <button
-                                            class="theme-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-white shadow focus:outline-none"
-                                            aria-label="Light theme"
-                                            data-theme="light"></button>
-                                        <button
-                                            class="theme-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#18181b] shadow focus:outline-none"
-                                            aria-label="Dark theme"
-                                            data-theme="dark"></button>
-                                        <button
-                                            class="theme-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-gradient-to-br from-white to-[#18181b]
-                                                shadow focus:outline-none"
-                                            aria-label="System theme"
-                                            data-theme="default"></button>
-                                    </div>
+                            class="bg-[var(--bg-nav)] rounded-xl p-3 sm:p-4 shadow-2xl border border-[var(--accent)] flex flex-col items-center">
+                            <div class="mb-2 sm:mb-3 w-full">
+                                <div class="flex gap-1.5 sm:gap-2 flex-wrap justify-center">
+                                    <button
+                                        class="theme-choice w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[var(--text-main)] bg-white shadow focus:outline-none flex-shrink-0"
+                                        aria-label="Light theme"
+                                        data-theme="light"></button>
+                                    <button
+                                        class="theme-choice w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[var(--text-main)] bg-[#18181b] shadow focus:outline-none flex-shrink-0"
+                                        aria-label="Dark theme"
+                                        data-theme="dark"></button>
+                                    <button
+                                        class="theme-choice w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[var(--text-main)] bg-gradient-to-br from-white to-[#18181b]
+                                            shadow focus:outline-none flex-shrink-0"
+                                        aria-label="System theme"
+                                        data-theme="default"></button>
                                 </div>
-                                <div class="mb-3 w-full">
-                                    <div class="flex gap-2 flex-wrap justify-center">
-                                        <button
-                                            class="color-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#22d3ee] shadow focus:outline-none"
-                                            aria-label="Blue accent"
-                                            data-color="blue"></button>
-                                        <button
-                                            class="color-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#ef4444] shadow focus:outline-none"
-                                            aria-label="Red accent"
-                                            data-color="red"></button>
-                                        <button
-                                            class="color-choice w-6 h-6 rounded-full border-2 border-[var(--text-main)] bg-[#22c55e] shadow focus:outline-none"
-                                            aria-label="Green accent"
-                                            data-color="green"></button>
-                                    </div>
+                            </div>
+                            <div class="mb-2 sm:mb-3 w-full">
+                                <div class="flex gap-1.5 sm:gap-2 flex-wrap justify-center">
+                                    <button
+                                        class="color-choice w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[var(--text-main)] bg-[#22d3ee] shadow focus:outline-none flex-shrink-0"
+                                        aria-label="Blue accent"
+                                        data-color="blue"></button>
+                                    <button
+                                        class="color-choice w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[var(--text-main)] bg-[#ef4444] shadow focus:outline-none flex-shrink-0"
+                                        aria-label="Red accent"
+                                        data-color="red"></button>
+                                    <button
+                                        class="color-choice w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[var(--text-main)] bg-[#22c55e] shadow focus:outline-none flex-shrink-0"
+                                        aria-label="Green accent"
+                                        data-color="green"></button>
                                 </div>
-                                <button
-                                    id="theme-dialog-close"
-                                    class="mt-3 px-3 py-1.5 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] w-full shadow hover:opacity-80
-                                        transition-opacity duration-200 text-sm">
-                                    Close</button>
+                            </div>
+                            <button
+                                id="theme-dialog-close"
+                                class="mt-2 sm:mt-3 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-[var(--accent)] text-[var(--btn-hire-text)] w-full shadow hover:opacity-80
+                                    transition-opacity duration-200 text-xs sm:text-sm min-w-0">
+                                Close</button>
                         </div>
                     </div>
                 </div>
@@ -97,9 +98,9 @@
                     </button>
                 </div>
                 <!-- Desktop menu -->
-                <div class="hidden md:flex space-x-4">
+                <div class="hidden md:flex space-x-2 lg:space-x-4 flex-shrink-0">
                     {% for item in navigation %}
-                        <a href="{{ item.url }}" class="nav-link text-[var(--nav-link)] hover:text-[var(--nav-link-hover)] px-3 py-1 rounded transition-colors duration-200 {% if page.url == item.url %}bg-[var(--accent)]/20{% endif %}">{{ item.text }}</a>
+                        <a href="{{ item.url }}" class="nav-link text-[var(--nav-link)] hover:text-[var(--nav-link-hover)] px-2 lg:px-3 py-1 rounded transition-colors duration-200 text-sm lg:text-base whitespace-nowrap {% if page.url == item.url %}bg-[var(--accent)]/20{% endif %}">{{ item.text }}</a>
                     {% endfor %}
                 </div>
             </div>

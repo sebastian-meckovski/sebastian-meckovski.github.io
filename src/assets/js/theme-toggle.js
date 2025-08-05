@@ -50,34 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
         let dialogTop, dialogLeft;
         let transformOrigin = 'top left';
 
-        const margin = -2; // Reduced margin for closer positioning
-        const viewportMargin = 30; // Minimum margin from viewport edges to ensure visibility
+        const margin = 8; // Margin from button and viewport edges
 
-        // Case 1: Place dialog below the button (preferred)
-        if (buttonRect.bottom + dialogRect.height + Math.abs(margin) < viewportHeight) {
-            dialogTop = buttonRect.bottom + margin;
-            dialogLeft = Math.max(viewportMargin, buttonRect.left - (dialogRect.width / 2) + (buttonRect.width / 2));
-            transformOrigin = 'top center';
-        }
-        // Case 2: Not enough space below, try above the button
-        else if (buttonRect.top - dialogRect.height - Math.abs(margin) > 0) {
-            dialogTop = buttonRect.top - dialogRect.height - margin;
-            dialogLeft = Math.max(viewportMargin, buttonRect.left - (dialogRect.width / 2) + (buttonRect.width / 2));
-            transformOrigin = 'bottom center';
-        }
-        // Case 3: Try to the right of the button
-        else if (buttonRect.right + dialogRect.width + Math.abs(margin) < viewportWidth) {
-            dialogTop = Math.max(viewportMargin, buttonRect.top - (dialogRect.height / 2) + (buttonRect.height / 2));
+        // Case 1: Place dialog to the right of the button (preferred for theme toggles)
+        if (buttonRect.right + dialogRect.width + margin < viewportWidth) {
+            dialogTop = buttonRect.top;
             dialogLeft = buttonRect.right + margin;
-            transformOrigin = 'center left';
+            transformOrigin = 'top left';
         }
-        // Case 4: Try to the left of the button
-        else if (buttonRect.left - dialogRect.width - Math.abs(margin) > 0) {
-            dialogTop = Math.max(viewportMargin, buttonRect.top - (dialogRect.height / 2) + (buttonRect.height / 2));
+        // Case 2: Not enough space on the right, try placing it to the left
+        else if (buttonRect.left - dialogRect.width - margin > 0) {
+            dialogTop = buttonRect.top;
             dialogLeft = buttonRect.left - dialogRect.width - margin;
-            transformOrigin = 'center right';
+            transformOrigin = 'top right';
         }
-        // Fallback: Center it on the screen
+        // Case 3: Not enough horizontal space, try placing it below the button
+        else if (buttonRect.bottom + dialogRect.height + margin < viewportHeight) {
+            dialogTop = buttonRect.bottom + margin;
+            dialogLeft = buttonRect.left;
+            transformOrigin = 'top left';
+        }
+        // Case 4: Not enough vertical space, try placing it above the button
+        else if (buttonRect.top - dialogRect.height - margin > 0) {
+            dialogTop = buttonRect.top - dialogRect.height - margin;
+            dialogLeft = buttonRect.left;
+            transformOrigin = 'bottom left';
+        }
+        // Fallback: Center it on the screen, shrinking it if needed
         else {
             dialogTop = (viewportHeight - dialogRect.height) / 2;
             dialogLeft = (viewportWidth - dialogRect.width) / 2;
@@ -85,8 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Adjust for viewport boundaries if the calculated position is out of bounds
-        dialogTop = Math.max(viewportMargin, Math.min(dialogTop, viewportHeight - dialogRect.height - viewportMargin));
-        dialogLeft = Math.max(viewportMargin, Math.min(dialogLeft, viewportWidth - dialogRect.width - viewportMargin));
+        dialogTop = Math.max(margin, Math.min(dialogTop, viewportHeight - dialogRect.height - margin));
+        dialogLeft = Math.max(margin, Math.min(dialogLeft, viewportWidth - dialogRect.width - margin));
 
         // Apply the calculated position and transform origin
         themeDialog.style.top = `${dialogTop}px`;
