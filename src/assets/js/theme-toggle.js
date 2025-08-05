@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let dialogTop, dialogLeft;
         let transformOrigin = 'top left';
 
-        const margin = 8; // Margin from button and viewport edges
+        const margin = 0; // Margin from button and viewport edges
 
         // Case 1: Place dialog to the right of the button (preferred for theme toggles)
         if (buttonRect.right + dialogRect.width + margin < viewportWidth) {
-            dialogTop = buttonRect.top;
+            dialogTop = buttonRect.top + margin;
             dialogLeft = buttonRect.right + margin;
             transformOrigin = 'top left';
         }
@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
             transformOrigin = 'center';
         }
 
-        // Adjust for viewport boundaries if the calculated position is out of bounds
-        dialogTop = Math.max(margin, Math.min(dialogTop, viewportHeight - dialogRect.height - margin));
-        dialogLeft = Math.max(margin, Math.min(dialogLeft, viewportWidth - dialogRect.width - margin));
+        // Clamp dialog position so it never overflows the left or right edge of the body
+        dialogLeft = Math.max(8, Math.min(dialogLeft, viewportWidth - dialogRect.width - 8));
+        dialogTop = Math.max(8, Math.min(dialogTop, viewportHeight - dialogRect.height - 8));
 
         // Apply the calculated position and transform origin
         themeDialog.style.top = `${dialogTop}px`;

@@ -45,16 +45,7 @@ a:focus-visible {
   transform-origin: var(--dialog-transform-origin);
   position: fixed; /* Fixed positioning relative to viewport */
   z-index: 50;
-  width: 160px; /* Smaller default width for mobile-first */
-  max-width: calc(100vw - 16px); /* Always leave 8px margin on each side */
-  min-width: 140px; /* Minimum usable width */
   box-sizing: border-box;
-}
-
-@media (min-width: 640px) {
-  #theme-dialog {
-    width: 200px; /* Larger width on bigger screens */
-  }
 }
 
 #theme-dialog.show {
