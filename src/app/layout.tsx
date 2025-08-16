@@ -40,7 +40,7 @@ export default function RootLayout({
           </Link>
           <Nav />
         </header>
-        <main className="flex-1 px-8 py-12 max-w-5xl w-full mx-auto">
+        <main className="container flex-1 px-8 py-12 mx-auto">
           {children}
         </main>
         <footer className="mt-12 py-8 text-center text-xs text-foreground/70 border-t border-foreground/10">
@@ -50,3 +50,4 @@ export default function RootLayout({
     </html>
   );
 }
+ 
