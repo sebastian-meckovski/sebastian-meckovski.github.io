@@ -2,8 +2,8 @@
   "git": {
     "deploymentEnabled": {
       "*": false,
-      "develop": true,
-      "master": true
+      "v3.0-development": true,
+      "v3.0-master": true
     }
   }
 }
