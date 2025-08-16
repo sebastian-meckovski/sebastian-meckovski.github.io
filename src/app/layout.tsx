@@ -3,7 +3,7 @@ import { Orbitron } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import Nav from "@/components/Nav";
-
+import HeaderPopupButton from "@/components/HeaderPopupButton";
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
@@ -31,21 +31,28 @@ export default function RootLayout({
       <body
         className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >
-        <header className="flex items-center justify-between px-8 py-4 border-b border-foreground/10 bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60 sticky top-0 z-50">
-          <Link href="/" className="text-lg font-semibold tracking-wide">
-            <span>Sebastian </span>
-            <span className="text-accent">Meckovski</span>
-          </Link>
+        <header
+          className="flex items-center justify-between px-8 py-4"
+          style={{ background: "var(--header-bg)" }}
+        >
+          <div className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="text-lg font-semibold tracking-wide"
+              style={{ color: "var(--header-fg)" }}
+            >
+              <span>Sebastian </span>
+              <span className="text-[var(--accent)]">Meckovski</span>
+            </Link>
+            <HeaderPopupButton />
+          </div>
           <Nav />
         </header>
-        <main className="container flex-1 px-8 py-12 mx-auto">
-          {children}
-        </main>
-        <footer className="mt-12 py-8 text-center text-xs text-foreground/70 border-t border-foreground/10">
+        <main className="container flex-1 px-8 py-12 mx-auto">{children}</main>
+        <footer className="mt-12 py-8 text-center text-xs bg-[var(--header-bg)]">
           © {new Date().getFullYear()} Sebastian Meckovski. All rights reserved.
         </footer>
       </body>
     </html>
   );
 }
- 
