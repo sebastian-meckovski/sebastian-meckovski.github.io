@@ -23,7 +23,7 @@ body {
 
 /* --- Simple page fade/slide-in animation (SSR friendly) --- */
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(50px); }
+  from { opacity: 0; transform: translateY(2rem); }
   to { opacity: 1; transform: translateY(0); }
 }
 
