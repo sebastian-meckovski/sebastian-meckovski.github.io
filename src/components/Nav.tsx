@@ -19,7 +19,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`hover:text-blue-500`}
+              className={`hover:text-[var(--accent)]`}
             >
               {l.label}
             </Link>
