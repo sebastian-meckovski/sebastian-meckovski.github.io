@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbitron } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import Nav from "@/components/Nav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
+        className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >
         <header className="flex items-center justify-between px-8 py-4 border-b border-foreground/10 bg-black/80 backdrop-blur supports-[backdrop-filter]:bg-black/60 sticky top-0 z-50">
           <Link href="/" className="text-lg font-semibold tracking-wide">
