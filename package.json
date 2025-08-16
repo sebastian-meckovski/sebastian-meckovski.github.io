@@ -1,28 +1,27 @@
 {
-  "name": "sebastian-meckovski.github.io",
-  "version": "1.0.0",
-  "description": "Sebastian's website",
-  "main": "index.js",
+  "name": "sebastian-meckovski.com",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:tailwind": "npx @tailwindcss/cli -i ./src/assets/css/styles.css -o ./_site/assets/css/output.css --minify",
-    "build": "npm run build:tailwind && npx @11ty/eleventy",
-    "serve": "npm run build:tailwind && npx @11ty/eleventy --serve"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sebastian-meckovski/sebastian-meckovski.github.io.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sebastian-meckovski/sebastian-meckovski.github.io/issues"
-  },
-  "homepage": "https://github.com/sebastian-meckovski/sebastian-meckovski.github.io#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@tailwindcss/cli": "^4.1.11",
-    "dotenv": "^17.2.0",
-    "tailwindcss": "^4.1.11"
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "next": "15.4.6"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "@eslint/eslintrc": "^3"
   }
 }
