@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { hideNav, showNav } from "../../public/mobileNav";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const burgerButtonBar =
   "absolute left-0 block h-[4px] w-full origin-center rounded bg-current burger-bar ";
@@ -45,21 +47,7 @@ export default function BurgerButton() {
       onClick={handleClick}
       className="relative inline-flex h-7 w-14 items-center justify-center md:hidden"
     >
-      <span className={burgerButtonBar} style={{ top: "0%" }} />
-      {/* Middle bar: stays centered & fades out */}
-      <span
-        className={burgerButtonBar}
-        style={{
-          top: "50%",
-        }}
-      />
-      {/* Bottom bar: from bottom -> center rotate -45 */}
-      <span
-        className={burgerButtonBar}
-        style={{
-          top: "100%",
-        }}
-      />
+      <FontAwesomeIcon icon={faBars} size="3x" />
     </button>
   );
 }
