@@ -49,6 +49,12 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
+header nav a,
+header span,
+header button {
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
 /* --- Simple page fade/slide-in animation (SSR friendly) --- */
 @keyframes pageFadeIn {
   from {
