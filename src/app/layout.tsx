@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron } from "next/font/google";
+import { cookies } from "next/headers";
 import Link from "next/link";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -21,13 +22,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sebastian-meckovski.com"),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme");
+  const themeAttr = theme && theme.value !== "auto" ? theme.value : undefined;
+  
   return (
-    <html lang="en">
+    <html lang="en" {...(themeAttr ? { "data-theme": themeAttr } : {})}>
       <body
         className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >

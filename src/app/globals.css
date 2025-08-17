@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Default (light) theme */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -7,6 +8,21 @@
   --accent: #00bcd4;
 }
 
+/* Dark theme via attribute */
+html[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --header-bg: #003457;
+}
+
+/* Light theme via attribute */
+html[data-theme="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+  --header-bg: #b6d0f7;
+}
+
+/* Fallback to prefers-color-scheme if no attribute is set */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,6 +35,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-orbitron), Arial, Helvetica, sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* --- Simple page fade/slide-in animation (SSR friendly) --- */
