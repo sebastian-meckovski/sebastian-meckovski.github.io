@@ -2,6 +2,8 @@
 import { useRef, useState, useEffect } from "react";
 import Popup from "./Popup";
 import { getCookie } from "@/helpers/cookies";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBrush } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeaderPopupButton() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -56,11 +58,13 @@ export default function HeaderPopupButton() {
     <>
       <button
         ref={buttonRef}
-        className="px-4 py-2 rounded bg-[var(--accent)] text-white font-bold shadow"
+        className="px-4 py-2 rounded bg-[var(--accent)] text-white font-bold shadow flex items-center justify-center"
         onClick={() => setOpen((o) => !o)}
         type="button"
+        aria-label="Change theme and color scheme"
       >
-        Open Popup
+        <FontAwesomeIcon icon={faBrush} size="lg" />
+        <span className="sr-only">Change theme and color scheme</span>
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-center justify-center h-full">

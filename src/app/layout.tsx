@@ -47,10 +47,10 @@ export default async function RootLayout({
           className="flex items-center justify-between px-8 py-4"
           style={{ background: "var(--header-bg)" }}
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="text-lg font-semibold tracking-wide"
+              className="text-lg font-semibold"
               style={{ color: "var(--header-fg)" }}
             >
               <span>Sebastian </span>
