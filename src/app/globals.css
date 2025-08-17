@@ -74,3 +74,8 @@ header button {
 main > * {
   animation: pageFadeIn 0.35s ease-out;
 }
+
+/* --- Burger button bar transitions --- */
+.burger-bar {
+  transition: transform 0.3s, opacity 0.2s, background 0.3s, top 0.3s, bottom 0.3s;
+}

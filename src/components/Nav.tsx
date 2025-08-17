@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NavColorEffect from "./NavColorEffect";
+import BurgerButton from "./BurgerButton";
 
 export default function Nav() {
   const links = [
@@ -26,6 +27,7 @@ export default function Nav() {
           );
         })}
       </nav>
+      <BurgerButton />
     </>
   );
 }
