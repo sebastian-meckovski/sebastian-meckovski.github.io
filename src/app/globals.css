@@ -1,11 +1,22 @@
 @import "tailwindcss";
 
 /* Default (light) theme */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --header-bg: #b6d0f7;
+  --accent: #00bcd4; /* blue (default) */
+}
+
+html[data-color-scheme="blue"] {
   --accent: #00bcd4;
+}
+html[data-color-scheme="red"] {
+  --accent: #ff3b30;
+}
+html[data-color-scheme="green"] {
+  --accent: #2ecc40;
 }
 
 /* Dark theme via attribute */

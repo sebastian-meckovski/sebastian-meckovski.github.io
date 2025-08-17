@@ -7,15 +7,26 @@ export default function HeaderPopupButton() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState<string>("auto");
+  const [colorScheme, setColorScheme] = useState<string>("blue");
 
-  // Read theme from cookie on mount
+  // Read theme and color-scheme from cookies on mount
   useEffect(() => {
-    const cookieValue = getCookie("theme");
-    console.log("Current theme:", cookieValue);
-    if (cookieValue) {
-      setTheme(cookieValue);
+    const themeCookie = getCookie("theme");
+    if (themeCookie) {
+      setTheme(themeCookie);
     } else {
       setTheme("auto");
+    }
+    const colorSchemeCookie = getCookie("color-scheme");
+    if (colorSchemeCookie) {
+      setColorScheme(colorSchemeCookie);
+      document.documentElement.setAttribute(
+        "data-color-scheme",
+        colorSchemeCookie
+      );
+    } else {
+      setColorScheme("blue");
+      document.documentElement.setAttribute("data-color-scheme", "blue");
     }
   }, []);
 
@@ -33,6 +44,14 @@ export default function HeaderPopupButton() {
     }
   }
 
+  // Handle color scheme change and cookie
+  function handleColorSchemeChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value;
+    setColorScheme(value);
+    document.cookie = `color-scheme=${value}; path=/;`;
+    document.documentElement.setAttribute("data-color-scheme", value);
+  }
+
   return (
     <>
       <button
@@ -46,41 +65,79 @@ export default function HeaderPopupButton() {
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-center justify-center h-full">
           <h2 className="text-lg font-semibold mb-2">Popup Content</h2>
-          <div className="flex items-center gap-4">
-            <span className="font-medium">Theme:</span>
-            <label className="flex items-center gap-1 cursor-pointer">
-              <input
-                type="radio"
-                name="theme"
-                value="light"
-                className="accent-[var(--accent)]"
-                checked={theme === "light"}
-                onChange={handleThemeChange}
-              />
-              <span>Light</span>
-            </label>
-            <label className="flex items-center gap-1 cursor-pointer">
-              <input
-                type="radio"
-                name="theme"
-                value="dark"
-                className="accent-[var(--accent)]"
-                checked={theme === "dark"}
-                onChange={handleThemeChange}
-              />
-              <span>Dark</span>
-            </label>
-            <label className="flex items-center gap-1 cursor-pointer">
-              <input
-                type="radio"
-                name="theme"
-                value="auto"
-                className="accent-[var(--accent)]"
-                checked={theme === "auto"}
-                onChange={handleThemeChange}
-              />
-              <span>Auto</span>
-            </label>
+          <div className="flex flex-col gap-4 items-center">
+            <div className="flex items-center gap-4">
+              <span className="font-medium">Theme:</span>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="theme"
+                  value="light"
+                  className="accent-[var(--accent)]"
+                  checked={theme === "light"}
+                  onChange={handleThemeChange}
+                />
+                <span>Light</span>
+              </label>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="theme"
+                  value="dark"
+                  className="accent-[var(--accent)]"
+                  checked={theme === "dark"}
+                  onChange={handleThemeChange}
+                />
+                <span>Dark</span>
+              </label>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="theme"
+                  value="auto"
+                  className="accent-[var(--accent)]"
+                  checked={theme === "auto"}
+                  onChange={handleThemeChange}
+                />
+                <span>Auto</span>
+              </label>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="font-medium">Accent:</span>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="color-scheme"
+                  value="blue"
+                  className="accent-[var(--accent)]"
+                  checked={colorScheme === "blue"}
+                  onChange={handleColorSchemeChange}
+                />
+                <span>Blue</span>
+              </label>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="color-scheme"
+                  value="red"
+                  className="accent-[var(--accent)]"
+                  checked={colorScheme === "red"}
+                  onChange={handleColorSchemeChange}
+                />
+                <span>Red</span>
+              </label>
+              <label className="flex items-center gap-1 cursor-pointer">
+                <input
+                  type="radio"
+                  name="color-scheme"
+                  value="green"
+                  className="accent-[var(--accent)]"
+                  checked={colorScheme === "green"}
+                  onChange={handleColorSchemeChange}
+                />
+                <span>Green</span>
+              </label>
+            </div>
           </div>
         </div>
       </Popup>

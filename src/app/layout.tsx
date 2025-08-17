@@ -29,10 +29,17 @@ export default async function RootLayout({
 }) {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme");
+  const colorScheme = cookieStore.get("color-scheme");
   const themeAttr = theme && theme.value !== "auto" ? theme.value : undefined;
-  
+  const colorSchemeAttr = colorScheme ? colorScheme.value : "blue";
+
+  // Build html attributes
+  const htmlAttrs: Record<string, string> = { lang: "en" };
+  if (themeAttr) htmlAttrs["data-theme"] = themeAttr;
+  if (colorSchemeAttr) htmlAttrs["data-color-scheme"] = colorSchemeAttr;
+
   return (
-    <html lang="en" {...(themeAttr ? { "data-theme": themeAttr } : {})}>
+    <html {...htmlAttrs}>
       <body
         className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >
