@@ -43,7 +43,7 @@ export default function BurgerButton() {
       aria-expanded={open}
       type="button"
       onClick={handleClick}
-      className="relative inline-flex h-10 w-16 items-center justify-center md:hidden"
+      className="relative inline-flex h-7 w-14 items-center justify-center md:hidden"
     >
       <span className={burgerButtonBar} style={{ top: "0%" }} />
       {/* Middle bar: stays centered & fades out */}

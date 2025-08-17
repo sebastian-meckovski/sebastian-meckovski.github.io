@@ -17,7 +17,7 @@ export default function Nav() {
       {/* Desktop nav */}
       <nav
         id="main-nav"
-        className="fixed top-0 left-0 z-40 w-full h-full bg-[rgba(10,10,10,0.95)] shadow-2xl
+        className="fixed top-0 left-0 z-40 w-full h-full bg-[var(--background)] shadow-2xl
           flex flex-col items-center justify-center gap-8
           text-2xl font-medium
           translate-x-full opacity-0 pointer-events-none
