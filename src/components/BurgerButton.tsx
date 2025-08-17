@@ -45,7 +45,7 @@ export default function BurgerButton() {
       aria-expanded={open}
       type="button"
       onClick={handleClick}
-      className="relative inline-flex h-7 w-14 items-center justify-center md:hidden"
+      className="md:hidden"
     >
       <FontAwesomeIcon icon={faBars} size="3x" />
     </button>

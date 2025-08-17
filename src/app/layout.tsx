@@ -50,14 +50,14 @@ export default async function RootLayout({
           <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="text-lg font-semibold"
+              className="text-lg font-semibold mr-2"
               style={{ color: "var(--header-fg)" }}
             >
               <span>Sebastian </span>
               <span className="text-[var(--accent)]">Meckovski</span>
             </Link>
-            <HeaderPopupButton />
           </div>
+          <HeaderPopupButton />
           <Nav />
         </header>
         <main className="container flex-1 px-8 py-12 mx-auto">{children}</main>

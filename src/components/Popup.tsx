@@ -58,7 +58,7 @@ export default function Popup({
   return (
     <div
       ref={popupRef}
-      className="popup fixed z-[1000] bg-[var(--background)] text-foreground shadow-lg rounded-xl border p-6"
+      className="popup max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-foreground shadow-lg rounded-xl border p-6"
       style={{}}
     >
       {children}
