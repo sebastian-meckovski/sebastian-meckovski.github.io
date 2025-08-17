@@ -21,7 +21,7 @@ export default function Nav() {
           flex flex-col items-center justify-center gap-8
           text-2xl font-medium
           translate-x-full opacity-0
-          max-md:transition-transform duration-300 ease-in-out
+          max-md:transition-all duration-300 ease-in-out
           md:static md:bg-transparent md:shadow-none md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex-row md:h-auto md:text-base md:w-auto md:justify-end"
       >
         {links.map((l) => (

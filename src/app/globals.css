@@ -1,3 +1,9 @@
+/* Flex wrap header only below 280px */
+@media (max-width: 280px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
 @import "tailwindcss";
 
 /* Default (light) theme */
@@ -77,5 +83,6 @@ main > * {
 
 /* --- Burger button bar transitions --- */
 .burger-bar {
-  transition: transform 0.3s, opacity 0.2s, background 0.3s, top 0.3s, bottom 0.3s;
+  transition: transform 0.3s, opacity 0.2s, background 0.3s, top 0.3s,
+    bottom 0.3s;
 }
