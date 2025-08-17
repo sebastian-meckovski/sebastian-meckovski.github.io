@@ -1,6 +1,7 @@
 import Link from "next/link";
 import NavColorEffect from "./NavColorEffect";
 import BurgerButton from "./BurgerButton";
+import MobileNavHideButton from "./MobileNavHideButton";
 
 export default function Nav() {
   const links = [
@@ -34,6 +35,7 @@ export default function Nav() {
             {l.label}
           </Link>
         ))}
+        <MobileNavHideButton />
       </nav>
       <BurgerButton />
     </>
