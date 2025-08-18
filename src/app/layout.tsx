@@ -12,7 +12,7 @@ import HeaderPopupButton from "@/components/HeaderPopupButton";
 // Sebastian Meckovski header shows up in two lines for some reason (nav issue)
 // Mobile nav change color on tap to indicate that it's being pressed
 // Check through Tailwind classes to find if there are any useless ones
-// Wrap list items into <ul> for better semantics
+// Wrap list items into <ul> for better semantics - DONE
 // server side rendered svgs look really big on network tab, maybe make them smaller?
 
 const orbitron = Orbitron({
