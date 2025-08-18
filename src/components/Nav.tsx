@@ -23,16 +23,19 @@ export default function Nav() {
           md:bg-[var(--header-bg)] md:flex-row md:static md:justify-end md:translate-x-0 md:w-auto md:h-auto md:py-0 md:px-0
       "
       >
-        {links.map((l) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            className="hover:text-[var(--accent)]"
-            tabIndex={0}
-          >
-            {l.label}
-          </Link>
-        ))}
+        <ul className="flex flex-col gap-8 items-center md:flex-row md:gap-8">
+          {links.map((l) => (
+            <li key={l.href}>
+              <Link
+                href={l.href}
+                className="hover:text-[var(--accent)] whitespace-nowrap text-3xl md:text-base"
+                tabIndex={0}
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
         <MobileNavHideButton />
       </nav>
       <BurgerButton />

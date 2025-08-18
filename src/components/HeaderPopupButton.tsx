@@ -62,6 +62,7 @@ export default function HeaderPopupButton() {
         onClick={() => setOpen((o) => !o)}
         type="button"
         aria-label="Change theme and color scheme"
+        style={{ maxWidth: "4rem" }}
       >
         <FontAwesomeIcon icon={faBrush} size="lg" />
         <span className="sr-only">Change theme and color scheme</span>
