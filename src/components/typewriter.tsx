@@ -85,6 +85,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
           color: ${accentColor};
           font-weight: bold;
           font-family: 'Orbitron', monospace;
+          font-size: 1.5em;
           white-space: pre;
         }
         .${uniqueClass}::before {

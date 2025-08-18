@@ -6,6 +6,15 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import HeaderPopupButton from "@/components/HeaderPopupButton";
 
+// Todo:
+// Move nav logic here (no need to have Nav component)
+// Theme popup logic, fade out animation, improve styling
+// Sebastian Meckovski header shows up in two lines for some reason (nav issue)
+// Mobile nav change color on tap to indicate that it's being pressed
+// Check through Tailwind classes to find if there are any useless ones
+// Wrap list items into <ul> for better semantics
+// server side rendered svgs look really big on network tab, maybe make them smaller?
+
 const orbitron = Orbitron({
   variable: "--font-orbitron",
   subsets: ["latin"],
