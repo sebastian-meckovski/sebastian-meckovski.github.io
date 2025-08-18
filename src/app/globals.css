@@ -1,10 +1,11 @@
+@import "tailwindcss";
+
 /* Flex wrap header only below 280px */
 @media (max-width: 280px) {
   header {
     flex-wrap: wrap;
   }
 }
-@import "tailwindcss";
 
 /* Default (light) theme */
 

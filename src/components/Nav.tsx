@@ -18,12 +18,10 @@ export default function Nav() {
       {/* Desktop nav */}
       <nav
         id="main-nav"
-        className="fixed top-0 left-0 z-40 w-full h-full bg-[var(--background)] shadow-2xl
-          flex flex-col items-center justify-center gap-8
-          text-2xl font-medium
-          translate-x-full opacity-0
-          max-md:transition-all duration-300 ease-in-out
-          md:static md:bg-transparent md:shadow-none md:translate-x-0 md:opacity-100 md:pointer-events-auto md:flex-row md:h-auto md:text-base md:w-auto md:justify-end"
+        className="
+          flex gap-8 bg-[var(--background)] flex-col fixed top-0 left-0 w-full h-full items-center justify-center translate-x-full
+          md:bg-[var(--header-bg)] md:flex-row md:static md:justify-end md:translate-x-0
+      "
       >
         {links.map((l) => (
           <Link
