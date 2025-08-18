@@ -6,8 +6,8 @@ interface TypewriterProps {
 }
 
 function generateKeyframes(words: string[], animName: string): string {
-  let steps: { percent: number; content: string }[] = [];
-  let wordSegments: { content: string; frames: number }[] = [];
+  const steps: { percent: number; content: string }[] = [];
+  const wordSegments: { content: string; frames: number }[] = [];
   // Total animation: 4s per word (approx), adjust as needed
   const framesPerChar = 1;
   const framesPauseWord = 3;
