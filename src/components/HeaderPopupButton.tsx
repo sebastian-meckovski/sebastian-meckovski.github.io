@@ -58,14 +58,17 @@ export default function HeaderPopupButton() {
     <>
       <button
         ref={buttonRef}
-        className="px-4 py-2 rounded bg-[var(--accent)] text-white h-10 ml-auto mr-2 md:mr-8"
+        className="text-[var(--foreground)] h-10 ml-auto mr-2 md:mr-8 cursor-pointer"
         onClick={() => setOpen((o) => !o)}
         type="button"
         aria-label="Change theme and color scheme"
-        style={{ maxWidth: "4rem" }}
       >
-        <FontAwesomeIcon icon={faBrush} size="lg" />
-        <span className="sr-only">Change theme and color scheme</span>
+        <span className="sr-only">Change theme</span>
+        <FontAwesomeIcon
+          icon={faBrush}
+          className="max-h-full max-w-full"
+          size="3x"
+        />
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-center justify-center h-full">

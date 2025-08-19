@@ -14,7 +14,7 @@ export default function Popup({
   onClose,
   children,
 }: PopupProps) {
-  const popupRef = useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDialogElement>(null);
 
   // Close on outside click
   useEffect(() => {
@@ -56,12 +56,14 @@ export default function Popup({
   if (!open) return null;
 
   return (
-    <div
+    <dialog
       ref={popupRef}
-      className="popup max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-foreground shadow-lg rounded-xl border p-6"
-      style={{}}
+      open
+      className="popup max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-lg rounded-xl border p-6"
+      aria-modal="true"
+      role="dialog"
     >
       {children}
-    </div>
+    </dialog>
   );
 }
