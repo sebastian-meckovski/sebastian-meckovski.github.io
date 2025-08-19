@@ -14,6 +14,7 @@ import HeaderPopupButton from "@/components/HeaderPopupButton";
 // Check through Tailwind classes to find if there are any useless ones
 // Wrap list items into <ul> for better semantics - DONE
 // server side rendered svgs look really big on network tab, maybe make them smaller? Maybe don't need the spans.
+// Nav hover kinda differs compared to route based selection
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
