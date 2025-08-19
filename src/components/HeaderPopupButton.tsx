@@ -58,7 +58,7 @@ export default function HeaderPopupButton() {
     <>
       <button
         ref={buttonRef}
-        className="text-[var(--foreground)] h-10 ml-auto mr-2 md:mr-8 cursor-pointer"
+        className="text-[var(--foreground)] h-10 md:h-6 ml-auto md:ml-2 cursor-pointer"
         onClick={() => setOpen((o) => !o)}
         type="button"
         aria-label="Change theme and color scheme"

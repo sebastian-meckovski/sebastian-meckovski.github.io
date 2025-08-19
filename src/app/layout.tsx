@@ -64,8 +64,8 @@ export default async function RootLayout({
               <span className="text-[var(--accent)]">Meckovski</span>
             </Link>
           </div>
-          <HeaderPopupButton />
           <Nav />
+          <HeaderPopupButton />
         </header>
         <main className="container flex-1 px-8 py-12 mx-auto">{children}</main>
         <footer className="mt-12 py-8 text-center text-xs bg-[var(--header-bg)]">
