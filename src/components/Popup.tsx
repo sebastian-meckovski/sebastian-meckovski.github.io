@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 interface PopupProps {
   open: boolean;
@@ -15,6 +15,13 @@ export default function Popup({
   children,
 }: PopupProps) {
   const popupRef = useRef<HTMLDialogElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setVisible(true);
+    }
+  }, [open]);
 
   // Close on outside click
   useEffect(() => {
@@ -53,18 +60,22 @@ export default function Popup({
     popup.style.left = `${Math.max(left, 8)}px`;
   }, [open, anchorRef]);
 
-
   function onAnimationEnd(e: React.AnimationEvent<HTMLDialogElement>): void {
-    if (e.animationName === 'popup-fade-out') {
-      (e.target as HTMLDialogElement).className = 'popup-did-fade-out';
+    if (e.animationName === "popup-fade-out" && popupRef.current) {
+      setVisible(false);
     }
   }
 
+  if (!open && !visible) {
+    return null;
+  }
   return (
     <dialog
       ref={popupRef}
       open
-      className={`${open ? "popup-fade-in" : "popup-fade-out"} max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-lg rounded-xl border p-6`}
+      className={`${
+        open ? "popup-fade-in" : "popup-fade-out"
+      } max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-lg rounded-xl border p-6`}
       onAnimationEnd={onAnimationEnd}
       aria-modal="true"
       role="dialog"

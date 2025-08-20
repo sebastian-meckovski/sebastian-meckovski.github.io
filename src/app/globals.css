@@ -97,10 +97,6 @@ header button {
   transform: translateY(2rem);
 }
 
-.popup-did-fade-out {
-  display: none;
-}
-
 main > * {
   animation: popup-fade-in 0.35s ease-out;
 }
