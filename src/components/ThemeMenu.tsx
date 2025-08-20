@@ -5,7 +5,7 @@ import { getCookie } from "@/helpers/cookies";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBrush } from "@fortawesome/free-solid-svg-icons";
 
-export default function HeaderPopupButton() {
+export default function ThemeMenu() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState<string>("auto");

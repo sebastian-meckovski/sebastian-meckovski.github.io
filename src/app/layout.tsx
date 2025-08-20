@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import HeaderPopupButton from "@/components/HeaderPopupButton";
+import ThemeMenu from "@/components/ThemeMenu";
 
 // Todo:
 // Move nav logic here (no need to have Nav component)
@@ -66,7 +66,7 @@ export default async function RootLayout({
             </Link>
           </div>
           <Nav />
-          <HeaderPopupButton />
+          <ThemeMenu />
         </header>
         <main className="container flex-1 px-8 py-12 mx-auto">{children}</main>
         <footer className="mt-12 py-8 text-center text-xs bg-[var(--header-bg)]">
