@@ -74,22 +74,27 @@ export default function ThemeMenu() {
         />
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
-        <div className="flex flex-col items-center justify-center h-full">
-            <button
-              type="button"
-              aria-label="Close popup"
-              className="absolute top-4 right-4 text-[var(--foreground)] hover:text-[var(--accent)]"
-              onClick={() => setOpen(false)}
-            >
-              <span className="sr-only">Close</span>
-              <FontAwesomeIcon icon={faClose} size="2x" />
-            </button>
-          <h2 className="text-lg font-semibold mb-2 hover:">Popup Content</h2>
-          <div className="flex flex-col gap-4 items-center">
+        <div className="flex flex-col items-start justify-start h-full">
+          <button
+            type="button"
+            aria-label="Close popup"
+            className="absolute top-4 right-4 text-[var(--foreground)] hover:text-[var(--accent)]"
+            onClick={() => setOpen(false)}
+          >
+            <span className="sr-only">Close</span>
+            <FontAwesomeIcon icon={faClose} size="2x" />
+          </button>
+          <h2 className="text-xl font-semibold mt-6 mb-4 text">
+            Customize Appearance
+          </h2>
+          <div className="flex flex-col gap-4 items-center justify-start items-start">
             <div className="flex items-center gap-4">
               <span className="font-medium">Theme:</span>
               {themes.map((t) => (
-                <label key={t} className="flex items-center gap-1 cursor-pointer">
+                <label
+                  key={t}
+                  className="flex items-center gap-1 cursor-pointer"
+                >
                   <input
                     type="radio"
                     name="theme"
@@ -102,10 +107,14 @@ export default function ThemeMenu() {
                 </label>
               ))}
             </div>
+            <p className="text-xs">Auto uses your system setting.</p>
             <div className="flex items-center gap-4">
               <span className="font-medium">Accent:</span>
               {colorSchemes.map((c) => (
-                <label key={c} className="flex items-center gap-1 cursor-pointer">
+                <label
+                  key={c}
+                  className="flex items-center gap-1 cursor-pointer"
+                >
                   <input
                     type="radio"
                     name="color-scheme"
@@ -118,6 +127,9 @@ export default function ThemeMenu() {
                 </label>
               ))}
             </div>
+            <p className="text-xs">
+              Settings are saved in your browser&apos;s cookies.
+            </p>
           </div>
         </div>
       </Popup>
