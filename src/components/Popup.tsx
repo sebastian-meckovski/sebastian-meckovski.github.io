@@ -42,22 +42,30 @@ export default function Popup({
 
   // Positioning logic
   useEffect(() => {
-    if (!open || !popupRef.current || !anchorRef.current) return;
-    const popup = popupRef.current;
-    const anchor = anchorRef.current;
-    const anchorRect = anchor.getBoundingClientRect();
-    const popupRect = popup.getBoundingClientRect();
-    let top = anchorRect.bottom + 2;
-    let left = anchorRect.left;
-    // Check for overflow
-    if (top + popupRect.height > window.innerHeight) {
-      top = anchorRect.top - popupRect.height - 8;
+    function positionPopup() {
+      if (!open || !popupRef.current || !anchorRef.current) return;
+      const popup = popupRef.current;
+      const anchor = anchorRef.current;
+      const anchorRect = anchor.getBoundingClientRect();
+      const popupRect = popup.getBoundingClientRect();
+      let top = anchorRect.bottom + 2;
+      let left = anchorRect.left;
+      // Check for overflow
+      if (top + popupRect.height > window.innerHeight) {
+        top = anchorRect.top - popupRect.height - 8;
+      }
+      if (left + popupRect.width > window.innerWidth) {
+        left = window.innerWidth - popupRect.width - 8;
+      }
+      popup.style.top = `${Math.max(top, 8)}px`;
+      popup.style.left = `${Math.max(left, 8)}px`;
     }
-    if (left + popupRect.width > window.innerWidth) {
-      left = window.innerWidth - popupRect.width - 8;
-    }
-    popup.style.top = `${Math.max(top, 8)}px`;
-    popup.style.left = `${Math.max(left, 8)}px`;
+    positionPopup();
+    if (!open) return;
+    window.addEventListener("resize", positionPopup);
+    return () => {
+      window.removeEventListener("resize", positionPopup);
+    };
   }, [open, anchorRef]);
 
   function onAnimationEnd(e: React.AnimationEvent<HTMLDialogElement>): void {
