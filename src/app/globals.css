@@ -63,7 +63,7 @@ header button {
 }
 
 /* --- Simple page fade/slide-in animation (SSR friendly) --- */
-@keyframes pageFadeIn {
+@keyframes popup-fade-in {
   from {
     opacity: 0;
     transform: translateY(2rem);
@@ -74,12 +74,35 @@ header button {
   }
 }
 
-.popup {
-  animation: pageFadeIn 0.2s ease-out;
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+
+.popup-fade-in {
+  animation: popup-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup-fade-out {
+  animation: popup-fade-out 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+.popup-did-fade-out {
+  display: none;
 }
 
 main > * {
-  animation: pageFadeIn 0.35s ease-out;
+  animation: popup-fade-in 0.35s ease-out;
 }
 
 /* --- Burger button bar transitions --- */
@@ -90,8 +113,13 @@ main > * {
 
 /* --- Blinking caret animation --- */
 @keyframes caret-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .caret-blink {

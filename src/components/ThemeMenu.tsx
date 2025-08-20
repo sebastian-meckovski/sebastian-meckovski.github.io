@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import Popup from "./Popup";
 import { getCookie } from "@/helpers/cookies";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrush } from "@fortawesome/free-solid-svg-icons";
+import { faBrush, faClose } from "@fortawesome/free-solid-svg-icons";
 
 export default function ThemeMenu() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -72,7 +72,16 @@ export default function ThemeMenu() {
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-center justify-center h-full">
-          <h2 className="text-lg font-semibold mb-2">Popup Content</h2>
+            <button
+              type="button"
+              aria-label="Close popup"
+              className="absolute top-4 right-4 text-[var(--foreground)] hover:text-[var(--accent)]"
+              onClick={() => setOpen(false)}
+            >
+              <span className="sr-only">Close</span>
+              <FontAwesomeIcon icon={faClose} size="2x" />
+            </button>
+          <h2 className="text-lg font-semibold mb-2 hover:">Popup Content</h2>
           <div className="flex flex-col gap-4 items-center">
             <div className="flex items-center gap-4">
               <span className="font-medium">Theme:</span>

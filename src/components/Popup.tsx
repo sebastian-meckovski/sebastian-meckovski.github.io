@@ -53,13 +53,19 @@ export default function Popup({
     popup.style.left = `${Math.max(left, 8)}px`;
   }, [open, anchorRef]);
 
-  if (!open) return null;
+
+  function onAnimationEnd(e: React.AnimationEvent<HTMLDialogElement>): void {
+    if (e.animationName === 'popup-fade-out') {
+      (e.target as HTMLDialogElement).className = 'popup-did-fade-out';
+    }
+  }
 
   return (
     <dialog
       ref={popupRef}
       open
-      className="popup max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-lg rounded-xl border p-6"
+      className={`${open ? "popup-fade-in" : "popup-fade-out"} max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-lg rounded-xl border p-6`}
+      onAnimationEnd={onAnimationEnd}
       aria-modal="true"
       role="dialog"
     >
