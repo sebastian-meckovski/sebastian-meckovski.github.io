@@ -11,6 +11,9 @@ export default function ThemeMenu() {
   const [theme, setTheme] = useState<string>("auto");
   const [colorScheme, setColorScheme] = useState<string>("blue");
 
+  const themes = ["light", "dark", "auto"] as const;
+  const colorSchemes = ["blue", "red", "green"] as const;
+
   // Read theme and color-scheme from cookies on mount
   useEffect(() => {
     const themeCookie = getCookie("theme");
@@ -85,75 +88,35 @@ export default function ThemeMenu() {
           <div className="flex flex-col gap-4 items-center">
             <div className="flex items-center gap-4">
               <span className="font-medium">Theme:</span>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input
-                  type="radio"
-                  name="theme"
-                  value="light"
-                  className="accent-[var(--accent)]"
-                  checked={theme === "light"}
-                  onChange={handleThemeChange}
-                />
-                <span>Light</span>
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input
-                  type="radio"
-                  name="theme"
-                  value="dark"
-                  className="accent-[var(--accent)]"
-                  checked={theme === "dark"}
-                  onChange={handleThemeChange}
-                />
-                <span>Dark</span>
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input
-                  type="radio"
-                  name="theme"
-                  value="auto"
-                  className="accent-[var(--accent)]"
-                  checked={theme === "auto"}
-                  onChange={handleThemeChange}
-                />
-                <span>Auto</span>
-              </label>
+              {themes.map((t) => (
+                <label key={t} className="flex items-center gap-1 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="theme"
+                    value={t}
+                    className="accent-[var(--accent)]"
+                    checked={theme === t}
+                    onChange={handleThemeChange}
+                  />
+                  <span>{t.charAt(0).toUpperCase() + t.slice(1)}</span>
+                </label>
+              ))}
             </div>
             <div className="flex items-center gap-4">
               <span className="font-medium">Accent:</span>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input
-                  type="radio"
-                  name="color-scheme"
-                  value="blue"
-                  className="accent-[var(--accent)]"
-                  checked={colorScheme === "blue"}
-                  onChange={handleColorSchemeChange}
-                />
-                <span>Blue</span>
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input
-                  type="radio"
-                  name="color-scheme"
-                  value="red"
-                  className="accent-[var(--accent)]"
-                  checked={colorScheme === "red"}
-                  onChange={handleColorSchemeChange}
-                />
-                <span>Red</span>
-              </label>
-              <label className="flex items-center gap-1 cursor-pointer">
-                <input
-                  type="radio"
-                  name="color-scheme"
-                  value="green"
-                  className="accent-[var(--accent)]"
-                  checked={colorScheme === "green"}
-                  onChange={handleColorSchemeChange}
-                />
-                <span>Green</span>
-              </label>
+              {colorSchemes.map((c) => (
+                <label key={c} className="flex items-center gap-1 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="color-scheme"
+                    value={c}
+                    className="accent-[var(--accent)]"
+                    checked={colorScheme === c}
+                    onChange={handleColorSchemeChange}
+                  />
+                  <span>{c.charAt(0).toUpperCase() + c.slice(1)}</span>
+                </label>
+              ))}
             </div>
           </div>
         </div>
