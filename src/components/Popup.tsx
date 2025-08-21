@@ -83,7 +83,7 @@ export default function Popup({
       open
       className={`${
         open ? "popup-fade-in" : "popup-fade-out"
-      } max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-lg rounded-xl border p-6`}
+      } max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-2xl rounded-2xl border border-solid border-[var(--foreground)]/20 p-8`}
       onAnimationEnd={onAnimationEnd}
       aria-modal="true"
       role="dialog"

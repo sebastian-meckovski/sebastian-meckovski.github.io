@@ -11,8 +11,20 @@ export default function ThemeMenu() {
   const [theme, setTheme] = useState<string>("auto");
   const [colorScheme, setColorScheme] = useState<string>("blue");
 
-  const themes = ["light", "dark", "auto"] as const;
-  const colorSchemes = ["blue", "red", "green"] as const;
+  const themes = [
+    { name: "light", backgroundColor: "#ffffff" },
+    { name: "dark", backgroundColor: "#000000" },
+    {
+      name: "auto",
+      backgroundColor: "linear-gradient(#ffffff 50%, #000000 50%)",
+    },
+  ] as const;
+
+  const colorSchemes = [
+    { name: "blue", color: "#3b82f6" },
+    { name: "red", color: "#ef4444" },
+    { name: "green", color: "#22c55e" },
+  ] as const;
 
   // Read theme and color-scheme from cookies on mount
   useEffect(() => {
@@ -84,46 +96,70 @@ export default function ThemeMenu() {
             <span className="sr-only">Close</span>
             <FontAwesomeIcon icon={faClose} size="2x" />
           </button>
-          <h2 className="text-xl font-semibold mt-6 mb-4 text">
-            Customize Appearance
-          </h2>
+          <h2 className="text-xl font-semibold my-4">Customize Appearance</h2>
           <div className="flex flex-col gap-4 items-center justify-start items-start">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <span className="font-medium">Theme:</span>
               {themes.map((t) => (
                 <label
-                  key={t}
-                  className="flex items-center gap-1 cursor-pointer"
+                  key={t.name}
+                  className="flex flex-col items-center gap-2 cursor-pointer"
                 >
                   <input
                     type="radio"
                     name="theme"
-                    value={t}
-                    className="accent-[var(--accent)]"
-                    checked={theme === t}
+                    value={t.name}
+                    className="sr-only peer"
+                    checked={theme === t.name}
                     onChange={handleThemeChange}
                   />
-                  <span>{t.charAt(0).toUpperCase() + t.slice(1)}</span>
+                  <span
+                    style={{
+                      background: t.backgroundColor,
+                    }}
+                    className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors"
+                  >
+                    <span className="w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></span>
+                  </span>
+                  {t.name && (
+                    <span>
+                      {t.name.charAt(0).toUpperCase() + t.name.slice(1)}
+                    </span>
+                  )}
                 </label>
               ))}
             </div>
             <p className="text-xs">Auto uses your system setting.</p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center">
               <span className="font-medium">Accent:</span>
               {colorSchemes.map((c) => (
                 <label
-                  key={c}
-                  className="flex items-center gap-1 cursor-pointer"
+                  key={c.name}
+                  className="flex flex-col items-center cursor-pointer"
                 >
                   <input
                     type="radio"
                     name="color-scheme"
-                    value={c}
-                    className="accent-[var(--accent)]"
-                    checked={colorScheme === c}
+                    value={c.name}
+                    className="sr-only peer"
+                    checked={colorScheme === c.name}
                     onChange={handleColorSchemeChange}
                   />
-                  <span>{c.charAt(0).toUpperCase() + c.slice(1)}</span>
+                  <span
+                    style={{
+                      borderColor: c.color,
+                      backgroundColor:
+                        colorScheme === c.name ? c.color : "transparent",
+                    }}
+                    className={`w-10 h-10 rounded-full border-3 flex items-center justify-center mx-2`}
+                  >
+                    <span
+                      className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2`}
+                    ></span>
+                  </span>
+                  <span style={{ color: c.color }}>
+                    {c.name.charAt(0).toUpperCase() + c.name.slice(1)}
+                  </span>
                 </label>
               ))}
             </div>
