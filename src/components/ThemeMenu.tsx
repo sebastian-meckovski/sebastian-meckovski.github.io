@@ -21,9 +21,9 @@ export default function ThemeMenu() {
   ] as const;
 
   const colorSchemes = [
-    { name: "blue", color: "#3b82f6" },
-    { name: "red", color: "#ef4444" },
-    { name: "green", color: "#22c55e" },
+    { name: "blue", color: "#00bcd4" },
+    { name: "red", color: "#ff3b30" },
+    { name: "green", color: "#2ecc40" },
   ] as const;
 
   // Read theme and color-scheme from cookies on mount
@@ -98,12 +98,12 @@ export default function ThemeMenu() {
           </button>
           <h2 className="text-xl font-semibold my-4">Customize Appearance</h2>
           <div className="flex flex-col gap-4 items-center justify-start items-start">
-            <div className="flex items-center gap-3">
-              <span className="font-medium">Theme:</span>
+            <span className="font-medium">Theme:</span>
+            <div className="flex items-center gap-2 flex-wrap">
               {themes.map((t) => (
                 <label
                   key={t.name}
-                  className="flex flex-col items-center gap-2 cursor-pointer"
+                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[3rem]"
                 >
                   <input
                     type="radio"
@@ -114,28 +114,27 @@ export default function ThemeMenu() {
                     onChange={handleThemeChange}
                   />
                   <span
-                    style={{
-                      background: t.backgroundColor,
-                    }}
-                    className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors"
+                      style={{
+                        background: t.backgroundColor,
+                        borderColor: theme === t.name ? 'var(--accent)' : undefined,
+                      }}
+                      className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors m-auto"
                   >
                     <span className="w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></span>
                   </span>
-                  {t.name && (
-                    <span>
-                      {t.name.charAt(0).toUpperCase() + t.name.slice(1)}
-                    </span>
-                  )}
+                  <span>
+                    {t.name.charAt(0).toUpperCase() + t.name.slice(1)}
+                  </span>
                 </label>
               ))}
             </div>
             <p className="text-xs">Auto uses your system setting.</p>
-            <div className="flex items-center">
-              <span className="font-medium">Accent:</span>
+            <span className="font-medium">Accent:</span>
+            <div className="flex items-center gap-2 flex-wrap">
               {colorSchemes.map((c) => (
                 <label
                   key={c.name}
-                  className="flex flex-col items-center cursor-pointer"
+                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[3rem]"
                 >
                   <input
                     type="radio"
@@ -151,7 +150,7 @@ export default function ThemeMenu() {
                       backgroundColor:
                         colorScheme === c.name ? c.color : "transparent",
                     }}
-                    className={`w-10 h-10 rounded-full border-3 flex items-center justify-center mx-2`}
+                    className={`w-10 h-10 rounded-full border-3 flex items-center justify-center m-auto`}
                   >
                     <span
                       className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2`}
