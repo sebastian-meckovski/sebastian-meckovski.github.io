@@ -1,4 +1,6 @@
 "use client";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRef, useEffect, useState } from "react";
 
 interface PopupProps {
@@ -83,11 +85,20 @@ export default function Popup({
       open
       className={`${
         open ? "popup-fade-in" : "popup-fade-out"
-      } max-w-[95vw] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-2xl rounded-2xl border border-solid border-[var(--foreground)]/20 p-8`}
+      } max-w-[95vw] max-h-[95vh] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-2xl rounded-2xl border border-solid border-[var(--foreground)]/20 p-8 overflow-y-auto`}
       onAnimationEnd={onAnimationEnd}
       aria-modal="true"
       role="dialog"
     >
+      <button
+        type="button"
+        aria-label="Close popup"
+        className="absolute top-4 right-4 text-[var(--foreground)] hover:text-[var(--accent)]"
+        onClick={() => onClose()}
+      >
+        <span className="sr-only">Close</span>
+        <FontAwesomeIcon icon={faClose} size="2x" />
+      </button>
       {children}
     </dialog>
   );

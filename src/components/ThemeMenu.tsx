@@ -87,15 +87,6 @@ export default function ThemeMenu() {
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-start justify-start h-full">
-          <button
-            type="button"
-            aria-label="Close popup"
-            className="absolute top-4 right-4 text-[var(--foreground)] hover:text-[var(--accent)]"
-            onClick={() => setOpen(false)}
-          >
-            <span className="sr-only">Close</span>
-            <FontAwesomeIcon icon={faClose} size="2x" />
-          </button>
           <h2 className="text-xl font-semibold my-4">Customize Appearance</h2>
           <div className="flex flex-col gap-4 items-center justify-start items-start">
             <span className="font-medium">Theme:</span>
@@ -114,11 +105,12 @@ export default function ThemeMenu() {
                     onChange={handleThemeChange}
                   />
                   <span
-                      style={{
-                        background: t.backgroundColor,
-                        borderColor: theme === t.name ? 'var(--accent)' : undefined,
-                      }}
-                      className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors m-auto"
+                    style={{
+                      background: t.backgroundColor,
+                      borderColor:
+                        theme === t.name ? "var(--accent)" : undefined,
+                    }}
+                    className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors m-auto"
                   >
                     <span className="w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></span>
                   </span>
