@@ -58,7 +58,8 @@ body {
 
 header nav a,
 header span,
-header button {
+header button,
+main span {
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
