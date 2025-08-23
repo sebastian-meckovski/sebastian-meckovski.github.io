@@ -51,16 +51,17 @@ export default function Popup({
       const anchorRect = anchor.getBoundingClientRect();
       const popupRect = popup.getBoundingClientRect();
       let top = anchorRect.bottom + 2;
-      let left = anchorRect.left;
+      let right = window.innerWidth - (anchorRect.left + popupRect.width);
       // Check for overflow
       if (top + popupRect.height > window.innerHeight) {
         top = anchorRect.top - popupRect.height - 8;
       }
-      if (left + popupRect.width > window.innerWidth) {
-        left = window.innerWidth - popupRect.width - 8;
+      if (right < 8) {
+        right = 8;
       }
       popup.style.top = `${Math.max(top, 8)}px`;
-      popup.style.left = `${Math.max(left, 8)}px`;
+      popup.style.right = `${Math.max(right, 8)}px`;
+      popup.style.left = 'auto';
     }
     positionPopup();
     if (!open) return;
