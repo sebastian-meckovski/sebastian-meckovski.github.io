@@ -4,28 +4,13 @@ import Popup from "./Popup";
 import { getCookie } from "@/helpers/cookies";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBrush, faClose } from "@fortawesome/free-solid-svg-icons";
+import { themes, colorSchemes } from "@/data/theme-config";
 
 export default function ThemeMenu() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState<string>("auto");
-  const [colorScheme, setColorScheme] = useState<string>("blue");
-
-  const themes = [
-    { name: "light", label: "Light", backgroundColor: "#ffffff" },
-    { name: "dark", label: "Dark", backgroundColor: "#000000" },
-    {
-      name: "auto",
-      label: "Auto*",
-      backgroundColor: "linear-gradient(#ffffff 50%, #000000 50%)",
-    },
-  ] as const;
-
-  const colorSchemes = [
-    { name: "blue", label: "Blue", color: "#00bcd4" },
-    { name: "red", label: "Red", color: "#ff3b30" },
-    { name: "green", label: "Green", color: "#2ecc40" },
-  ] as const;
+  const [colorScheme, setColorScheme] = useState<string>("cyan");
 
   // Read theme and color-scheme from cookies on mount
   useEffect(() => {
@@ -43,8 +28,8 @@ export default function ThemeMenu() {
         colorSchemeCookie
       );
     } else {
-      setColorScheme("blue");
-      document.documentElement.setAttribute("data-color-scheme", "blue");
+      setColorScheme("cyan");
+      document.documentElement.setAttribute("data-color-scheme", "cyan");
     }
   }, []);
 
@@ -91,11 +76,11 @@ export default function ThemeMenu() {
           <h2 className="text-xl font-semibold my-4">Customize Appearance</h2>
           <div className="flex flex-col gap-4 items-center justify-start items-start">
             <span className="font-medium">Theme:</span>
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap mx-auto justify-center">
               {themes.map((t) => (
                 <label
                   key={t.name}
-                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[3rem]"
+                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[5rem]"
                 >
                   <input
                     type="radio"
@@ -121,11 +106,14 @@ export default function ThemeMenu() {
             </div>
             <p className="text-xs">*Auto uses your system theme setting.</p>
             <span className="font-medium">Accent:</span>
-            <div className="flex items-center gap-2 flex-wrap">
+            <div>
+              
+            </div>
+            <div className="flex items-center gap-2 flex-wrap mx-auto justify-center">
               {colorSchemes.map((c) => (
                 <label
                   key={c.name}
-                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[3rem]"
+                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[5rem]"
                 >
                   <input
                     type="radio"

@@ -41,7 +41,7 @@ export default async function RootLayout({
   const theme = cookieStore.get("theme");
   const colorScheme = cookieStore.get("color-scheme");
   const themeAttr = theme && theme.value !== "auto" ? theme.value : undefined;
-  const colorSchemeAttr = colorScheme ? colorScheme.value : "blue";
+  const colorSchemeAttr = colorScheme ? colorScheme.value : "cyan";
 
   // Build html attributes
   const htmlAttrs: Record<string, string> = { lang: "en" };

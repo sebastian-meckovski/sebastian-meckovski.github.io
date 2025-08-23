@@ -86,7 +86,7 @@ export default function Popup({
       open
       className={`${
         open ? "popup-fade-in" : "popup-fade-out"
-      } sm:max-w-[25rem]  max-w-[95vw]  max-h-[95vh] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-2xl rounded-2xl border border-solid border-[var(--foreground)]/20 p-8 overflow-y-auto`}
+      } sm:max-w-[23rem]  max-w-[95vw]  max-h-[95vh] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-2xl rounded-2xl border border-solid border-[var(--foreground)]/20 p-8 overflow-y-auto`}
       onAnimationEnd={onAnimationEnd}
       aria-modal="true"
       role="dialog"

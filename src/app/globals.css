@@ -7,45 +7,54 @@
   }
 }
 
-/* Default (light) theme */
+/* Default (light) theme with more sophisticated colors */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --header-bg: #b6d0f7;
-  --accent: #00bcd4; /* blue (default) */
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --header-bg: #e2e8f0;
+  --accent: #06b6d4; /* cyan (default) */
 }
 
-html[data-color-scheme="blue"] {
-  --accent: #00bcd4;
+html[data-color-scheme="cyan"] {
+  --accent: #06b6d4;
 }
-html[data-color-scheme="red"] {
-  --accent: #ff3b30;
+html[data-color-scheme="purple"] {
+  --accent: #8b5cf6;
 }
-html[data-color-scheme="green"] {
-  --accent: #2ecc40;
+html[data-color-scheme="emerald"] {
+  --accent: #10b981;
+}
+html[data-color-scheme="orange"] {
+  --accent: #f97316;
+}
+html[data-color-scheme="rose"] {
+  --accent: #f43f5e;
+}
+html[data-color-scheme="stone"] {
+  --accent: #78716c;
 }
 
-/* Dark theme via attribute */
+/* Dark theme via attribute with richer colors */
 html[data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --header-bg: #003457;
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --header-bg: #1e293b;
 }
 
 /* Light theme via attribute */
 html[data-theme="light"] {
-  --background: #ffffff;
-  --foreground: #171717;
-  --header-bg: #b6d0f7;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --header-bg: #e2e8f0;
 }
 
 /* Fallback to prefers-color-scheme if no attribute is set */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --header-bg: #003457;
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --header-bg: #1e293b;
   }
 }
 
