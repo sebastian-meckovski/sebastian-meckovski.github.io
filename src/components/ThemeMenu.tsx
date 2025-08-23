@@ -12,18 +12,19 @@ export default function ThemeMenu() {
   const [colorScheme, setColorScheme] = useState<string>("blue");
 
   const themes = [
-    { name: "light", backgroundColor: "#ffffff" },
-    { name: "dark", backgroundColor: "#000000" },
+    { name: "light", label: "Light", backgroundColor: "#ffffff" },
+    { name: "dark", label: "Dark", backgroundColor: "#000000" },
     {
       name: "auto",
+      label: "Auto*",
       backgroundColor: "linear-gradient(#ffffff 50%, #000000 50%)",
     },
   ] as const;
 
   const colorSchemes = [
-    { name: "blue", color: "#00bcd4" },
-    { name: "red", color: "#ff3b30" },
-    { name: "green", color: "#2ecc40" },
+    { name: "blue", label: "Blue", color: "#00bcd4" },
+    { name: "red", label: "Red", color: "#ff3b30" },
+    { name: "green", label: "Green", color: "#2ecc40" },
   ] as const;
 
   // Read theme and color-scheme from cookies on mount
@@ -114,13 +115,11 @@ export default function ThemeMenu() {
                   >
                     <span className="w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></span>
                   </span>
-                  <span>
-                    {t.name.charAt(0).toUpperCase() + t.name.slice(1)}
-                  </span>
+                  <span>{t.label}</span>
                 </label>
               ))}
             </div>
-            <p className="text-xs">Auto uses your system setting.</p>
+            <p className="text-xs">*Auto uses your system theme setting.</p>
             <span className="font-medium">Accent:</span>
             <div className="flex items-center gap-2 flex-wrap">
               {colorSchemes.map((c) => (
@@ -148,9 +147,7 @@ export default function ThemeMenu() {
                       className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2`}
                     ></span>
                   </span>
-                  <span style={{ color: c.color }}>
-                    {c.name.charAt(0).toUpperCase() + c.name.slice(1)}
-                  </span>
+                  <span style={{ color: c.color }}>{c.label}</span>
                 </label>
               ))}
             </div>
