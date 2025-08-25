@@ -1,5 +1,13 @@
 import Typewriter from "@/components/typewriter";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faGithub,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -29,18 +37,46 @@ export default function Home() {
         implementing new technologies.
       </p>
       <div className="flex gap-6 mb-6">
-        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
-          L
-        </span>
-        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
-          F
-        </span>
-        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
-          I
-        </span>
-        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
-          E
-        </span>
+        <Link
+          href="https://www.linkedin.com/in/sebastian-meckovski"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            style={{ width: "2.5rem", height: "2.5rem" }}
+          />
+        </Link>
+        <Link
+          href="https://www.facebook.com/sebastian.meckovski"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faFacebook}
+            style={{ width: "2.5rem", height: "2.5rem" }}
+          />
+        </Link>
+        <Link
+          href="https://www.instagram.com/sebastian_meckovski/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faInstagram}
+            style={{ width: "2.5rem", height: "2.5rem" }}
+          />
+        </Link>
+        <Link
+          href="https://www.instagram.com/sebastian_meckovski/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon
+            icon={faGithub}
+            style={{ width: "2.5rem", height: "2.5rem" }}
+          />
+        </Link>
       </div>
       <button className="py-2 px-8 rounded-full text-lg font-bold border border-gray-400 bg-transparent">
         Hire Me
