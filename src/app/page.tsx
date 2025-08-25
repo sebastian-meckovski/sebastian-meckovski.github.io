@@ -16,15 +16,21 @@ export default function Home() {
   const iconStyle = { width: "2rem", height: "2rem" };
   return (
     <div className="flex flex-col items-center w-full">
-      <Image
-        src="/seb-portrait.jpg"
-        id="seb-portrait"
-        alt="Sebastian Meckovski portrait"
-        width={600}
-        height={600}
-        className="w-90 mb-8 object-cover rounded-full border-2 border-gray-300 hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
-        priority
-      />
+      <div className="relative mb-8 flex items-center justify-center">
+        <Image
+          src="/seb-portrait.jpg"
+          id="seb-portrait"
+          alt="Sebastian Meckovski portrait"
+          width={500}
+          height={500}
+          className="w-[24rem] relative object-cover rounded-full hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
+          priority
+        />
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-full shadow-[0_0_45px_2px_var(--accent)] opacity-[var(--image-shadow-blur)] blur-[1px]"
+        />
+      </div>
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
         Hi, Seb here
       </h1>
