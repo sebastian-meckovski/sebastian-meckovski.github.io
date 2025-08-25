@@ -15,6 +15,7 @@ import ThemeMenu from "@/components/ThemeMenu";
 // Wrap list items into <ul> for better semantics - DONE
 // server side rendered svgs look really big on network tab, maybe make them smaller? Maybe don't need the spans.
 // Nav hover kinda differs compared to route based selection
+// Typewriter effect breaks on new line on mobiles
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
