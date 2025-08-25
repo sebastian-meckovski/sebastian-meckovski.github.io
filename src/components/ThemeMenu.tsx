@@ -66,6 +66,7 @@ export default function ThemeMenu() {
       clone.style.position = "absolute";
       clone.style.top = img.offsetTop + "px";
       clone.style.left = img.offsetLeft + "px";
+      clone.style.width = img.offsetWidth + "px";
       clone.style.zIndex = "0";
       img.style.zIndex = "1";
 
