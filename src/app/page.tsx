@@ -97,7 +97,7 @@ export default function Home() {
       </div>
       <Link
         href="/contact"
-        className="inline-flex items-center px-8 py-2 rounded-full border border-[var(--accent)] text-lg font-bold text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
+        className="inline-flex items-center px-8 py-2 rounded-full border text-lg font-bold hover:bg-[var(--accent)] hover:text-white"
       >
         Hire Me
       </Link>
