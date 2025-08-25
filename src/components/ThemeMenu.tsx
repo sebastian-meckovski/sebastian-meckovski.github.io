@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import Popup from "./Popup";
 import { getCookie } from "@/helpers/cookies";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrush, faClose } from "@fortawesome/free-solid-svg-icons";
+import { faBrush } from "@fortawesome/free-solid-svg-icons";
 import { themes, colorSchemes } from "@/data/theme-config";
 
 export default function ThemeMenu() {
