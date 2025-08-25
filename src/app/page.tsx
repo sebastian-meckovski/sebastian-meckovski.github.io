@@ -95,9 +95,12 @@ export default function Home() {
           </Link>
         </span>
       </div>
-      <button className="py-2 px-8 rounded-full text-lg font-bold border bg-transparent">
+      <Link
+        href="/contact"
+        className="inline-flex items-center px-8 py-2 rounded-full border border-[var(--accent)] text-lg font-bold text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white"
+      >
         Hire Me
-      </button>
+      </Link>
     </div>
   );
 }
