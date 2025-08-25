@@ -22,16 +22,24 @@ export default function Home() {
         alt="Sebastian Meckovski portrait"
         width={600}
         height={600}
-        className="w-90 h-90 mb-8 object-cover rounded-full border-2 border-gray-300 hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
+        className="w-90 mb-8 object-cover rounded-full border-2 border-gray-300 hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
         priority
       />
       <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
         Hi, Seb here
       </h1>
-      <div className="flex items-center gap-2 mb-2">
-        <span className="text-2xl">I am a</span>
+      <div
+        className="
+        flex flex-row items-center mb-2 whitespace-nowrap min-w-0
+        [@media(max-width:320px)]:flex-col
+        [@media(max-width:320px)]:items-start
+      "
+      >
+        <span className="text-2xl [@media(max-width:320px)]:text-center w-full">
+          I am a{" "}
+        </span>
         <Typewriter
-          words={["software engineer", "programmer", "web developer"]}
+          words={[" software engineer", " programmer", " web developer"]}
         />
       </div>
       <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-center mb-6">
@@ -72,7 +80,7 @@ export default function Home() {
         </span>
         <span className={socialCircleClass}>
           <Link
-            href="https://www.instagram.com/sebastian_meckovski/"
+            href="https://www.github.com/sebastian-meckovski/"
             target="_blank"
             rel="noopener noreferrer"
             className={socialLinkClass}
