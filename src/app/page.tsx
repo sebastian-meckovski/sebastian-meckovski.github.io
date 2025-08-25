@@ -10,9 +10,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
+  const socialCircleClass =
+    "w-12 h-12 flex items-center justify-center rounded-full border text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_16px_4px_var(--accent)]";
+  const socialLinkClass = "flex items-center justify-center w-full h-full";
+  const iconStyle = { width: "2rem", height: "2rem" };
   return (
     <div className="flex flex-col items-center w-full">
-      {/* Example: apply hue-cyan, hue-purple, etc. based on theme */}
       <Image
         src="/seb-portrait.jpg"
         id="seb-portrait"
@@ -37,48 +40,48 @@ export default function Home() {
         implementing new technologies.
       </p>
       <div className="flex gap-6 mb-6">
-        <Link
-          href="https://www.linkedin.com/in/sebastian-meckovski"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            style={{ width: "2.5rem", height: "2.5rem" }}
-          />
-        </Link>
-        <Link
-          href="https://www.facebook.com/sebastian.meckovski"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faFacebook}
-            style={{ width: "2.5rem", height: "2.5rem" }}
-          />
-        </Link>
-        <Link
-          href="https://www.instagram.com/sebastian_meckovski/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faInstagram}
-            style={{ width: "2.5rem", height: "2.5rem" }}
-          />
-        </Link>
-        <Link
-          href="https://www.instagram.com/sebastian_meckovski/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon
-            icon={faGithub}
-            style={{ width: "2.5rem", height: "2.5rem" }}
-          />
-        </Link>
+        <span className={socialCircleClass}>
+          <Link
+            href="https://www.linkedin.com/in/sebastian-meckovski"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={socialLinkClass}
+          >
+            <FontAwesomeIcon icon={faLinkedin} style={iconStyle} />
+          </Link>
+        </span>
+        <span className={socialCircleClass}>
+          <Link
+            href="https://www.facebook.com/sebastian.meckovski"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={socialLinkClass}
+          >
+            <FontAwesomeIcon icon={faFacebook} style={iconStyle} />
+          </Link>
+        </span>
+        <span className={socialCircleClass}>
+          <Link
+            href="https://www.instagram.com/sebastian_meckovski/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={socialLinkClass}
+          >
+            <FontAwesomeIcon icon={faInstagram} style={iconStyle} />
+          </Link>
+        </span>
+        <span className={socialCircleClass}>
+          <Link
+            href="https://www.instagram.com/sebastian_meckovski/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={socialLinkClass}
+          >
+            <FontAwesomeIcon icon={faGithub} style={iconStyle} />
+          </Link>
+        </span>
       </div>
-      <button className="py-2 px-8 rounded-full text-lg font-bold border border-gray-400 bg-transparent">
+      <button className="py-2 px-8 rounded-full text-lg font-bold border bg-transparent">
         Hire Me
       </button>
     </div>
