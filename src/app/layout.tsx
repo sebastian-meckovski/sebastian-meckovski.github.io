@@ -8,7 +8,7 @@ import ThemeMenu from "@/components/ThemeMenu";
 
 // Todo:
 // Move nav logic here (no need to have Nav component)
-// Theme popup logic, fade out animation, improve styling
+// Theme popup logic, fade out animation, improve styling - DONE
 // Sebastian Meckovski header shows up in two lines for some reason (nav issue) - DONE
 // Mobile nav change color on tap to indicate that it's being pressed
 // Check through Tailwind classes to find if there are any useless ones
