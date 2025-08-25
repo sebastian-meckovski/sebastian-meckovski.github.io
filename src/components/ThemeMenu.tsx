@@ -49,10 +49,39 @@ export default function ThemeMenu() {
 
   // Handle color scheme change and cookie
   function handleColorSchemeChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const imageHue = rootStyles.getPropertyValue("--image-hue");
+    const grayscale = rootStyles.getPropertyValue("--image-grayscale");
     const value = e.target.value;
     setColorScheme(value);
     document.cookie = `color-scheme=${value}; path=/;`;
     document.documentElement.setAttribute("data-color-scheme", value);
+
+    // Animate image with id 'seb-portrait' before applying filter
+    const img = document.getElementById("seb-portrait");
+    if (img) {
+      const clone = img.cloneNode(true) as HTMLElement;
+      img.parentElement?.insertBefore(clone, img.nextSibling);
+      clone.style.filter = `hue-rotate(${imageHue}) grayscale(${grayscale})`;
+      clone.style.position = "absolute";
+      clone.style.top = img.offsetTop + "px";
+      clone.style.left = img.offsetLeft + "px";
+      clone.style.zIndex = "0";
+      img.style.zIndex = "1";
+
+      // img.style.filter = 'none';
+      img.classList.add("img-fade");
+      img.addEventListener(
+        "animationend",
+        () => {
+          img.classList.remove("img-fade");
+          img.style.filter = "";
+          img.style.zIndex = "initial";
+          clone.remove();
+        },
+        { once: true }
+      );
+    }
   }
 
   return (
@@ -106,9 +135,7 @@ export default function ThemeMenu() {
             </div>
             <p className="text-xs">*Auto uses your system theme setting.</p>
             <span className="font-medium">Accent:</span>
-            <div>
-              
-            </div>
+            <div></div>
             <div className="flex items-center gap-2 flex-wrap mx-auto justify-center">
               {colorSchemes.map((c) => (
                 <label

@@ -1,14 +1,50 @@
 import Typewriter from "@/components/typewriter";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <section className="space-y-6">
-      <h1 className="text-4xl font-bold tracking-tight">Hi, Seb here</h1>
-      <span className="text-2xl">I am a </span>
-      <Typewriter words={["software engineer", "programmer", "web developer"]}/>
-      <p className="max-w-prose leading-relaxed">
-        A versatile software developer with 3 years of experience in frontend, backend, testing, and web technologies. Passionate about learning and implementing new technologies.
+    <div className="flex flex-col items-center w-full">
+      {/* Example: apply hue-cyan, hue-purple, etc. based on theme */}
+      <Image
+        src="/seb-portrait.jpg"
+        id="seb-portrait"
+        alt="Sebastian Meckovski portrait"
+        width={600}
+        height={600}
+        className="w-90 h-90 mb-8 object-cover rounded-full border-2 border-gray-300 hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
+        priority
+      />
+      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
+        Hi, Seb here
+      </h1>
+      <div className="flex items-center gap-2 mb-2">
+        <span className="text-2xl">I am a</span>
+        <Typewriter
+          words={["software engineer", "programmer", "web developer"]}
+        />
+      </div>
+      <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-center mb-6">
+        A versatile software developer with 3 years of experience in frontend,
+        backend, testing, and web technologies. Passionate about learning and
+        implementing new technologies.
       </p>
-    </section>
+      <div className="flex gap-6 mb-6">
+        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
+          L
+        </span>
+        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
+          F
+        </span>
+        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
+          I
+        </span>
+        <span className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-400 text-lg font-bold">
+          E
+        </span>
+      </div>
+      <button className="py-2 px-8 rounded-full text-lg font-bold border border-gray-400 bg-transparent">
+        Hire Me
+      </button>
+    </div>
   );
 }
