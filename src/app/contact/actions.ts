@@ -17,8 +17,8 @@ export async function submitContactForm(formData: FormData) {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme");
   const colorScheme = cookieStore.get("color-scheme");
-  console.log(theme);
-  console.log(colorScheme);
+  console.log('Theme:', theme);
+  console.log('Color Scheme:', colorScheme);
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -51,7 +51,7 @@ export async function submitContactForm(formData: FormData) {
     to: rawFormData.email,
     subject: "Thank you for your message!",
     text: `Hi ${rawFormData.name},\n\nThank you for contacting me. I have received your message and will get back to you as soon as possible.\n\nBest regards,\nSebastian Meckovski`,
-    html: emailTemplate,
+    html: emailTemplate.replace("{{name}}", rawFormData.name),
   };
 
   // Fire and forget: send both emails without waiting for the response.
