@@ -47,8 +47,8 @@ export async function submitContactForm(formData: FormData) {
 
   // Fire and forget: send both emails without waiting for the response.
   Promise.all([
-    transporter.sendMail(notificationMailOptions),
-    transporter.sendMail(confirmationMailOptions),
+    await transporter.sendMail(notificationMailOptions),
+    await transporter.sendMail(confirmationMailOptions),
   ]).catch((error) => {
     console.error("Error sending emails:", error);
   });
