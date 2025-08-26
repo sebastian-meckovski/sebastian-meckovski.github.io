@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
+import { emailTemplate } from "./emailTemplateString";
 
 export async function submitContactForm(formData: FormData) {
   const rawFormData = {
@@ -42,7 +43,7 @@ export async function submitContactForm(formData: FormData) {
     to: rawFormData.email,
     subject: "Thank you for your message!",
     text: `Hi ${rawFormData.name},\n\nThank you for contacting me. I have received your message and will get back to you as soon as possible.\n\nBest regards,\nSebastian Meckovski`,
-    html: `<p>Hi ${rawFormData.name},</p><p>Thank you for contacting me. I have received your message and will get back to you as soon as possible.</p><p>Best regards,<br>Sebastian Meckovski</p>`,
+    html: emailTemplate.replace("{{name}}", rawFormData.name),
   };
 
   // Fire and forget: send both emails without waiting for the response.
