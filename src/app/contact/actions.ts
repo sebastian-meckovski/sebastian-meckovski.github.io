@@ -14,9 +14,9 @@ export async function submitContactForm(formData: FormData) {
   };
 
   // for now just console log the cookies, we'll make amendments to the html template later
-  const cookieStore = cookies();
-  const colorScheme = (await cookieStore).get("color-scheme");
-  const theme = (await cookieStore).get("theme");
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme");
+  const colorScheme = cookieStore.get("color-scheme");
   console.log(theme);
   console.log(colorScheme);
 
