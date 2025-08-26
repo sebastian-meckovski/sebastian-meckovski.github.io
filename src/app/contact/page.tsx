@@ -5,7 +5,7 @@ export const metadata = { title: "Contact" };
 export default async function ContactPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { status } = await searchParams;
 
