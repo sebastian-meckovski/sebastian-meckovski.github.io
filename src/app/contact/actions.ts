@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 import { emailTemplate } from "./emailTemplateString";
+import { cookies } from "next/headers"; // ⬅️ Import cookies
 
 export async function submitContactForm(formData: FormData) {
   const rawFormData = {
@@ -11,6 +12,13 @@ export async function submitContactForm(formData: FormData) {
     subject: formData.get("subject") as string,
     message: formData.get("message") as string,
   };
+
+  // for now just console log the cookies, we'll make amendments to the html template later
+  const cookieStore = cookies();
+  const colorScheme = (await cookieStore).get("color-scheme");
+  const theme = (await cookieStore).get("theme");
+  console.log(theme);
+  console.log(colorScheme);
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -43,7 +51,7 @@ export async function submitContactForm(formData: FormData) {
     to: rawFormData.email,
     subject: "Thank you for your message!",
     text: `Hi ${rawFormData.name},\n\nThank you for contacting me. I have received your message and will get back to you as soon as possible.\n\nBest regards,\nSebastian Meckovski`,
-    html: emailTemplate.replace("{{name}}", rawFormData.name),
+    html: emailTemplate,
   };
 
   // Fire and forget: send both emails without waiting for the response.
