@@ -1,0 +1,57 @@
+"use server";
+
+import { redirect } from "next/navigation";
+import nodemailer from "nodemailer";
+
+export async function submitContactForm(formData: FormData) {
+  const rawFormData = {
+    name: formData.get("name") as string,
+    email: formData.get("email") as string,
+    subject: formData.get("subject") as string,
+    message: formData.get("message") as string,
+  };
+
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    requireTLS: true,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  const notificationMailOptions = {
+    from: `"${process.env.SMTP_NAME}" <${process.env.SMTP_USER}>`,
+    to: process.env.SMTP_USER,
+    replyTo: rawFormData.email,
+    subject: `New Contact Form Submission: ${rawFormData.subject}`,
+    text: `Name: ${rawFormData.name}\nEmail: ${rawFormData.email}\n\nMessage:\n${rawFormData.message}`,
+    html: `<p><strong>Name:</strong> ${
+      rawFormData.name
+    }</p><p><strong>Email:</strong> <a href="mailto:${rawFormData.email}">${
+      rawFormData.email
+    }</a></p><p><strong>Message:</strong></p><p>${rawFormData.message.replace(
+      /\n/g,
+      "<br>"
+    )}</p>`,
+  };
+
+  const confirmationMailOptions = {
+    from: `"${process.env.SMTP_NAME}" <${process.env.SMTP_USER}>`,
+    to: rawFormData.email,
+    subject: "Thank you for your message!",
+    text: `Hi ${rawFormData.name},\n\nThank you for contacting me. I have received your message and will get back to you as soon as possible.\n\nBest regards,\nSebastian Meckovski`,
+    html: `<p>Hi ${rawFormData.name},</p><p>Thank you for contacting me. I have received your message and will get back to you as soon as possible.</p><p>Best regards,<br>Sebastian Meckovski</p>`,
+  };
+
+  // Fire and forget: send both emails without waiting for the response.
+  Promise.all([
+    transporter.sendMail(notificationMailOptions),
+    transporter.sendMail(confirmationMailOptions),
+  ]).catch((error) => {
+    console.error("Error sending emails:", error);
+  });
+
+  redirect("/contact?status=success");
+}
