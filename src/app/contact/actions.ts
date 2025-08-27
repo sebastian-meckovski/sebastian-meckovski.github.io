@@ -53,7 +53,8 @@ export async function submitContactForm(formData: FormData) {
 
   const confirmationHtml = emailTemplate
     .replace("{{name}}", rawFormData.name)
-    .replaceAll("{{accent}}", accent);
+    .replaceAll("{{accent}}", accent)
+    .replace("{{year}}", new Date().getFullYear().toString());
 
   console.log("Generated Confirmation HTML:", confirmationHtml);
 

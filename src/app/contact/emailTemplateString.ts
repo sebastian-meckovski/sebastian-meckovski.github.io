@@ -171,7 +171,7 @@ export const emailTemplate = `
                       margin-top: 20px;
                     "
                   >
-                    &copy; 2025 Sebastian Meckovski. All rights reserved.<br />
+                    &copy; {{year}} Sebastian Meckovski. All rights reserved.<br />
                     Designed with passion &lt;/&gt;
                   </div>
                 </td>
