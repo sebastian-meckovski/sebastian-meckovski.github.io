@@ -1,6 +1,6 @@
 "use server";
 
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 import { emailTemplate } from "./emailTemplateString";
 import { getAccentColor } from "./accentColors";

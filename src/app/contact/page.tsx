@@ -1,4 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { submitContactForm } from "./actions";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import FormSubmitBehaviour from "./FormSumbitBehaviour";
 
 export const metadata = { title: "Contact" };
 
@@ -30,71 +33,82 @@ export default async function ContactPage({
   }
 
   return (
-    <div className="flex flex-col items-center w-full">
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
-        Contact Me
-      </h1>
-      <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-center mb-6">
-        Have a question or want to work together? Feel free to reach out.
-      </p>
-      <form action={submitContactForm} className="w-full max-w-2xl space-y-6">
-        <div>
-          <label htmlFor="name" className={labelClass}>
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className={inputClass}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className={labelClass}>
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className={inputClass}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="subject" className={labelClass}>
-            Subject
-          </label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            className={inputClass}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className={labelClass}>
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            className={inputClass}
-            required
-          ></textarea>
-        </div>
-        <div className="text-center">
+    <>
+      <FormSubmitBehaviour />
+      <div className="flex flex-col items-center w-full">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
+          Contact Me
+        </h1>
+        <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-center mb-6">
+          Have a question or want to work together? Feel free to reach out.
+        </p>
+        <form
+          action={submitContactForm}
+          id="contact-form"
+          className="w-full max-w-2xl space-y-6"
+        >
+          <div>
+            <label htmlFor="name" className={labelClass}>
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className={inputClass}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className={labelClass}>
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className={inputClass}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="subject" className={labelClass}>
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              className={inputClass}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="message" className={labelClass}>
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={5}
+              className={inputClass}
+              required
+            ></textarea>
+          </div>
           <button
             type="submit"
-            className="inline-flex items-center px-8 py-2 rounded-full border text-lg font-bold hover:bg-[var(--accent)] hover:text-white"
+            className="flex mx-auto items-center gap-2 px-8 py-2 rounded-full border text-lg font-bold hover:bg-[var(--accent)] hover:text-white"
           >
             Send Message
+            <div className="hidden">
+              <FontAwesomeIcon
+                icon={faSpinner}
+                className="animate-spin"
+              />
+            </div>
           </button>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </>
   );
 }
