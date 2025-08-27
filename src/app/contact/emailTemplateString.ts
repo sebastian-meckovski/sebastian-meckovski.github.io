@@ -28,7 +28,6 @@ export const emailTemplate = `
           margin: 40px auto;
           background: #ffffff;
           border-radius: 16px;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
           padding: 40px 32px;
           text-align: center;
           width: 100%;
@@ -54,7 +53,6 @@ export const emailTemplate = `
                       margin: 0 auto 20px;
                       border-radius: 50%;
                       background: {{accent}};
-                      box-shadow: 0 8px 24px {{accent}};
                     "
                   >
                     <tr>
@@ -138,7 +136,6 @@ export const emailTemplate = `
                       padding: 0.85em 1.8em;
                       border-radius: 50px;
                       font-weight: 600;
-                      box-shadow: 0 4px 10px rgba(0, 230, 118, 0.4);
                       font-size: 16px;
                     "
                   >
@@ -186,5 +183,4 @@ export const emailTemplate = `
     </center>
   </body>
 </html>
-
 `;
