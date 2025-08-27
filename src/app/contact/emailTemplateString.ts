@@ -139,7 +139,7 @@ export const emailTemplate = `
                       font-size: 16px;
                     "
                   >
-                    <b style="font-weight: 600">Visit my portfolio</b>
+                    <b style="font-weight: 600">Read more about me</b>
                   </a>
                 </td>
               </tr>
