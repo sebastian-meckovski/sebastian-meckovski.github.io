@@ -89,7 +89,7 @@ export default function ThemeMenu() {
     <>
       <button
         ref={buttonRef}
-        className="text-[var(--foreground)] h-10 md:h-6 ml-auto md:ml-2 cursor-pointer"
+        className="text-[var(--foreground)] h-[2.4rem] md:h-[2rem] 2xl:h-[1.6vw] ml-auto md:ml-[1.6vw] cursor-pointer"
         onClick={() => setOpen((o) => !o)}
         type="button"
         aria-label="Change theme and color scheme"
@@ -97,8 +97,10 @@ export default function ThemeMenu() {
         <span className="sr-only">Change theme</span>
         <FontAwesomeIcon
           icon={faBrush}
-          className="max-h-full max-w-full"
-          size="3x"
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
         />
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>

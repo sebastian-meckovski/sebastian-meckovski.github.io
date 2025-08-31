@@ -55,12 +55,12 @@ export default async function RootLayout({
         className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >
         <header
-          className="flex items-center justify-between px-8 py-4 bg-[var(--header-bg)]"
+          className="flex items-center justify-between px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw] bg-[var(--header-bg)]"
         >
           <div className="flex items-center gap-2">
             <Link
               href="/"
-              className="text-lg font-semibold mr-2 text-[var(--header-fg)]"
+              className="text-lg 2xl:text-[1.2vw] font-semibold mr-2 text-[var(--header-fg)]"
             >
               <span>Sebastian </span>
               <span className="text-[var(--accent)]">Meckovski</span>

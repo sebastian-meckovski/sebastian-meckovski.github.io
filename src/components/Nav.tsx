@@ -19,16 +19,16 @@ export default function Nav() {
       <nav
         id="main-nav"
         className="
-          flex gap-8 bg-[var(--background)] flex-col fixed top-0 left-0 w-full h-full items-center justify-center translate-x-full z-50 ml-auto
+          flex bg-[var(--background)] flex-col fixed top-0 left-0 w-full h-full items-center justify-center translate-x-full z-50 ml-auto
           md:bg-[var(--header-bg)] md:flex-row md:static md:justify-end md:translate-x-0 md:w-auto md:h-auto md:py-0 md:px-0
       "
       >
-        <ul className="flex flex-col gap-8 items-center md:flex-row md:gap-8">
+        <ul className="flex flex-col gap-8 2xl:gap-[1.2vw] items-center md:flex-row">
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="hover:text-[var(--accent)] whitespace-nowrap text-3xl md:text-base"
+                className="hover:text-[var(--accent)] whitespace-nowrap text-3xl md:text-base 2xl:text-[1vw]"
                 tabIndex={0}
               >
                 {l.label}
