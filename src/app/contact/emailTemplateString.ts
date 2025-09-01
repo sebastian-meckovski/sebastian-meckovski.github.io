@@ -126,7 +126,7 @@ export const emailTemplate = `
               <tr>
                 <td align="center">
                   <a
-                    href="https://sebastian-meckovski.com/portfolio"
+                    href="https://sebastian-meckovski.com"
                     target="_blank"
                     style="
                       display: inline-block;
