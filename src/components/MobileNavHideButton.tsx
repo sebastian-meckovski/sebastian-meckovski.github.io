@@ -12,8 +12,8 @@ export default function MobileNavHideButton() {
       className="md:hidden absolute bottom-4 right-4 bg-[var(--accent)] text-white rounded-full px-4 py-3 shadow-lg flex items-center gap-2"
       aria-label="Close menu"
     >
-      <span className="font-semibold text-base text-xl">Close menu</span>
-      <FontAwesomeIcon icon={faChevronRight} size="2x"/>
+      <span className="font-semibold text-xl">Close menu</span>
+      <FontAwesomeIcon icon={faChevronRight} style={{ width: "100%", height: "100%" }} />
     </button>
   );
 }

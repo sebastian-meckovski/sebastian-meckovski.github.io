@@ -105,7 +105,7 @@ export default function ThemeMenu() {
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-start justify-start h-full">
-          <h2 className="text-2xl 2xl:text-[1.4vw] font-semibold my-4">
+          <h2 className="text-2xl 2xl:text-[1.4vw] font-semibold my-4 2xl:my-[1vh]">
             Customize Appearance
           </h2>
           <div className="flex flex-col gap-2 2xl:gap-[2vh] items-center justify-start items-start w-full">
@@ -166,7 +166,7 @@ export default function ThemeMenu() {
                     className={`w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw] rounded-full border-3 flex items-center justify-center m-auto`}
                   >
                     <span
-                      className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2`}
+                      className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2 2xl:mx-[0.5vw]`}
                     ></span>
                   </span>
                   <span
