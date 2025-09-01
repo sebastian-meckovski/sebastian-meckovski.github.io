@@ -11,9 +11,9 @@ import Link from "next/link";
 
 export default function Home() {
   const socialCircleClass =
-    "w-12 2xl:w-[3vw] h-12 2xl:h-[3vw] flex items-center justify-center rounded-full border text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_16px_4px_var(--accent)]";
+    "w-12 2xl:w-[3vw] h-12 2xl:h-[3vw] flex items-center justify-center rounded-full outline outline-1 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_16px_4px_var(--accent)]";
   const socialLinkClass = "flex items-center justify-center w-full h-full p-[0.25vw]";
-  const iconStyle = { width: "74%", height: "100%" };
+  const iconStyle = { width: "80%", height: "80%" };
   return (
     <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
       <div className="relative flex items-center justify-center">
