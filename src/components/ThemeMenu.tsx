@@ -89,7 +89,7 @@ export default function ThemeMenu() {
     <>
       <button
         ref={buttonRef}
-        className="text-[var(--foreground)] h-[2.4rem] md:h-[2rem] 2xl:h-[1.6vw] ml-auto md:ml-[1.6vw] cursor-pointer"
+        className="text-[var(--foreground)] h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw] ml-auto md:ml-[1.6vw] cursor-pointer"
         onClick={() => setOpen((o) => !o)}
         type="button"
         aria-label="Change theme and color scheme"
