@@ -70,7 +70,7 @@ export default async function RootLayout({
           <ThemeMenu />
         </header>
         <main className="flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto">{children}</main>
-        <footer className="py-4 2xl:py-[2vh] text-center text-base 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-2 2xl:mt-[3vh]">
+        <footer className="py-4 2xl:py-[2vh] text-center text-base 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh]">
           © {new Date().getFullYear()} Sebastian Meckovski. All rights reserved.
         </footer>
       </body>
