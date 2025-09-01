@@ -52,7 +52,7 @@ export const emailTemplate = `
                       height: 120px;
                       margin: 0 auto 20px;
                       border-radius: 50%;
-                      background: {{accent}};
+                      background: #00e676;
                     "
                   >
                     <tr>
@@ -76,7 +76,7 @@ export const emailTemplate = `
                       margin: 0;
                     "
                   >
-                    Hey {{name}} 👋
+                    Got your message, {{name}}! 👋
                   </h1>
                 </td>
               </tr>
@@ -86,7 +86,7 @@ export const emailTemplate = `
                     style="
                       font-size: 1.4em;
                       font-weight: 500;
-                      color: {{accent}};
+                      color: #00e676;
                       margin: 0;
                     "
                   >
@@ -104,7 +104,8 @@ export const emailTemplate = `
                     padding-bottom: 1em;
                   "
                 >
-                  Thank you for reaching out! Great news - your message has landed safely in my inbox!
+                  Thank you for reaching out! Great news - your message has
+                  landed safely in my inbox!
                 </td>
               </tr>
               <tr>
@@ -114,21 +115,23 @@ export const emailTemplate = `
                     font-style: italic;
                     font-size: 1.05em;
                     color: #6b7a90;
-                    padding-bottom: 2em;
+                    padding-bottom: 1em;
                   "
                 >
-                  I love connecting with new people, and I'll be reviewing your message personally very soon. You can expect to hear back from me within 24 hours on business days.
+                  I love connecting with new people, and I'll be reviewing your
+                  message personally very soon. You can expect to hear back from
+                  me within 24 hours on business days.
                 </td>
               </tr>
               <tr>
                 <td align="center">
                   <a
-                    href="https://sebastian-meckovski.com"
+                    href="https://sebastian-meckovski.com/portfolio"
                     target="_blank"
                     style="
                       display: inline-block;
-                      margin-top: 2em;
-                      background-color: {{accent}};
+                      margin-top: 1em;
+                      background-color: #00e676;
                       color: #0e1a2b;
                       text-decoration: none;
                       padding: 0.85em 1.8em;
@@ -137,7 +140,9 @@ export const emailTemplate = `
                       font-size: 16px;
                     "
                   >
-                    <b style="font-weight: 600">Read more about me</b>
+                    <b style="font-weight: 600"
+                      >🚀 Explore My Latest Projects</b
+                    >
                   </a>
                 </td>
               </tr>
@@ -148,13 +153,13 @@ export const emailTemplate = `
                       font-style: italic;
                       font-size: 1.2em;
                       color: #334155;
-                      margin-top: 2em;
+                      margin-top: 1em;
                     "
                   >
                     Best regards,<br />
                     <strong style="color: #0e1a2b">Sebastian Meckovski</strong
                     ><br />
-                    <span style="color: {{accent}}">(a.k.a. a program 🤖)</span>
+                    <span style="color: #00e676">(a.k.a. a program 🤖)</span>
                   </div>
                 </td>
               </tr>
@@ -169,8 +174,7 @@ export const emailTemplate = `
                       margin-top: 20px;
                     "
                   >
-                    &copy; {{year}} Sebastian Meckovski. All rights reserved.<br />
-                    Designed with passion &lt;/&gt;
+                    &copy; {{year}} Sebastian Meckovski. All rights reserved.
                   </div>
                 </td>
               </tr>
