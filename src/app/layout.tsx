@@ -69,7 +69,7 @@ export default async function RootLayout({
           <Nav />
           <ThemeMenu />
         </header>
-        <main className="container flex-1 px-8 pt-12 pb-10 mx-auto">{children}</main>
+        <main className="flex-1 px-8 pt-12 pb-10 mx-auto">{children}</main>
         <footer className="py-4 2xl:py-[2vh] text-center text-base 2xl:text-[0.8vw] bg-[var(--header-bg)]">
           © {new Date().getFullYear()} Sebastian Meckovski. All rights reserved.
         </footer>
