@@ -13,7 +13,7 @@ export default function BurgerButton() {
         aria-label="Open menu"
         aria-controls="main-nav"
         type="button"
-        className="md:hidden h-[2.5rem] cursor-pointer ml-3 md:ml-auto order-1 "
+        className="md:hidden h-[2.7rem] cursor-pointer ml-3 md:ml-auto order-1 "
       >
         <span className="sr-only" data-state="closed">
           Open menu

@@ -108,13 +108,13 @@ export default function ThemeMenu() {
           <h2 className="text-2xl 2xl:text-[1.4vw] font-semibold my-4 2xl:my-[1vh]">
             Customize Appearance
           </h2>
-          <div className="flex flex-col gap-2 2xl:gap-[2vh] items-center justify-start items-start w-full">
+          <div className="flex flex-col gap-3 2xl:gap-[2vh] items-center justify-start items-start w-full">
             <span className="text-xs 2xl:text-[0.8vw]">Theme:</span>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
               {themes.map((t) => (
                 <label
                   key={t.name}
-                  className="flex flex-col items-center gap-2 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
+                  className="flex flex-col items-center gap-3 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
                 >
                   <input
                     type="radio"
@@ -143,11 +143,11 @@ export default function ThemeMenu() {
             </span>
             <span className="text-xs 2xl:text-[0.8vw]">Accent:</span>
             <div></div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
               {colorSchemes.map((c) => (
                 <label
                   key={c.name}
-                  className="flex flex-col items-center gap-2 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
+                  className="flex flex-col items-center gap-3 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
                 >
                   <input
                     type="radio"
