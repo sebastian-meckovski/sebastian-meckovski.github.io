@@ -57,7 +57,7 @@ export default async function RootLayout({
         <header
           className="flex items-center justify-between px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw] bg-[var(--header-bg)]"
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 2xl:gap-[1vw]">
             <Link
               href="/"
               className="text-lg 2xl:text-[1.2vw] font-semibold mr-2 text-[var(--header-fg)]"
@@ -69,7 +69,7 @@ export default async function RootLayout({
           <Nav />
           <ThemeMenu />
         </header>
-        <main className="flex-1 px-8 pt-12 pb-10 mx-auto">{children}</main>
+        <main className="flex-1 px-8 2xl:px-[2vw] py-8 2xl:py-[4vh] mx-auto">{children}</main>
         <footer className="py-4 2xl:py-[2vh] text-center text-base 2xl:text-[0.8vw] bg-[var(--header-bg)]">
           © {new Date().getFullYear()} Sebastian Meckovski. All rights reserved.
         </footer>

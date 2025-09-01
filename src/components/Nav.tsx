@@ -28,7 +28,7 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="hover:text-[var(--accent)] whitespace-nowrap text-3xl md:text-base 2xl:text-[1vw]"
+                className="hover:text-[var(--accent)] whitespace-nowrap text-3xl md:text-base 2xl:text-[1.3vw]"
                 tabIndex={0}
               >
                 {l.label}
