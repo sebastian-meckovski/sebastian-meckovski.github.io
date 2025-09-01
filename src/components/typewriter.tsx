@@ -3,6 +3,7 @@ import React from "react";
 interface TypewriterProps {
   words: string[];
   accentColor?: string;
+  className?: string;
 }
 
 function generateKeyframes(words: string[], animName: string): string {
@@ -68,6 +69,7 @@ const caretKeyframes = `
 const Typewriter: React.FC<TypewriterProps> = ({
   words,
   accentColor = "var(--accent)",
+  className
 }) => {
   const animName = "typing-" + hashWords(words);
   const uniqueClass = "tw-" + animName;
@@ -85,7 +87,6 @@ const Typewriter: React.FC<TypewriterProps> = ({
           color: ${accentColor};
           font-weight: bold;
           font-family: 'Orbitron', monospace;
-          font-size: 1.5em;
           white-space: pre;
         }
         .${uniqueClass}::before {
@@ -100,7 +101,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
         }
       `}
       </style>
-      <span className={uniqueClass}></span>
+      <span className={uniqueClass + ' ' + className}></span>
     </>
   );
 };

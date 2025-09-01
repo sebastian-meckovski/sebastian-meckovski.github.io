@@ -21,9 +21,9 @@ export default function Home() {
           src="/seb-portrait.jpg"
           id="seb-portrait"
           alt="Sebastian Meckovski portrait"
-          width={500}
-          height={500}
-          className="w-[24rem] relative object-cover rounded-full hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
+          width={1024}
+          height={1024}
+          className="w-[24rem] 2xl:w-[50vh] 2xl:h-[50vh] relative object-cover rounded-full hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
           priority
         />
         <span
@@ -31,7 +31,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 rounded-full shadow-[0_0_45px_2px_var(--accent)] opacity-[var(--image-shadow-blur)] blur-[1px]"
         />
       </div>
-      <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
+      <h1 className="text-4xl 2xl:text-[2.5svw] font-bold tracking-tight mb-2 text-center">
         Hi, Seb here
       </h1>
       <div
@@ -41,14 +41,15 @@ export default function Home() {
         [@media(max-width:320px)]:items-start
       "
       >
-        <span className="text-2xl [@media(max-width:320px)]:text-center w-full">
+        <span className="text-2xl 2xl:text-[1.5vw] [@media(max-width:320px)]:text-center w-full">
           I am a{" "}
         </span>
         <Typewriter
           words={[" software engineer", " programmer", " web developer"]}
+          className="text-2xl 2xl:text-[1.5vw]"
         />
       </div>
-      <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-center mb-6">
+      <p className="max-w-2xl 2xl:max-w-[55vw] text-lg 2xl:text-[1.2vw] leading-relaxed text-center mb-6">
         A versatile software developer with 3 years of experience in frontend,
         backend, testing, and web technologies. Passionate about learning and
         implementing new technologies.
