@@ -90,7 +90,7 @@ export const emailTemplate = `
                       margin: 0;
                     "
                   >
-                    Message successfully uploaded to my brain 🧠✅
+                    Message Received - I'm On It! 🚀
                   </h2>
                 </td>
               </tr>
@@ -104,9 +104,7 @@ export const emailTemplate = `
                     padding-bottom: 1em;
                   "
                 >
-                  Thank you for reaching out! Your message has officially landed
-                  in my inbox — and I’m already curious. I’ll get back to you as
-                  soon as possible.
+                  Thank you for reaching out! Great news - your message has landed safely in my inbox!
                 </td>
               </tr>
               <tr>
@@ -119,7 +117,7 @@ export const emailTemplate = `
                     padding-bottom: 2em;
                   "
                 >
-                  Meanwhile, feel free to grab a coffee — I’ll bring the code.
+                  I love connecting with new people, and I'll be reviewing your message personally very soon. You can expect to hear back from me within 24 hours on business days.
                 </td>
               </tr>
               <tr>
