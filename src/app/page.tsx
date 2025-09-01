@@ -49,7 +49,7 @@ export default function Home() {
           className="text-2xl 2xl:text-[1.5vw]"
         />
       </div>
-      <p className="max-w-2xl 2xl:max-w-[55vw] text-lg 2xl:text-[1.2vw] leading-relaxed text-center ">
+      <p className="max-w-2xl 2xl:max-w-[55vw] text-base 2xl:text-[1.2vw] leading-relaxed text-center ">
         A versatile software developer with 3 years of experience in frontend,
         backend, testing, and web technologies. Passionate about learning and
         implementing new technologies.
