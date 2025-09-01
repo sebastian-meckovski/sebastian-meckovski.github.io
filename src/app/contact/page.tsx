@@ -15,16 +15,16 @@ export default async function ContactPage({
   console.log(status);
 
   const inputClass =
-    "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)]";
-  const labelClass = "block mb-2 text-lg font-medium";
+    "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)] h-12 2xl:h-[7vh]";
+  const labelClass = "block text-2xl 2xl:text-[1.5vw] font-medium";
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center w-full text-center">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2">
+      <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
+        <h1 className="text-4xl 2xl:text-[2.5svw] font-bold tracking-tight mb-2">
           Message Sent!
         </h1>
-        <p className="max-w-2xl text-lg md:text-xl leading-relaxed">
+        <p className="text-base 2xl:text-[1.2vw] max-w-2xl leading-relaxed">
           Thank you for contacting me. I will get back to you as soon as
           possible.
         </p>
@@ -35,17 +35,17 @@ export default async function ContactPage({
   return (
     <>
       <FormSubmitBehaviour />
-      <div className="flex flex-col items-center w-full">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
+      <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
+        <h1 className="text-4xl 2xl:text-[2.5svw] font-bold tracking-tight mb-2 text-center">
           Contact Me
         </h1>
-        <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-center mb-6">
+        <p className="text-base 2xl:text-[1.2vw] leading-relaxed text-center mb-6">
           Have a question or want to work together? Feel free to reach out.
         </p>
         <form
           action={submitContactForm}
           id="contact-form"
-          className="w-full max-w-2xl space-y-6"
+          className="w-full max-w-2xl 2xl:max-w-[55vw] space-y-6"
         >
           <div>
             <label htmlFor="name" className={labelClass}>
@@ -92,19 +92,17 @@ export default async function ContactPage({
               name="message"
               rows={5}
               className={inputClass}
+              style={{height: "30vh"}}
               required
             ></textarea>
           </div>
           <button
             type="submit"
-            className="flex mx-auto items-center gap-2 px-8 py-2 rounded-full border text-lg font-bold hover:bg-[var(--accent)] hover:text-white"
+            className="flex mx-auto items-center gap-2 px-8 py-2 rounded-full border text-lg 2xl:text-[1.5vw] font-bold hover:bg-[var(--accent)] hover:text-white"
           >
             Send Message
             <div className="hidden">
-              <FontAwesomeIcon
-                icon={faSpinner}
-                className="animate-spin"
-              />
+              <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
             </div>
           </button>
         </form>
