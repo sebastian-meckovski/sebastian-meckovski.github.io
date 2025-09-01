@@ -15,7 +15,7 @@ export default function Home() {
   const socialLinkClass = "flex items-center justify-center w-full h-full p-[0.25vw]";
   const iconStyle = { width: "74%", height: "100%" };
   return (
-    <div className="flex flex-col gap-3 2xl:gap-[2vh] items-center w-full">
+    <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
       <div className="relative flex items-center justify-center">
         <Image
           src="/seb-portrait.jpg"
