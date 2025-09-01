@@ -105,14 +105,16 @@ export default function ThemeMenu() {
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
         <div className="flex flex-col items-start justify-start h-full">
-          <h2 className="text-xl font-semibold my-4">Customize Appearance</h2>
-          <div className="flex flex-col gap-4 items-center justify-start items-start">
-            <span className="font-medium">Theme:</span>
-            <div className="flex items-center gap-2 flex-wrap mx-auto justify-center">
+          <h2 className="text-2xl 2xl:text-[1.4vw] font-semibold my-4">
+            Customize Appearance
+          </h2>
+          <div className="flex flex-col gap-2 2xl:gap-[2vh] items-center justify-start items-start w-full">
+            <span className="text-xs 2xl:text-[0.8vw]">Theme:</span>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
               {themes.map((t) => (
                 <label
                   key={t.name}
-                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[5rem]"
+                  className="flex flex-col items-center gap-2 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
                 >
                   <input
                     type="radio"
@@ -128,22 +130,24 @@ export default function ThemeMenu() {
                       borderColor:
                         theme === t.name ? "var(--accent)" : undefined,
                     }}
-                    className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors m-auto"
+                    className="w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw] rounded-full border-3 flex items-center justify-center transition-colors m-auto"
                   >
                     <span className="w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></span>
                   </span>
-                  <span>{t.label}</span>
+                  <span className="text-xs 2xl:text-[0.8vw]">{t.label}</span>
                 </label>
               ))}
             </div>
-            <p className="text-xs">*Auto uses your system theme setting.</p>
-            <span className="font-medium">Accent:</span>
+            <span className="text-xs 2xl:text-[0.8vw]">
+              *Auto uses your system theme setting.
+            </span>
+            <span className="text-xs 2xl:text-[0.8vw]">Accent:</span>
             <div></div>
-            <div className="flex items-center gap-2 flex-wrap mx-auto justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-2 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
               {colorSchemes.map((c) => (
                 <label
                   key={c.name}
-                  className="flex flex-col items-center gap-2 cursor-pointer min-w-[5rem]"
+                  className="flex flex-col items-center gap-2 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
                 >
                   <input
                     type="radio"
@@ -159,19 +163,24 @@ export default function ThemeMenu() {
                       backgroundColor:
                         colorScheme === c.name ? c.color : "transparent",
                     }}
-                    className={`w-10 h-10 rounded-full border-3 flex items-center justify-center m-auto`}
+                    className={`w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw] rounded-full border-3 flex items-center justify-center m-auto`}
                   >
                     <span
                       className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2`}
                     ></span>
                   </span>
-                  <span style={{ color: c.color }}>{c.label}</span>
+                  <span
+                    className="text-xs 2xl:text-[0.8vw]"
+                    style={{ color: c.color }}
+                  >
+                    {c.label}
+                  </span>
                 </label>
               ))}
             </div>
-            <p className="text-xs">
+            <span className="text-xs 2xl:text-[0.8vw]">
               Settings are saved in your browser&apos;s cookies.
-            </p>
+            </span>
           </div>
         </div>
       </Popup>
