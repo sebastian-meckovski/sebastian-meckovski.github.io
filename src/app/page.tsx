@@ -12,7 +12,8 @@ import Link from "next/link";
 export default function Home() {
   const socialCircleClass =
     "w-12 2xl:w-[3vw] h-12 2xl:h-[3vw] flex items-center justify-center rounded-full outline outline-1 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_16px_4px_var(--accent)]";
-  const socialLinkClass = "flex items-center justify-center w-full h-full p-[0.25vw]";
+  const socialLinkClass =
+    "flex items-center justify-center w-full h-full p-[0.25vw]";
   const iconStyle = { width: "80%", height: "80%" };
   return (
     <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
@@ -31,9 +32,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-0 rounded-full shadow-[0_0_45px_2px_var(--accent)] opacity-[var(--image-shadow-blur)] blur-[1px]"
         />
       </div>
-      <h1 className="text-4xl 2xl:text-[2.5svw] font-bold tracking-tight text-center">
-        Hi, Seb here
-      </h1>
+      <h1>Hi, Seb here</h1>
       <div
         className="
         flex flex-row items-center whitespace-nowrap min-w-0

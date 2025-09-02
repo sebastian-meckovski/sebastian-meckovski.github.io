@@ -21,7 +21,7 @@ export default async function ContactPage({
   if (status === "success") {
     return (
       <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
-        <h1 className="text-4xl 2xl:text-[2.5svw] font-bold tracking-tight mb-2">
+        <h1 className="tracking-tight mb-2">
           Message Sent!
         </h1>
         <p className="text-base 2xl:text-[1.2vw] max-w-2xl leading-relaxed">
@@ -36,7 +36,7 @@ export default async function ContactPage({
     <>
       <FormSubmitBehaviour />
       <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
-        <h1 className="text-4xl 2xl:text-[2.5svw] font-bold tracking-tight mb-2 text-center">
+        <h1 className="tracking-tight mb-2 text-center">
           Contact Me
         </h1>
         <p className="text-base 2xl:text-[1.2vw] leading-relaxed text-center mb-6">
