@@ -58,7 +58,7 @@ export default async function RootLayout({
           <div className="flex items-center gap-2 2xl:gap-[1vw]">
             <Link
               href="/"
-              className="text-lg 2xl:text-[1.2vw] font-semibold mr-2 text-[var(--header-fg)]"
+              className="text-xl md:text-2xl 2xl:text-[1.6vw] font-semibold mr-2 text-[var(--header-fg)]"
             >
               <span>Sebastian </span>
               <span className="text-[var(--accent)]">Meckovski</span>
@@ -70,8 +70,8 @@ export default async function RootLayout({
         <main className="flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
           {children}
         </main>
-        <footer className="py-4 2xl:py-[2vh] text-center text-base 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh]">
-          © {new Date().getFullYear()} Sebastian Meckovski. All rights reserved.
+        <footer className="py-4 2xl:py-[2vh] text-center text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh]">
+          © {new Date().getFullYear()} Sebastian Meckovski. Designed with passion.
         </footer>
       </body>
     </html>
