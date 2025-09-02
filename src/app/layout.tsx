@@ -54,9 +54,7 @@ export default async function RootLayout({
       <body
         className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >
-        <header
-          className="flex items-center justify-between px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw] bg-[var(--header-bg)]"
-        >
+        <header className="flex items-center justify-between px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw] bg-[var(--header-bg)]">
           <div className="flex items-center gap-2 2xl:gap-[1vw]">
             <Link
               href="/"
@@ -69,7 +67,9 @@ export default async function RootLayout({
           <Nav />
           <ThemeMenu />
         </header>
-        <main className="flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto">{children}</main>
+        <main className="flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
+          {children}
+        </main>
         <footer className="py-4 2xl:py-[2vh] text-center text-base 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh]">
           © {new Date().getFullYear()} Sebastian Meckovski. All rights reserved.
         </footer>

@@ -24,7 +24,7 @@ export default async function ContactPage({
         <h1 className="tracking-tight mb-2">
           Message Sent!
         </h1>
-        <p className="text-base 2xl:text-[1.2vw] max-w-2xl leading-relaxed">
+        <p>
           Thank you for contacting me. I will get back to you as soon as
           possible.
         </p>
@@ -39,7 +39,7 @@ export default async function ContactPage({
         <h1 className="tracking-tight mb-2 text-center">
           Contact Me
         </h1>
-        <p className="text-base 2xl:text-[1.2vw] leading-relaxed text-center mb-6">
+        <p>
           Have a question or want to work together? Feel free to reach out.
         </p>
         <form
