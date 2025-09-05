@@ -16,14 +16,12 @@ export default async function ContactPage({
 
   const inputClass =
     "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)] h-12 2xl:h-[6vh]";
-  const labelClass = "block text-2xl 2xl:text-[1.5vw] font-medium";
+  const labelClass = "block text-2xl 2xl:text-[1.5vw] font-medium mb-2 2xl:mb-[0.5vh]";
 
   if (status === "success") {
     return (
       <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
-        <h1 className="tracking-tight mb-2">
-          Message Sent!
-        </h1>
+        <h1 className="tracking-tight mb-2">Message Sent!</h1>
         <p>
           Thank you for contacting me. I will get back to you as soon as
           possible.
@@ -36,16 +34,12 @@ export default async function ContactPage({
     <>
       <FormSubmitBehaviour />
       <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
-        <h1 className="tracking-tight mb-2 text-center">
-          Contact Me
-        </h1>
-        <p>
-          Have a question or want to work together? Feel free to reach out.
-        </p>
+        <h1 className="tracking-tight mb-2 text-center">Contact Me</h1>
+        <p>Have a question or want to work together? Feel free to reach out.</p>
         <form
           action={submitContactForm}
           id="contact-form"
-          className="w-full max-w-2xl 2xl:max-w-[55vw] space-y-6"
+          className="w-full max-w-2xl 2xl:max-w-[55vw] flex flex-col gap-6 2xl:gap-[1.7vh]"
         >
           <div>
             <label htmlFor="name" className={labelClass}>
@@ -92,7 +86,7 @@ export default async function ContactPage({
               name="message"
               rows={5}
               className={inputClass}
-              style={{height: "30vh"}}
+              style={{ height: "30vh" }}
               required
             ></textarea>
           </div>
