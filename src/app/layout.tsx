@@ -67,7 +67,7 @@ export default async function RootLayout({
           <Nav />
           <ThemeMenu />
         </header>
-        <main className="flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
+        <main className="container flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
           {children}
         </main>
         <footer className="py-4 2xl:py-[2vh] text-center text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh]">

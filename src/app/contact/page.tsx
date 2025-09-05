@@ -15,7 +15,7 @@ export default async function ContactPage({
   console.log(status);
 
   const inputClass =
-    "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)] h-12 2xl:h-[7vh]";
+    "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)] h-12 2xl:h-[6vh]";
   const labelClass = "block text-2xl 2xl:text-[1.5vw] font-medium";
 
   if (status === "success") {

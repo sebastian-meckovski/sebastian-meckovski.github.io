@@ -28,6 +28,11 @@
   --p-font-size: max(1rem, 1.05vw);
   --p-line-height: 1.6;
   --p-font-weight: normal;
+
+  /* Input Typography Variables */
+  --input-font-size: max(1rem, 1.05vw);
+  --input-line-height: 1.4;
+  --input-font-weight: normal;
 }
 
 /* Global Heading Styles with Fluid Typography */
@@ -72,4 +77,24 @@ p {
   font-size: var(--p-font-size);
   line-height: var(--p-line-height);
   font-weight: var(--p-font-weight);
+}
+
+/* Global Input & Textarea Styles with Fluid Typography */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="tel"],
+textarea {
+  font-size: var(--input-font-size);
+  line-height: var(--input-line-height);
+  font-weight: var(--input-font-weight);
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  font-size: var(--input-font-size);
+  font-weight: var(--input-font-weight);
 }
