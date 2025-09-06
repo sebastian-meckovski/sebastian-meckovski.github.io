@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { submitContactForm } from "./actions";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { submitContactForm } from "./actions";
 import FormSubmitBehaviour from "./FormSumbitBehaviour";
+import ButtonLink from "@/components/ButtonLink";
 
 export const metadata = { title: "Contact" };
 
@@ -16,7 +17,8 @@ export default async function ContactPage({
 
   const inputClass =
     "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)] h-12 2xl:h-[6vh]";
-  const labelClass = "block text-2xl 2xl:text-[1.5vw] font-medium mb-2 2xl:mb-[0.5vh]";
+  const labelClass =
+    "block text-2xl 2xl:text-[1.5vw] font-medium mb-2 2xl:mb-[0.5vh]";
 
   if (status === "success") {
     return (
@@ -90,15 +92,12 @@ export default async function ContactPage({
               required
             ></textarea>
           </div>
-          <button
-            type="submit"
-            className="flex mx-auto items-center gap-2 px-8 py-2 rounded-full border text-lg 2xl:text-[1.5vw] font-bold hover:bg-[var(--accent)] hover:text-white"
-          >
+          <ButtonLink variant="button" type="submit">
             Send Message
             <div className="hidden">
               <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
             </div>
-          </button>
+          </ButtonLink>
         </form>
       </div>
     </>

@@ -18,17 +18,41 @@ export default function Nav() {
       {/* Desktop nav */}
       <nav
         id="main-nav"
-        className="
-          flex bg-[var(--background)] flex-col fixed top-0 left-0 w-full h-full items-center justify-center translate-x-full z-50 ml-auto
-          md:bg-[var(--header-bg)] md:flex-row md:static md:justify-end md:translate-x-0 md:w-auto md:h-auto md:py-0 md:px-0
-      "
+        className={[
+          // Mobile layout & positioning
+          "flex flex-col fixed top-0 left-0 items-center justify-center",
+          // Mobile sizing
+          "w-full h-full",
+          // Mobile appearance
+          "bg-[var(--background)] translate-x-full z-50 ml-auto",
+          // Desktop layout & positioning
+          "md:flex-row md:static md:justify-end md:translate-x-0",
+          // Desktop sizing
+          "md:w-auto md:h-auto md:py-0 md:px-0",
+          // Desktop appearance
+          "md:bg-[var(--header-bg)]"
+        ].join(" ")}
       >
-        <ul className="flex flex-col gap-8 2xl:gap-[1.2vw] items-center md:flex-row">
+        <ul className={[
+          // Layout & positioning
+          "flex flex-col items-center",
+          // Spacing
+          "gap-8 2xl:gap-[1.2vw]",
+          // Desktop layout
+          "md:flex-row"
+        ].join(" ")}>
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="hover:text-[var(--accent)] whitespace-nowrap text-3xl md:text-base 2xl:text-[1.2vw]"
+                className={[
+                  // Typography
+                  "whitespace-nowrap text-3xl md:text-base 2xl:text-[1.2vw]",
+                  // Hover & active effects
+                  "hover:text-[var(--accent)] active:text-[var(--accent)]",
+                  // Transitions
+                  "transition-color duration-300 ease-out"
+                ].join(" ")}
                 tabIndex={0}
               >
                 {l.label}

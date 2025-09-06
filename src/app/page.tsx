@@ -8,12 +8,31 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonLink from "@/components/ButtonLink";
 
 export default function Home() {
-  const socialCircleClass =
-    "w-12 2xl:w-[3vw] h-12 2xl:h-[3vw] flex items-center justify-center rounded-full outline outline-1 text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white hover:shadow-[0_0_16px_4px_var(--accent)]";
-  const socialLinkClass =
-    "flex items-center justify-center w-full h-full p-[0.25vw]";
+  const socialCircleClass = [
+    // Layout & positioning
+    "flex items-center justify-center",
+    // Sizing
+    "w-12 2xl:w-[3vw] h-12 2xl:h-[3vw]",
+    // Appearance
+    "rounded-full outline outline-1",
+    // Colors
+    "text-[var(--accent)]",
+    // Hover effects
+    "hover:bg-[var(--accent)] hover:text-white",
+    "hover:shadow-[0_0_16px_4px_var(--accent)]",
+    // Transitions
+    "transition-color duration-300 ease-out",
+  ].join(" ");
+
+  const socialLinkClass = [
+    // Layout & positioning
+    "flex items-center justify-center",
+    // Sizing
+    "w-full h-full p-[0.25vw]",
+  ].join(" ");
   const iconStyle = { width: "80%", height: "80%" };
   return (
     <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
@@ -95,12 +114,9 @@ export default function Home() {
           </Link>
         </span>
       </div>
-      <Link
-        href="/contact"
-        className="inline-flex items-center px-8 2xl:px-[2vw] py-2 2xl:py-[1vh] rounded-full border text-lg 2xl:text-[1.2vw] font-bold hover:bg-[var(--accent)] hover:text-white"
-      >
+      <ButtonLink variant="link" href="/contact">
         Hire Me
-      </Link>
+      </ButtonLink>
     </div>
   );
 }

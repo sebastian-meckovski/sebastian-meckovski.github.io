@@ -89,7 +89,18 @@ export default function ThemeMenu() {
     <>
       <button
         ref={buttonRef}
-        className="text-[var(--foreground)] h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw] ml-auto md:ml-[1.6vw] cursor-pointer"
+        className={[
+          // Colors
+          "text-[var(--foreground)]",
+          // Sizing
+          "h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw]",
+          // Positioning
+          "ml-auto md:ml-[1.6vw]",
+          // Interaction
+          "cursor-pointer",
+          // Hover & active effects
+          "hover:text-[var(--accent)] active:text-[var(--accent)]"
+        ].join(" ")}
         onClick={() => setOpen((o) => !o)}
         type="button"
         aria-label="Change theme and color scheme"
@@ -104,17 +115,53 @@ export default function ThemeMenu() {
         />
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
-        <div className="flex flex-col items-start justify-start h-full">
-          <h2 className="text-2xl 2xl:text-[1.4vw] font-semibold my-4 2xl:my-[1vh]">
+        <div className={[
+          // Layout
+          "flex flex-col items-start justify-start",
+          // Sizing
+          "h-full"
+        ].join(" ")}>
+          <h2 className={[
+            // Typography
+            "text-2xl 2xl:text-[1.4vw] font-semibold",
+            // Spacing
+            "my-4 2xl:my-[1vh]"
+          ].join(" ")}>
             Customize Appearance
           </h2>
-          <div className="flex flex-col gap-3 2xl:gap-[2vh] items-center justify-start items-start w-full">
-            <span className="text-xs 2xl:text-[0.8vw]">Theme:</span>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
+          <div className={[
+            // Layout
+            "flex flex-col items-center justify-start items-start",
+            // Sizing
+            "w-full",
+            // Spacing
+            "gap-3 2xl:gap-[2vh]"
+          ].join(" ")}>
+            <span className={[
+              // Typography
+              "text-xs 2xl:text-[0.8vw]"
+            ].join(" ")}>Theme:</span>
+            <div className={[
+              // Layout
+              "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 justify-items-center",
+              // Sizing
+              "w-full",
+              // Spacing
+              "gap-3 2xl:gap-[0.7vw] mx-auto"
+            ].join(" ")}>
               {themes.map((t) => (
                 <label
                   key={t.name}
-                  className="flex flex-col items-center gap-3 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
+                  className={[
+                    // Layout
+                    "flex flex-col items-center",
+                    // Sizing
+                    "min-w-[5rem]",
+                    // Spacing
+                    "gap-3 2xl:gap-[0.8vh]",
+                    // Interaction
+                    "cursor-pointer"
+                  ].join(" ")}
                 >
                   <input
                     type="radio"
