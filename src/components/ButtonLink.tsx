@@ -24,7 +24,7 @@ export default function ButtonLink(props: ButtonProps | LinkProps) {
     // Typography
     "text-lg 2xl:text-[1.5vw] font-bold",
     // Transitions
-    "md:transition-colors duration-300 md:duration-150 md:ease-out",
+    "md:transition-all duration-300 md:ease-out",
     // Hover effects
     "hover:bg-[var(--accent)] hover:text-white hover:pr-12 2xl:hover:pr-[3vw]",
     "hover:shadow-lg hover:shadow-[var(--accent)]/25 hover:scale-105",

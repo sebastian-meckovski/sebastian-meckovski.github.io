@@ -116,7 +116,7 @@ export default function Popup({
           // Hover & active effects
           "hover:text-[var(--accent)] active:text-[var(--accent)]",
           // Transitions
-          "md:transition-colors duration-300 md:duration-150 md:ease-out",
+          "md:transition-colors duration-150 md:duration-300 md:ease-out",
         ].join(" ")}
         onClick={() => onClose()}
       >
