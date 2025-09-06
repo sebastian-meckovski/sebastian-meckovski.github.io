@@ -84,9 +84,21 @@ export default function Popup({
     <dialog
       ref={popupRef}
       open
-      className={`${
-        open ? "popup-fade-in" : "popup-fade-out"
-      } max-w-[95vw] sm:max-w-[50vw] 2xl:max-w-[25vw] max-h-[95vh] fixed z-[1000] bg-[var(--background)] text-[var(--foreground)] shadow-2xl rounded-2xl 2xl:rounded-[1vw] border border-solid border-[var(--foreground)]/20 p-8 2xl:p-[1vw] overflow-y-auto`}
+      className={[
+        // Animation
+        open ? "popup-fade-in" : "popup-fade-out",
+        // Positioning
+        "fixed z-[1000]",
+        // Sizing
+        "max-w-[95vw] sm:max-w-[50vw] 2xl:max-w-[25vw] max-h-[95vh]",
+        // Appearance
+        "bg-[var(--background)] text-[var(--foreground)] shadow-2xl",
+        "rounded-2xl 2xl:rounded-[1vw] border border-solid border-[var(--foreground)]/20",
+        // Spacing
+        "p-8 2xl:p-[1vw]",
+        // Overflow
+        "overflow-y-auto",
+      ].join(" ")}
       onAnimationEnd={onAnimationEnd}
       aria-modal="true"
       role="dialog"
@@ -94,7 +106,18 @@ export default function Popup({
       <button
         type="button"
         aria-label="Close popup"
-        className="absolute top-4 right-4 h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw]  text-[var(--foreground)] hover:text-[var(--accent)]"
+        className={[
+          // Positioning
+          "absolute top-4 right-4",
+          // Sizing
+          "h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw]",
+          // Colors
+          "text-[var(--foreground)]",
+          // Hover & active effects
+          "hover:text-[var(--accent)] active:text-[var(--accent)]",
+          // Transitions
+          "md:transition-colors duration-300 md:duration-150 md:ease-out",
+        ].join(" ")}
         onClick={() => onClose()}
       >
         <span className="sr-only">Close</span>

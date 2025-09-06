@@ -24,7 +24,7 @@ export default function Home() {
     "hover:bg-[var(--accent)] hover:text-white",
     "hover:shadow-[0_0_16px_4px_var(--accent)]",
     // Transitions
-    "transition-color duration-300 ease-out",
+    "transition-colors duration-300 ease-out",
   ].join(" ");
 
   const socialLinkClass = [

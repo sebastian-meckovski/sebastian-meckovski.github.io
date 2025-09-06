@@ -30,17 +30,19 @@ export default function Nav() {
           // Desktop sizing
           "md:w-auto md:h-auto md:py-0 md:px-0",
           // Desktop appearance
-          "md:bg-[var(--header-bg)]"
+          "md:bg-[var(--header-bg)]",
         ].join(" ")}
       >
-        <ul className={[
-          // Layout & positioning
-          "flex flex-col items-center",
-          // Spacing
-          "gap-8 2xl:gap-[1.2vw]",
-          // Desktop layout
-          "md:flex-row"
-        ].join(" ")}>
+        <ul
+          className={[
+            // Layout & positioning
+            "flex flex-col items-center",
+            // Spacing
+            "gap-8 2xl:gap-[1.2vw]",
+            // Desktop layout
+            "md:flex-row",
+          ].join(" ")}
+        >
           {links.map((l) => (
             <li key={l.href}>
               <Link
@@ -51,7 +53,7 @@ export default function Nav() {
                   // Hover & active effects
                   "hover:text-[var(--accent)] active:text-[var(--accent)]",
                   // Transitions
-                  "transition-color duration-300 ease-out"
+                  "md:transition-colors duration-300 md:duration-150 md:ease-out",
                 ].join(" ")}
                 tabIndex={0}
               >

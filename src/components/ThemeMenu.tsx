@@ -99,7 +99,9 @@ export default function ThemeMenu() {
           // Interaction
           "cursor-pointer",
           // Hover & active effects
-          "hover:text-[var(--accent)] active:text-[var(--accent)]"
+          "hover:text-[var(--accent)] active:text-[var(--accent)]",
+          // Transitions
+          "md:transition-colors duration-150 md:duration-300 md:ease-out",
         ].join(" ")}
         onClick={() => setOpen((o) => !o)}
         type="button"
@@ -115,40 +117,52 @@ export default function ThemeMenu() {
         />
       </button>
       <Popup open={open} anchorRef={buttonRef} onClose={() => setOpen(false)}>
-        <div className={[
-          // Layout
-          "flex flex-col items-start justify-start",
-          // Sizing
-          "h-full"
-        ].join(" ")}>
-          <h2 className={[
-            // Typography
-            "text-2xl 2xl:text-[1.4vw] font-semibold",
-            // Spacing
-            "my-4 2xl:my-[1vh]"
-          ].join(" ")}>
+        <div
+          className={[
+            // Layout
+            "flex flex-col items-start justify-start",
+            // Sizing
+            "h-full",
+          ].join(" ")}
+        >
+          <h2
+            className={[
+              // Typography
+              "text-2xl 2xl:text-[1.4vw] font-semibold",
+              // Spacing
+              "my-4 2xl:my-[1vh]",
+            ].join(" ")}
+          >
             Customize Appearance
           </h2>
-          <div className={[
-            // Layout
-            "flex flex-col items-center justify-start items-start",
-            // Sizing
-            "w-full",
-            // Spacing
-            "gap-3 2xl:gap-[2vh]"
-          ].join(" ")}>
-            <span className={[
-              // Typography
-              "text-xs 2xl:text-[0.8vw]"
-            ].join(" ")}>Theme:</span>
-            <div className={[
+          <div
+            className={[
               // Layout
-              "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 justify-items-center",
+              "flex flex-col items-center justify-start items-start",
               // Sizing
               "w-full",
               // Spacing
-              "gap-3 2xl:gap-[0.7vw] mx-auto"
-            ].join(" ")}>
+              "gap-3 2xl:gap-[2vh]",
+            ].join(" ")}
+          >
+            <span
+              className={[
+                // Typography
+                "text-xs 2xl:text-[0.8vw]",
+              ].join(" ")}
+            >
+              Theme:
+            </span>
+            <div
+              className={[
+                // Layout
+                "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 justify-items-center",
+                // Sizing
+                "w-full",
+                // Spacing
+                "gap-3 2xl:gap-[0.7vw] mx-auto",
+              ].join(" ")}
+            >
               {themes.map((t) => (
                 <label
                   key={t.name}
@@ -160,7 +174,7 @@ export default function ThemeMenu() {
                     // Spacing
                     "gap-3 2xl:gap-[0.8vh]",
                     // Interaction
-                    "cursor-pointer"
+                    "cursor-pointer",
                   ].join(" ")}
                 >
                   <input

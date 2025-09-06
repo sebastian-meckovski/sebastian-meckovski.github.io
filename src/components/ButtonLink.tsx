@@ -24,19 +24,21 @@ export default function ButtonLink(props: ButtonProps | LinkProps) {
     // Typography
     "text-lg 2xl:text-[1.5vw] font-bold",
     // Transitions
-    "transition-all duration-300 ease-out",
+    "md:transition-colors duration-300 md:duration-150 md:ease-out",
     // Hover effects
     "hover:bg-[var(--accent)] hover:text-white hover:pr-12 2xl:hover:pr-[3vw]",
-    "hover:shadow-lg hover:shadow-[var(--accent)]/25 hover:scale-105"
+    "hover:shadow-lg hover:shadow-[var(--accent)]/25 hover:scale-105",
   ].join(" ");
   const combinedClassName = `${baseClassName} ${className}`.trim();
 
   const content = (
     <>
-      <span className={[
-        "transition-transform duration-300 ease-out",
-        "group-hover:-translate-x-1 2xl:group-hover:-translate-x-[0.25vw]"
-      ].join(" ")}>
+      <span
+        className={[
+          "transition-transform duration-300 ease-out",
+          "group-hover:-translate-x-1 2xl:group-hover:-translate-x-[0.25vw]",
+        ].join(" ")}
+      >
         {children}
       </span>
       <FontAwesomeIcon
@@ -51,7 +53,7 @@ export default function ButtonLink(props: ButtonProps | LinkProps) {
           // Transitions
           "transition-all duration-300 ease-out",
           // Hover effects
-          "group-hover:opacity-100 group-hover:translate-x-0"
+          "group-hover:opacity-100 group-hover:translate-x-0",
         ].join(" ")}
       />
     </>
