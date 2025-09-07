@@ -20,11 +20,11 @@ export default function Home() {
     "rounded-full outline outline-1",
     // Colors
     "text-[var(--accent)]",
-    // Hover effects
-    "hover:bg-[var(--accent)] hover:text-white",
-    "hover:shadow-[0_0_16px_4px_var(--accent)]",
+    // Hover & active effects
+    "hover:bg-[var(--accent)] hover:text-white active:bg-[var(--accent)] active:text-white",
+    "hover:shadow-[0_0_16px_4px_var(--accent)] active:shadow-[0_0_16px_4px_var(--accent)]",
     // Transitions
-    "transition-colors duration-300 ease-out",
+    "transition-colors duration-150 md:duration-300 ease-out",
   ].join(" ");
 
   const socialLinkClass = [

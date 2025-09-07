@@ -175,6 +175,8 @@ export default function ThemeMenu() {
                     "gap-3 2xl:gap-[0.8vh]",
                     // Interaction
                     "cursor-pointer",
+                    // Transitions
+                    "transition-colors duration-150 md:duration-300 ease-out",
                   ].join(" ")}
                 >
                   <input
@@ -208,7 +210,16 @@ export default function ThemeMenu() {
               {colorSchemes.map((c) => (
                 <label
                   key={c.name}
-                  className="flex flex-col items-center gap-3 2xl:gap-[0.8vh] cursor-pointer min-w-[5rem]"
+                  className={[
+                    // Layout
+                    "flex flex-col items-center",
+                    // Sizing
+                    "min-w-[5rem]",
+                    // Spacing
+                    "gap-3 2xl:gap-[0.8vh]",
+                    // Interaction
+                    "cursor-pointer",
+                  ].join(" ")}
                 >
                   <input
                     type="radio"
@@ -224,14 +235,37 @@ export default function ThemeMenu() {
                       backgroundColor:
                         colorScheme === c.name ? c.color : "transparent",
                     }}
-                    className={`w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw] rounded-full border-3 flex items-center justify-center m-auto`}
+                    className={[
+                      // Layout
+                      "flex items-center justify-center",
+                      // Sizing
+                      "w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw]",
+                      // Appearance
+                      "rounded-full border-3",
+                      // Positioning
+                      "m-auto",
+                      // Transitions
+                      "transition-colors duration-300 ease-out",
+                    ].join(" ")}
                   >
                     <span
-                      className={`w-2 h-2 rounded-full bg-white opacity-0 peer-checked:opacity-100 mx-2 2xl:mx-[0.5vw]`}
+                      className={[
+                        // Sizing
+                        "w-2 h-2",
+                        // Appearance
+                        "rounded-full bg-white",
+                        // Visibility
+                        "opacity-0 peer-checked:opacity-100",
+                        // Spacing
+                        "mx-2 2xl:mx-[0.5vw]",
+                      ].join(" ")}
                     ></span>
                   </span>
                   <span
-                    className="text-xs 2xl:text-[0.8vw]"
+                    className={[
+                      // Typography
+                      "text-xs 2xl:text-[0.8vw]"
+                    ].join(" ")}
                     style={{ color: c.color }}
                   >
                     {c.label}
