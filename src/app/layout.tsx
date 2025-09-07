@@ -8,14 +8,8 @@ import ThemeMenu from "@/components/ThemeMenu";
 
 // Todo:
 // Move nav logic here (no need to have Nav component)
-// Theme popup logic, fade out animation, improve styling - DONE
-// Sebastian Meckovski header shows up in two lines for some reason (nav issue) - DONE
-// Mobile nav change color on tap to indicate that it's being pressed
 // Check through Tailwind classes to find if there are any useless ones
-// Wrap list items into <ul> for better semantics - DONE
 // server side rendered svgs look really big on network tab, maybe make them smaller? Maybe don't need the spans.
-// Nav hover kinda differs compared to route based selection - DONE
-// Typewriter effect breaks on new line on mobiles
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
@@ -60,7 +54,9 @@ export default async function RootLayout({
               className="text-xl md:text-2xl 2xl:text-[1.6vw] font-semibold mr-2 text-[var(--header-fg)]"
             >
               <span>Sebastian </span>
-              <span className="text-[var(--accent)]">Meckovski</span>
+              <span className="text-[var(--accent)] transition-colors duration-150 md:duration-300 ease-out">
+                Meckovski
+              </span>
             </Link>
           </div>
           <Nav />
@@ -69,7 +65,7 @@ export default async function RootLayout({
         <main className="container flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
           {children}
         </main>
-        <footer className="py-4 2xl:py-[2vh] text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw]">
+        <footer className="py-4 2xl:py-[2vh] text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw] text-center">
           © {new Date().getFullYear()} Sebastian Meckovski. Designed with
           passion.
         </footer>

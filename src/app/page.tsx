@@ -35,36 +35,82 @@ export default function Home() {
   ].join(" ");
   const iconStyle = { width: "80%", height: "80%" };
   return (
-    <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full">
-      <div className="relative flex items-center justify-center">
+    <div
+      className={[
+        // Layout
+        "flex flex-col items-center",
+        // Sizing
+        "w-full",
+        // Spacing
+        "gap-4 2xl:gap-[2vh]",
+      ].join(" ")}
+    >
+      <div
+        className={[
+          // Positioning
+          "relative",
+          // Layout
+          "flex items-center justify-center",
+        ].join(" ")}
+      >
         <Image
           src="/seb-portrait.jpg"
           id="seb-portrait"
           alt="Sebastian Meckovski portrait"
           width={1024}
           height={1024}
-          className="w-[24rem] 2xl:w-[39vh] 2xl:h-[39vh] relative object-cover rounded-full hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]"
+          className={[
+            // Sizing
+            "w-[24rem] 2xl:w-[39vh] 2xl:h-[39vh]",
+            // Positioning
+            "relative",
+            // Appearance
+            "object-cover rounded-full",
+            // Filters
+            "hue-rotate-[var(--image-hue)] grayscale-[var(--image-grayscale)]",
+          ].join(" ")}
           priority
         />
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-full shadow-[0_0_45px_2px_var(--accent)] opacity-[var(--image-shadow-blur)] blur-[1px]"
+          className={[
+            // Interaction
+            "pointer-events-none",
+            // Positioning
+            "absolute inset-0",
+            // Appearance
+            "rounded-full blur-[1px]",
+            // Effects
+            "shadow-[0_0_45px_2px_var(--accent)] opacity-[var(--image-shadow-blur)]",
+          ].join(" ")}
         />
       </div>
       <h1>Hi, Seb here</h1>
       <div
-        className="
-        flex flex-row items-center whitespace-nowrap min-w-0
-        [@media(max-width:320px)]:flex-col
-        [@media(max-width:320px)]:items-start
-      "
+        className={[
+          // Layout
+          "flex flex-row items-center",
+          // Text handling
+          "whitespace-nowrap min-w-0",
+          // Mobile responsive
+          "[@media(max-width:320px)]:flex-col [@media(max-width:320px)]:items-start",
+        ].join(" ")}
       >
-        <span className="text-2xl 2xl:text-[1.5vw] w-full">
+        <span
+          className={[
+            // Typography
+            "text-2xl 2xl:text-[1.5vw]",
+            // Sizing
+            "w-full",
+            // Positioning
+            "text-center",
+          ].join(" ")}
+        >
           I am a{" "}
         </span>
         <Typewriter
           words={[" software engineer", " programmer", " web developer"]}
-          className="text-2xl 2xl:text-[1.5vw]"
+          className="text-2xl 2xl:text-[1.5vw] transition-colors duration-150 md:duration-300 ease-out"
         />
       </div>
       <p className="text-center">
@@ -72,7 +118,14 @@ export default function Home() {
         backend, testing, and web technologies. Passionate about learning and
         implementing new technologies.
       </p>
-      <div className="flex gap-6 2xl:gap-[1vw]">
+      <div
+        className={[
+          // Layout
+          "flex flex-wrap justify-center",
+          // Spacing
+          "gap-6 2xl:gap-[1vw]",
+        ].join(" ")}
+      >
         <span className={socialCircleClass}>
           <Link
             href="https://www.linkedin.com/in/sebastian-meckovski"
