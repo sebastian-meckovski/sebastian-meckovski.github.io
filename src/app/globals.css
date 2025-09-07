@@ -70,11 +70,25 @@ html[data-theme="light"] {
   }
 }
 
+/* TODO: */
+/* Temporary implementation, will need to look into gradient transition */
 body {
-  background: var(--background);
+  /* Base color (fallback) */
+  background-color: var(--background);
+  /* Layered, subtle accent tints using perceptual mixing */
+  background-image: radial-gradient(
+      120% 80% at 10% 0%,
+      color-mix(in oklab, var(--accent) 18%, transparent) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      100% 70% at 100% 100%,
+      color-mix(in oklab, var(--accent) 12%, transparent) 0%,
+      transparent 55%
+    );
+
   color: var(--foreground);
   font-family: var(--font-unbounded), Arial, Helvetica, sans-serif;
-  transition: background 0.5s, color 0.3s;
 }
 
 @keyframes fade-out-in {
