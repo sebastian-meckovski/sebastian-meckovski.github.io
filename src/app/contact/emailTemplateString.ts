@@ -52,7 +52,7 @@ export const emailTemplate = `
                       height: 120px;
                       margin: 0 auto 20px;
                       border-radius: 50%;
-                      background: #00e676;
+                      background: {{accent}};
                     "
                   >
                     <tr>
@@ -86,7 +86,7 @@ export const emailTemplate = `
                     style="
                       font-size: 1.4em;
                       font-weight: 500;
-                      color: #00e676;
+                      color: {{accent}};
                       margin: 0;
                     "
                   >
@@ -131,7 +131,7 @@ export const emailTemplate = `
                     style="
                       display: inline-block;
                       margin-top: 1em;
-                      background-color: #00e676;
+                      background-color: {{accent}};
                       color: #0e1a2b;
                       text-decoration: none;
                       padding: 0.85em 1.8em;
@@ -159,7 +159,7 @@ export const emailTemplate = `
                     Best regards,<br />
                     <strong style="color: #0e1a2b">Sebastian Meckovski</strong
                     ><br />
-                    <span style="color: #00e676">(a.k.a. a program 🤖)</span>
+                    <span style="color: {{accent}}">(a.k.a. a program 🤖)</span>
                   </div>
                 </td>
               </tr>

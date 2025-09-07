@@ -1,6 +1,6 @@
 "use server";
 
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import nodemailer from "nodemailer";
 import { emailTemplate } from "./emailTemplateString";
 import { getAccentColor } from "./accentColors";
@@ -18,12 +18,9 @@ export async function submitContactForm(formData: FormData) {
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme");
   const colorScheme = cookieStore.get("color-scheme");
-  console.log("Theme:", theme);
-  console.log("Color Scheme:", colorScheme);
 
   // Get accent color from cookie value
   const accent = getAccentColor(colorScheme?.value);
-  console.log("Accent Color:", accent);
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,

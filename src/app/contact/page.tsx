@@ -37,7 +37,7 @@ export default async function ContactPage({
       <FormSubmitBehaviour />
       <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
         <div className="w-full">
-          <h1>Let's Connect</h1>
+          <h1>Let&apos;s Connect</h1>
         </div>
         <div
           className={[
@@ -47,9 +47,6 @@ export default async function ContactPage({
         >
           <p
             className={[
-              // Typography
-              "text-lg 2xl:text-[1.2vw] font-semibold",
-              // Colors
               "text-[var(--accent)]",
               // Transitions
               "transition-colors duration-150 md:duration-300 ease-out",
@@ -57,27 +54,15 @@ export default async function ContactPage({
           >
             Ready to bring your ideas to life?
           </p>
-          <p
-            className={[
-              // Typography
-              "text-base 2xl:text-[1vw] leading-relaxed",
-            ].join(" ")}
-          >
+          <p>
             Whether you have a project in mind, need technical consultation, or
-            just want to discuss the latest in web development, I'd love to hear
-            from you. I'm always excited to collaborate on innovative solutions
-            and help turn your vision into reality.
+            just want to discuss the latest in web development, I&apos;d love to
+            hear from you. I&apos;m always excited to collaborate on innovative
+            solutions and help turn your vision into reality.
           </p>
-          <p
-            className={[
-              // Typography
-              "text-sm 2xl:text-[0.9vw]",
-              // Colors
-              "text-[var(--foreground)]/80",
-            ].join(" ")}
-          >
-            I typically respond within 24 hours on business days. Let's start a
-            conversation!
+          <p>
+            I typically respond within 24 hours on business days. Let&apos;s
+            start a conversation!
           </p>
         </div>
         <form
