@@ -125,10 +125,11 @@ export default async function ContactPage({
           </div>
           <ButtonLink variant="button" type="submit">
             Send Message
-            <div className="hidden">
-              <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-            </div>
           </ButtonLink>
+          {/* TODO: FIX THIS */}
+          {/* <div>
+              <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+            </div> */}
         </form>
       </div>
     </>
