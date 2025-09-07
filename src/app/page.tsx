@@ -59,7 +59,7 @@ export default function Home() {
         [@media(max-width:320px)]:items-start
       "
       >
-        <span className="text-2xl 2xl:text-[1.5vw] [@media(max-width:320px)]:text-center w-full">
+        <span className="text-2xl 2xl:text-[1.5vw] w-full">
           I am a{" "}
         </span>
         <Typewriter

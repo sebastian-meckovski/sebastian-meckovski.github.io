@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
+import { Unbounded } from "next/font/google";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import "./globals.css";
@@ -14,14 +14,13 @@ import ThemeMenu from "@/components/ThemeMenu";
 // Check through Tailwind classes to find if there are any useless ones
 // Wrap list items into <ul> for better semantics - DONE
 // server side rendered svgs look really big on network tab, maybe make them smaller? Maybe don't need the spans.
-// Nav hover kinda differs compared to route based selection
+// Nav hover kinda differs compared to route based selection - DONE
 // Typewriter effect breaks on new line on mobiles
 
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
+const unbounded = Unbounded({
+  variable: "--font-unbounded",
   subsets: ["latin"],
-  weight: ["400", "700"],
-  display: "swap",
+  weight: ["300"],
 });
 
 export const metadata: Metadata = {
@@ -52,7 +51,7 @@ export default async function RootLayout({
   return (
     <html {...htmlAttrs}>
       <body
-        className={`${orbitron.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
+        className={`${unbounded.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
       >
         <header className="flex items-center justify-between px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw] bg-[var(--header-bg)]">
           <div className="flex items-center gap-2 2xl:gap-[1vw]">
@@ -70,8 +69,9 @@ export default async function RootLayout({
         <main className="container flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
           {children}
         </main>
-        <footer className="py-4 2xl:py-[2vh] text-center text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh]">
-          © {new Date().getFullYear()} Sebastian Meckovski. Designed with passion.
+        <footer className="py-4 2xl:py-[2vh] text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw]">
+          © {new Date().getFullYear()} Sebastian Meckovski. Designed with
+          passion.
         </footer>
       </body>
     </html>

@@ -36,8 +36,50 @@ export default async function ContactPage({
     <>
       <FormSubmitBehaviour />
       <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
-        <h1 className="tracking-tight mb-2 text-center">Contact Me</h1>
-        <p>Have a question or want to work together? Feel free to reach out.</p>
+        <div className="w-full">
+          <h1>Let's Connect</h1>
+        </div>
+        <div
+          className={[
+            // Spacing
+            "space-y-4 2xl:space-y-[1vh] mb-4 2xl:mb-[2vh]",
+          ].join(" ")}
+        >
+          <p
+            className={[
+              // Typography
+              "text-lg 2xl:text-[1.2vw] font-semibold",
+              // Colors
+              "text-[var(--accent)]",
+              // Transitions
+              "transition-colors duration-150 md:duration-300 ease-out",
+            ].join(" ")}
+          >
+            Ready to bring your ideas to life?
+          </p>
+          <p
+            className={[
+              // Typography
+              "text-base 2xl:text-[1vw] leading-relaxed",
+            ].join(" ")}
+          >
+            Whether you have a project in mind, need technical consultation, or
+            just want to discuss the latest in web development, I'd love to hear
+            from you. I'm always excited to collaborate on innovative solutions
+            and help turn your vision into reality.
+          </p>
+          <p
+            className={[
+              // Typography
+              "text-sm 2xl:text-[0.9vw]",
+              // Colors
+              "text-[var(--foreground)]/80",
+            ].join(" ")}
+          >
+            I typically respond within 24 hours on business days. Let's start a
+            conversation!
+          </p>
+        </div>
         <form
           action={submitContactForm}
           id="contact-form"
@@ -51,6 +93,7 @@ export default async function ContactPage({
               type="text"
               id="name"
               name="name"
+              placeholder="Your full name"
               className={inputClass}
               required
             />
@@ -63,6 +106,7 @@ export default async function ContactPage({
               type="email"
               id="email"
               name="email"
+              placeholder="your.email@example.com"
               className={inputClass}
               required
             />
@@ -75,6 +119,7 @@ export default async function ContactPage({
               type="text"
               id="subject"
               name="subject"
+              placeholder="What would you like to discuss?"
               className={inputClass}
               required
             />
@@ -87,6 +132,7 @@ export default async function ContactPage({
               id="message"
               name="message"
               rows={5}
+              placeholder="Tell me about your project, ideas, or questions. I'd love to hear the details and understand how I can help you achieve your goals..."
               className={inputClass}
               style={{ height: "30vh" }}
               required
