@@ -45,9 +45,26 @@ export default async function RootLayout({
   return (
     <html {...htmlAttrs}>
       <body
-        className={`${unbounded.variable} antialiased flex min-h-screen flex-col bg-background text-foreground`}
+        className={[
+          `${unbounded.variable}`,
+          // Rendering
+          "antialiased",
+          // Layout
+          "flex min-h-screen flex-col",
+          // Appearance
+          "bg-background text-foreground",
+        ].join(" ")}
       >
-        <header className="flex items-center justify-between px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw] bg-[var(--header-bg)]">
+        <header
+          className={[
+            // Layout
+            "flex items-center justify-between",
+            // Spacing
+            "px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw]",
+            // Appearance
+            "bg-[var(--header-bg)]",
+          ].join(" ")}
+        >
           <div className="flex items-center gap-2 2xl:gap-[1vw]">
             <Link
               href="/"
@@ -62,10 +79,28 @@ export default async function RootLayout({
           <Nav />
           <ThemeMenu />
         </header>
-        <main className="container flex-1 px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh] mx-auto max-w-2xl 2xl:max-w-[55vw]">
+        <main
+          className={[
+            // Layout
+            "container flex-1 mx-auto",
+            // Spacing
+            "px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh]",
+            // Sizing
+            "max-w-2xl 2xl:max-w-[55vw]",
+          ].join(" ")}
+        >
           {children}
         </main>
-        <footer className="py-4 2xl:py-[2vh] text-xs 2xl:text-[0.8vw] bg-[var(--header-bg)] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw] text-center">
+        <footer
+          className={[
+            // Spacing
+            "py-4 2xl:py-[2vh] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw]",
+            // Typography
+            "text-xs 2xl:text-[0.8vw]",
+            // Appearance
+            "bg-[var(--header-bg)] text-center",
+          ].join(" ")}
+        >
           © {new Date().getFullYear()} Sebastian Meckovski. Designed with
           passion.
         </footer>
