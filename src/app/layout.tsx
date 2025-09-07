@@ -62,13 +62,13 @@ export default async function RootLayout({
             // Spacing
             "px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw]",
             // Appearance
-            "bg-[var(--header-bg)]",
+            "bg-[var(--foreground)]/5",
           ].join(" ")}
         >
           <div className="flex items-center gap-2 2xl:gap-[1vw]">
             <Link
               href="/"
-              className="text-xl md:text-2xl 2xl:text-[1.6vw] font-semibold mr-2 text-[var(--header-fg)]"
+              className="text-xl md:text-2xl 2xl:text-[1.6vw] font-semibold mr-2"
             >
               <span>Sebastian </span>
               <span className="text-[var(--accent)] transition-colors duration-150 md:duration-300 ease-out">
@@ -96,9 +96,9 @@ export default async function RootLayout({
             // Spacing
             "py-4 2xl:py-[2vh] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw]",
             // Typography
-            "text-xs 2xl:text-[0.8vw]",
+            "text-xs 2xl:text-[0.8vw] text-center",
             // Appearance
-            "bg-[var(--header-bg)] text-center",
+            "bg-[var(--foreground)]/5",
           ].join(" ")}
         >
           © {new Date().getFullYear()} Sebastian Meckovski. Designed with

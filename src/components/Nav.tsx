@@ -30,7 +30,7 @@ export default function Nav() {
           // Desktop sizing
           "md:w-auto md:h-auto md:py-0 md:px-0",
           // Desktop appearance
-          "md:bg-[var(--header-bg)]",
+          "md:bg-transparent",
         ].join(" ")}
       >
         <ul

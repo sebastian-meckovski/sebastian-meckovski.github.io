@@ -42,7 +42,7 @@ export default async function ContactPage({
         <div
           className={[
             // Spacing
-            "space-y-4 2xl:space-y-[1vh] mb-4 2xl:mb-[2vh]",
+            "space-y-4 2xl:space-y-[1vh]",
           ].join(" ")}
         >
           <p
