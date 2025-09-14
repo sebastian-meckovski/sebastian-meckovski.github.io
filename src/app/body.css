@@ -1,0 +1,36 @@
+/* Global body styling moved from globals.css
+   Keeps gradient/background logic modular */
+
+/* Make theme color variables animatable (where supported) */
+@property --background { syntax: "<color>"; inherits: true; initial-value: #fefefe; }
+@property --foreground { syntax: "<color>"; inherits: true; initial-value: #1e293b; }
+@property --accent { syntax: "<color>"; inherits: true; initial-value: #06b6d4; }
+
+body {
+  /* Base color (fallback) */
+  background-color: var(--background);
+
+  /* Elegant, subtle radial gradients + linear base sweep */
+  background-image:
+    radial-gradient(circle at 70% 30%, color-mix(in oklab, var(--accent) 12%, transparent) 0%, transparent 60%),
+    radial-gradient(circle at 20% 80%, color-mix(in oklab, var(--accent) 8%, transparent) 0%, transparent 70%),
+    linear-gradient(120deg, var(--background) 0%, color-mix(in oklab, var(--background) 85%, black) 100%);
+
+  /* Keep background fixed and stable while scrolling */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Typography and color */
+  color: var(--foreground);
+  font-family: var(--font-unbounded), Arial, Helvetica, sans-serif;
+
+  /* Smooth transitions for color changes */
+  transition:
+    background-color 500ms ease,
+    color 500ms ease,
+    --background 500ms ease,
+    --accent 500ms ease,
+    --foreground 500ms ease;
+}
+

@@ -1,10 +1,10 @@
 export const themes = [
-  { name: "light", label: "Light", backgroundColor: "#f8fafc" },
+  { name: "light", label: "Light", backgroundColor: "#fefefe" },
   { name: "dark", label: "Dark", backgroundColor: "#0f172a" },
   {
     name: "auto",
     label: "Auto*",
-    backgroundColor: "linear-gradient(#f8fafc 50%, #0f172a 50%)",
+    backgroundColor: "linear-gradient(#fefefe 50%, #0f172a 50%)",
   },
 ] as const;
 
