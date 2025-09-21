@@ -109,7 +109,6 @@ export default async function RootLayout({
           passion.
         </footer>
 
-        {/* Tawk.to chat widget via Next Script (docs pattern) */}
         {tawkPropertyId && tawkWidgetId ? (
           <Script
             src={`https://embed.tawk.to/${tawkPropertyId}/${tawkWidgetId}`}
