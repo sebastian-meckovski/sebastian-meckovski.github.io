@@ -108,7 +108,6 @@ export default async function RootLayout({
           © {new Date().getFullYear()} Sebastian Meckovski. Designed with
           passion.
         </footer>
-
         {tawkPropertyId && tawkWidgetId ? (
           <Script
             src={`https://embed.tawk.to/${tawkPropertyId}/${tawkWidgetId}`}
