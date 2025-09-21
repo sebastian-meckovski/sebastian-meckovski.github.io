@@ -13,6 +13,7 @@ import Script from "next/script";
 // server side rendered svgs look really big on network tab, maybe make them smaller? Maybe don't need the spans.
 // Form auto fill inputs look really small on larger screens
 // Form submission broken
+// Update SEO metadata Title + Description each page
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
