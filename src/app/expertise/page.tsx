@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Expertise",
+  title: "Expertise | Sebastian Meckovski | Web Developer & Software Engineer",
   description:
     "Skills and technologies Sebastian works with — frontend, backend, testing, and modern web tooling.",
 };

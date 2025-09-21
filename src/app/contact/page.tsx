@@ -5,7 +5,7 @@ import FormSubmitBehaviour from "./FormSumbitBehaviour";
 import ButtonLink from "@/components/ButtonLink";
 
 export const metadata = {
-  title: "Contact",
+  title: "Contact | Sebastian Meckovski | Web Developer & Software Engineer",
   description:
     "Get in touch with Sebastian to discuss your project, collaboration, or technical consultation.",
 };
