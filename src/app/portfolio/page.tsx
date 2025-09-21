@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Portfolio",
+  title: "Portfolio | Sebastian Meckovski | Web Developer & Software Engineer",
   description:
     "Selected projects by Sebastian Meckovski — thoughtful, performant web experiences and engineering craftsmanship.",
 };

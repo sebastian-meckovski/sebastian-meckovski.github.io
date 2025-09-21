@@ -22,10 +22,7 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Sebastian Meckovski | Web Developer",
-    template: "%s | Sebastian Meckovski",
-  },
+  title: "Sebastian Meckovski | Web Developer & Software Engineer",
   description: "Portfolio of Sebastian Meckovski – Web Developer.",
   metadataBase: new URL("https://sebastian-meckovski.com"),
 };

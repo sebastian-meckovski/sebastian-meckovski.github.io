@@ -11,7 +11,7 @@ import Link from "next/link";
 import ButtonLink from "@/components/ButtonLink";
 
 export const metadata = {
-  title: "Home",
+  title: "Home | Sebastian Meckovski | Web Developer & Software Engineer",
   description:
     "Versatile software engineer with 4 years of experience across frontend, backend, and testing — passionate about learning and shipping modern, performant web solutions.",
 };
