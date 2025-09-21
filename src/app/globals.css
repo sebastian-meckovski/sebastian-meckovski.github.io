@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "./body.css";
+@import "./typography.css";
+
+/* Flex wrap header only below 280px */
+@media (max-width: 280px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+:root {
+  --background: #fefefe;
+  --foreground: #1e293b;
+  --accent: #06b6d4; /* cyan (default) */
+  --image-grayscale: 0;
+  --image-shadow-blur: 0.7;
+}
+
+html[data-color-scheme="cyan"] {
+  --accent: #06b6d4;
+  --image-hue: 0deg;
+  --image-grayscale: 0;
+}
+html[data-color-scheme="purple"] {
+  --accent: #8b5cf6;
+  --image-hue: 70deg;
+  --image-grayscale: 0;
+}
+html[data-color-scheme="emerald"] {
+  --accent: #10b981;
+  --image-hue: 305deg;
+  --image-grayscale: 0;
+}
+html[data-color-scheme="orange"] {
+  --accent: #f97316;
+  --image-hue: 205deg;
+  --image-grayscale: 0;
+}
+html[data-color-scheme="rose"] {
+  --accent: #f43f5e;
+  --image-hue: 145deg;
+  --image-grayscale: 0.2;
+}
+html[data-color-scheme="stone"] {
+  --accent: #78716c;
+  --image-hue: 0deg;
+  --image-grayscale: 1;
+}
+
+/* Dark theme via attribute with richer colors */
+html[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --image-shadow-blur: 0.4;
+}
+
+/* Light theme via attribute */
+html[data-theme="light"] {
+  --background: #fefefe;
+  --foreground: #1e293b;
+  --image-shadow-blur: 0.7;
+}
+
+/* Fallback to prefers-color-scheme if no attribute is set */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    --foreground: #f1f5f9;
+    --image-shadow-blur: 0.4;
+  }
+}
+
+@keyframes fade-out-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.img-fade {
+  animation: fade-out-in 1s;
+}
+
+/* --- Simple page fade/slide-in animation (SSR friendly) --- */
+@keyframes popup-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popup-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+
+.popup-fade-in {
+  animation: popup-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup-fade-out {
+  animation: popup-fade-out 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+main > * {
+  animation: popup-fade-in 0.35s ease-out;
+}
+
+/* --- Blinking caret animation --- */
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.caret-blink {
+  animation: caret-blink 1s steps(1) infinite;
+}
