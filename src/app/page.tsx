@@ -10,6 +10,12 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonLink from "@/components/ButtonLink";
 
+export const metadata = {
+  title: "Home",
+  description:
+    "Versatile software engineer with 4 years of experience across frontend, backend, and testing — passionate about learning and shipping modern, performant web solutions.",
+};
+
 export default function Home() {
   const socialCircleClass = [
     // Layout & positioning
@@ -114,9 +120,9 @@ export default function Home() {
         />
       </div>
       <p className="text-center">
-        A versatile software developer with 3 years of experience in frontend,
-        backend, testing, and web technologies. Passionate about learning and
-        implementing new technologies.
+        A versatile software engineer with 4 years of experience across frontend,
+        backend, and testing. I love turning ideas into fast, accessible, and
+        maintainable web products.
       </p>
       <div
         className={[

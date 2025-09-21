@@ -1,4 +1,8 @@
-export const metadata = { title: "Portfolio" };
+export const metadata = {
+  title: "Portfolio",
+  description:
+    "Selected projects by Sebastian Meckovski — thoughtful, performant web experiences and engineering craftsmanship.",
+};
 
 export default function PortfolioPage() {
   return (
