@@ -1,0 +1,131 @@
+/* Global body styling moved from globals.css
+   Keeps gradient/background logic modular */
+
+/* Make theme color variables animatable (where supported) */
+@property --background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fefefe;
+}
+
+@property --foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1e293b;
+}
+
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #06b6d4;
+}
+
+/* Animatable custom properties controlling gradient motion */
+@property --grad-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 120deg;
+}
+
+@property --stop-a {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 10%;
+}
+
+@property --stop-b {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 90%;
+}
+
+@property --accent-mix {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 20%;
+}
+
+
+body {
+  /* Base color (fallback) */
+  background-color: var(--background);
+
+  /* Single linear gradient (only --background + --accent) */
+  background-image: linear-gradient(var(--grad-angle, 120deg),
+      var(--background) var(--stop-a, 10%),
+      color-mix(in oklab, var(--background), var(--accent) var(--accent-mix, 20%)) var(--stop-b, 90%));
+
+  /* Keep background fixed and stable while scrolling */
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Typography and color */
+  color: var(--foreground);
+  font-family: var(--font-unbounded), Arial, Helvetica, sans-serif;
+
+  /* Smooth transitions for color changes */
+  /* Gentle background pulse */
+  animation: gradient-pulse 5s ease-in-out infinite;
+
+  /* Smooth transitions for color changes */
+  transition:
+    background-color 500ms ease,
+    color 500ms ease,
+    --background 500ms ease,
+    --accent 500ms ease,
+    --foreground 500ms ease;
+}
+
+/* Keyframes: nudge angle, stops, and accent mix very slightly */
+@keyframes gradient-pulse {
+  0% {
+    --grad-angle: 10deg;
+    --stop-a: 20%;
+    --stop-b: 80%;
+    --accent-mix: 10%;
+  }
+
+  50% {
+    --grad-angle: 30deg;
+    --stop-a: 40%;
+    --stop-b: 60%;
+    --accent-mix: 18%;
+  }
+
+  100% {
+    --grad-angle: 10deg;
+    --stop-a: 20%;
+    --stop-b: 80%;
+    --accent-mix: 10%;
+  }
+}
+
+/* Stronger pulse for light color scheme */
+@keyframes gradient-pulse-strong-light {
+  0% {
+    --grad-angle: 8deg;
+    --stop-a: 16%;
+    --stop-b: 84%;
+    --accent-mix: 16%;
+  }
+  50% {
+    --grad-angle: 36deg;
+    --stop-a: 44%;
+    --stop-b: 56%;
+    --accent-mix: 30%;
+  }
+  100% {
+    --grad-angle: 8deg;
+    --stop-a: 16%;
+    --stop-b: 84%;
+    --accent-mix: 16%;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    /* Keep your duration/easing; only swap the animation name */
+    animation-name: gradient-pulse-strong-light;
+  }
+}

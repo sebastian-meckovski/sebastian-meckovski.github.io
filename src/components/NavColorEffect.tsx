@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function NavColorEffect() {
   const pathname = usePathname();
   const activeLinkClasses =
-    "text-blue-300 font-bold underline underline-offset-4 drop-shadow";
+    "text-[var(--accent)] underline underline-offset-4 drop-shadow";
   useEffect(() => {
     const nav = document.querySelector("header > nav");
     if (nav) {
