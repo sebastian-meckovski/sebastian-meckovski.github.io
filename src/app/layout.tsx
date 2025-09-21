@@ -5,6 +5,8 @@ import Link from "next/link";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ThemeMenu from "@/components/ThemeMenu";
+import TawkScript from "@/components/TawkScript.jsx";
+
 
 // Todo:
 // Move nav logic here (no need to have Nav component)
@@ -41,6 +43,9 @@ export default async function RootLayout({
   const htmlAttrs: Record<string, string> = { lang: "en" };
   if (themeAttr) htmlAttrs["data-theme"] = themeAttr;
   if (colorSchemeAttr) htmlAttrs["data-color-scheme"] = colorSchemeAttr;
+
+  const tawkPropertyId = process.env.TAWK_TO_PROPERTY_ID;
+  const tawkWidgetId = process.env.TAWK_TO_WIDGET_ID;
 
   return (
     <html {...htmlAttrs}>
@@ -104,6 +109,9 @@ export default async function RootLayout({
           © {new Date().getFullYear()} Sebastian Meckovski. Designed with
           passion.
         </footer>
+
+        {/* Tawk.to chat widget */}
+        <TawkScript propertyId={tawkPropertyId} widgetId={tawkWidgetId} />
       </body>
     </html>
   );
