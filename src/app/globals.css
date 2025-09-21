@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-orbitron), Arial, Helvetica, sans-serif;
+}
+
+.text-accent { color: #00bcd4; }
+
+/* --- Simple page fade/slide-in animation (SSR friendly) --- */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(2rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Every direct child (a route's root element) of main animates on mount */
+main > * {
+  animation: pageFadeIn .35s ease-out;
+}
