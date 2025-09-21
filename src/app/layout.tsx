@@ -5,8 +5,7 @@ import Link from "next/link";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ThemeMenu from "@/components/ThemeMenu";
-import TawkScript from "@/components/TawkScript.jsx";
-
+import Script from "next/script";
 
 // Todo:
 // Move nav logic here (no need to have Nav component)
@@ -110,8 +109,13 @@ export default async function RootLayout({
           passion.
         </footer>
 
-        {/* Tawk.to chat widget */}
-        <TawkScript propertyId={tawkPropertyId} widgetId={tawkWidgetId} />
+        {/* Tawk.to chat widget via Next Script (docs pattern) */}
+        {tawkPropertyId && tawkWidgetId ? (
+          <Script
+            src={`https://embed.tawk.to/${tawkPropertyId}/${tawkWidgetId}`}
+            strategy="lazyOnload"
+          />
+        ) : null}
       </body>
     </html>
   );
