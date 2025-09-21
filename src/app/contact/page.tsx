@@ -4,7 +4,11 @@ import { submitContactForm } from "./actions";
 import FormSubmitBehaviour from "./FormSumbitBehaviour";
 import ButtonLink from "@/components/ButtonLink";
 
-export const metadata = { title: "Contact" };
+export const metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Sebastian to discuss your project, collaboration, or technical consultation.",
+};
 
 export default async function ContactPage({
   searchParams,

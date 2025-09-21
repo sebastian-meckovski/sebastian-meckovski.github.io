@@ -1,4 +1,8 @@
-export const metadata = { title: "About" };
+export const metadata = {
+  title: "About",
+  description:
+    "Learn about Sebastian Meckovski — a web developer focused on clean UX, performance, and robust engineering practices.",
+};
 
 export default function AboutPage() {
   return (

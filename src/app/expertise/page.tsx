@@ -1,4 +1,8 @@
-export const metadata = { title: "Expertise" };
+export const metadata = {
+  title: "Expertise",
+  description:
+    "Skills and technologies Sebastian works with — frontend, backend, testing, and modern web tooling.",
+};
 
 export default function ExpertisePage() {
   return (
