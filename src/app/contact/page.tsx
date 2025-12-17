@@ -1,8 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { submitContactForm } from "./actions";
-import FormSubmitBehaviour from "./FormSumbitBehaviour";
-import ButtonLink from "@/components/ButtonLink";
+import SubmitButton from "@/components/SubmitButton";
 
 export const metadata = {
   title: "Contact | Sebastian Meckovski | Web Developer & Software Engineer",
@@ -16,8 +13,6 @@ export default async function ContactPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const { status } = await searchParams;
-
-  console.log(status);
 
   const inputClass =
     "w-full px-4 py-2 border rounded-md bg-transparent focus:outline-none focus:ring-2 focus:ring-[var(--accent)] h-12 2xl:h-[6vh]";
@@ -37,9 +32,7 @@ export default async function ContactPage({
   }
 
   return (
-    <>
-      <FormSubmitBehaviour />
-      <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
+    <div className="flex flex-col gap-4 2xl:gap-[2vh] items-center w-full max-w-2xl 2xl:max-w-[55vw] ">
         <div className="w-full">
           <h1>Let&apos;s Connect</h1>
         </div>
@@ -127,15 +120,8 @@ export default async function ContactPage({
               required
             ></textarea>
           </div>
-          <ButtonLink variant="button" type="submit">
-            Send Message
-          </ButtonLink>
-          {/* TODO: FIX THIS */}
-          {/* <div>
-              <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
-            </div> */}
+          <SubmitButton>Send Message</SubmitButton>
         </form>
       </div>
-    </>
-  );
+    );
 }
