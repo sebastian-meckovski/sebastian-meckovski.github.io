@@ -10,10 +10,13 @@ import Script from "next/script";
 // Todo:
 // Move nav logic here (no need to have Nav component)
 // Check through Tailwind classes to find if there are any useless ones
-// server side rendered svgs look really big on network tab, maybe make them smaller? Maybe don't need the spans.
-// Form auto fill inputs look really small on larger screens
-// Form submission broken
-// Update SEO metadata Title + Description each page - DONE
+
+// Hire me and submit buttons reuse same component
+// Contact form center on larger screens
+// Light mode maybe change background to a very light gray instead of pure white
+// Form Submission success message implement modern approoach, don't rely on route change
+// replace fontawesome with just svgs
+
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
