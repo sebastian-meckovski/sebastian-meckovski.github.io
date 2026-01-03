@@ -64,16 +64,13 @@ export default async function RootLayout({
             // Layout
             "flex items-center justify-between",
             // Spacing
-            "px-8 2xl:px-[2vw] py-4 2xl:py-[0.6vw]",
+            "px-8 py-4",
             // Appearance
             "bg-[var(--foreground)]/5",
           ].join(" ")}
         >
-          <div className="flex items-center gap-2 2xl:gap-[1vw]">
-            <Link
-              href="/"
-              className="text-xl md:text-2xl 2xl:text-[1.6vw] font-semibold mr-2"
-            >
+          <div className="flex items-center gap-2">
+            <Link href="/" className="text-xl md:text-2xl font-semibold mr-2">
               <span>Sebastian </span>
               <span className="text-[var(--accent)] transition-colors duration-150 md:duration-300 ease-out">
                 Meckovski
@@ -88,9 +85,7 @@ export default async function RootLayout({
             // Layout
             "container flex-1 mx-auto",
             // Spacing
-            "px-8 2xl:px-[2vw] pt-8 2xl:pt-[4vh]",
-            // Sizing
-            "max-w-2xl 2xl:max-w-[55vw]",
+            "max-w-5xl mx-auto px-8 pt-8 flex-1",
           ].join(" ")}
         >
           {children}
@@ -98,9 +93,9 @@ export default async function RootLayout({
         <footer
           className={[
             // Spacing
-            "py-4 2xl:py-[2vh] mt-6 2xl:mt-[3vh] px-8 2xl:px-[2vw]",
+            "py-4 mt-6 px-8",
             // Typography
-            "text-xs 2xl:text-[0.8vw] text-center",
+            "text-xs text-center",
             // Appearance
             "bg-[var(--foreground)]/5",
           ].join(" ")}
@@ -108,7 +103,7 @@ export default async function RootLayout({
           © {new Date().getFullYear()} Sebastian Meckovski. Designed with
           passion.
         </footer>
-        
+
         {tawkPropertyId && tawkWidgetId ? (
           <Script
             src={`https://embed.tawk.to/${tawkPropertyId}/${tawkWidgetId}`}

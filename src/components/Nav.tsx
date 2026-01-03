@@ -38,7 +38,7 @@ export default function Nav() {
             // Layout & positioning
             "flex flex-col items-center",
             // Spacing
-            "gap-8 2xl:gap-[1.2vw]",
+            "gap-8",
             // Desktop layout
             "md:flex-row",
           ].join(" ")}
@@ -49,7 +49,7 @@ export default function Nav() {
                 href={l.href}
                 className={[
                   // Typography
-                  "whitespace-nowrap text-3xl md:text-base 2xl:text-[1.2vw]",
+                  "whitespace-nowrap text-3xl md:text-base",
                   // Hover & active effects
                   "hover:text-[var(--accent)] active:text-[var(--accent)]",
                   // Transitions

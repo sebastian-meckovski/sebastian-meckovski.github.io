@@ -93,9 +93,9 @@ export default function ThemeMenu() {
           // Colors
           "text-[var(--foreground)]",
           // Sizing
-          "h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw]",
+          "h-[2.2rem] md:h-[2rem]",
           // Positioning
-          "ml-auto md:ml-[1.6vw]",
+          "ml-auto md:ml-6",
           // Interaction
           "cursor-pointer",
           // Hover & active effects
@@ -128,9 +128,9 @@ export default function ThemeMenu() {
           <h2
             className={[
               // Typography
-              "text-2xl 2xl:text-[1.4vw] font-semibold",
+              "text-2xl font-semibold",
               // Spacing
-              "my-4 2xl:my-[1vh]",
+              "my-4",
             ].join(" ")}
           >
             Customize Appearance
@@ -142,13 +142,13 @@ export default function ThemeMenu() {
               // Sizing
               "w-full",
               // Spacing
-              "gap-3 2xl:gap-[2vh]",
+              "gap-3",
             ].join(" ")}
           >
             <span
               className={[
                 // Typography
-                "text-xs 2xl:text-[0.8vw]",
+                "text-xs",
               ].join(" ")}
             >
               Theme:
@@ -160,7 +160,7 @@ export default function ThemeMenu() {
                 // Sizing
                 "w-full",
                 // Spacing
-                "gap-3 2xl:gap-[0.7vw] mx-auto",
+                "gap-3 mx-auto",
               ].join(" ")}
             >
               {themes.map((t) => (
@@ -172,7 +172,7 @@ export default function ThemeMenu() {
                     // Sizing
                     "min-w-[5rem]",
                     // Spacing
-                    "gap-3 2xl:gap-[0.8vh]",
+                    "gap-3",
                     // Interaction
                     "cursor-pointer",
                     // Transitions
@@ -193,20 +193,20 @@ export default function ThemeMenu() {
                       borderColor:
                         theme === t.name ? "var(--accent)" : undefined,
                     }}
-                    className="w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw] rounded-full border-3 flex items-center justify-center transition-colors m-auto"
+                    className="w-10 h-10 rounded-full border-3 flex items-center justify-center transition-colors m-auto"
                   >
                     <span className="w-3 h-3 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></span>
                   </span>
-                  <span className="text-xs 2xl:text-[0.8vw]">{t.label}</span>
+                  <span className="text-xs">{t.label}</span>
                 </label>
               ))}
             </div>
-            <span className="text-xs 2xl:text-[0.8vw]">
+            <span className="text-xs">
               *Auto uses your system theme setting.
             </span>
-            <span className="text-xs 2xl:text-[0.8vw]">Accent:</span>
+            <span className="text-xs">Accent:</span>
             <div></div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 2xl:gap-[0.7vw] mx-auto justify-items-center w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3 mx-auto justify-items-center w-full">
               {colorSchemes.map((c) => (
                 <label
                   key={c.name}
@@ -216,7 +216,7 @@ export default function ThemeMenu() {
                     // Sizing
                     "min-w-[5rem]",
                     // Spacing
-                    "gap-3 2xl:gap-[0.8vh]",
+                    "gap-3",
                     // Interaction
                     "cursor-pointer",
                   ].join(" ")}
@@ -239,7 +239,7 @@ export default function ThemeMenu() {
                       // Layout
                       "flex items-center justify-center",
                       // Sizing
-                      "w-10 h-10 2xl:w-[2.5vw] 2xl:h-[2.5vw]",
+                      "w-10 h-10",
                       // Appearance
                       "rounded-full border-3",
                       // Positioning
@@ -257,14 +257,14 @@ export default function ThemeMenu() {
                         // Visibility
                         "opacity-0 peer-checked:opacity-100",
                         // Spacing
-                        "mx-2 2xl:mx-[0.5vw]",
+                        "mx-2",
                       ].join(" ")}
                     ></span>
                   </span>
                   <span
                     className={[
                       // Typography
-                      "text-xs 2xl:text-[0.8vw]"
+                      "text-xs"
                     ].join(" ")}
                     style={{ color: c.color }}
                   >
@@ -273,7 +273,7 @@ export default function ThemeMenu() {
                 </label>
               ))}
             </div>
-            <span className="text-xs 2xl:text-[0.8vw]">
+            <span className="text-xs">
               Settings are saved in your browser&apos;s cookies.
             </span>
           </div>

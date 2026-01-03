@@ -21,7 +21,7 @@ export default function Home() {
     // Layout & positioning
     "flex items-center justify-center",
     // Sizing
-    "w-12 2xl:w-[3vw] h-12 2xl:h-[3vw]",
+    "w-16",
     // Appearance
     "rounded-full outline outline-1",
     // Colors
@@ -37,18 +37,18 @@ export default function Home() {
     // Layout & positioning
     "flex items-center justify-center",
     // Sizing
-    "w-full h-full p-[0.25vw]",
+    "w-full h-full p-2",
   ].join(" ");
   const iconStyle = { width: "80%", height: "80%" };
   return (
     <div
       className={[
         // Layout
-        "flex flex-col items-center",
+        "flex flex-col items-center justify-center",
         // Sizing
-        "w-full",
+        "w-full h-full min-h-[calc(100vh-12rem)]",
         // Spacing
-        "gap-4 2xl:gap-[2vh]",
+        "gap-6",
       ].join(" ")}
     >
       <div
@@ -67,7 +67,7 @@ export default function Home() {
           height={1024}
           className={[
             // Sizing
-            "w-[24rem] 2xl:w-[39vh] 2xl:h-[39vh]",
+            "w-[24rem] 2xl:w-[33vh] 2xl:h-[33vh]",
             // Positioning
             "relative",
             // Appearance
@@ -91,45 +91,32 @@ export default function Home() {
           ].join(" ")}
         />
       </div>
-      <h1>Hi, Seb here</h1>
-      <div
-        className={[
-          // Layout
-          "flex flex-row items-center",
-          // Text handling
-          "whitespace-nowrap min-w-0",
-          // Mobile responsive
-          "[@media(max-width:320px)]:flex-col [@media(max-width:320px)]:items-start",
-        ].join(" ")}
-      >
-        <span
-          className={[
-            // Typography
-            "text-2xl 2xl:text-[1.5vw]",
-            // Sizing
-            "w-full",
-            // Positioning
-            "text-center",
-          ].join(" ")}
-        >
-          I am a{" "}
-        </span>
+      {/* Heading - uses h1 from typography.css */}
+      <h1 className="text-center text-5xl">
+        Hi, I&apos;m <span className="text-accent">Seb</span>
+      </h1>
+
+      {/* Subtitle with typewriter */}
+      <div className="flex items-center justify-center text-subtitle text-2xl">
+        <span>I&apos;m a</span>
         <Typewriter
           words={[" software engineer", " programmer", " web developer"]}
-          className="text-2xl 2xl:text-[1.5vw] transition-colors duration-150 md:duration-300 ease-out"
+          className="transition-colors duration-300 ease-out text-2xl"
         />
       </div>
-      <p className="text-center">
-        A versatile software engineer with 4 years of experience across frontend,
-        backend, and testing. I love turning ideas into fast, accessible, and
-        maintainable web products.
+
+      {/* Description */}
+      <p className="text-center text-lg">
+        A versatile software engineer with 4 years of experience across
+        frontend, backend, and testing. I love turning ideas into fast,
+        accessible, and maintainable web products.
       </p>
       <div
         className={[
           // Layout
           "flex flex-wrap justify-center",
           // Spacing
-          "gap-6 2xl:gap-[1vw]",
+          "gap-6",
         ].join(" ")}
       >
         <span className={socialCircleClass}>

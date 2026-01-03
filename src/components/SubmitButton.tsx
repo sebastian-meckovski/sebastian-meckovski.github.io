@@ -21,17 +21,17 @@ export default function SubmitButton({
     // Layout & positioning
     "group relative flex mx-auto items-center justify-center overflow-hidden",
     // Spacing
-    "px-4 2xl:px-[1vw] py-2 2xl:py-[1vh]",
+    "px-4 py-2",
     // Appearance
-    "rounded-full 2xl:rounded-[10vw] border",
+    "rounded-full border",
     // Typography
-    "text-lg 2xl:text-[1.5vw] font-bold",
+    "text-lg font-bold",
     // Transitions
     "md:transition-all duration-300 md:ease-out",
     // Hover effects (disabled when pending)
     pending
-      ? "opacity-75 cursor-not-allowed pr-12 2xl:pr-[3vw] bg-[var(--accent)] text-white shadow-lg shadow-[var(--accent)]/25"
-      : "hover:bg-[var(--accent)] hover:text-white hover:pr-12 2xl:hover:pr-[3vw] hover:shadow-lg hover:shadow-[var(--accent)]/25 hover:scale-105",
+      ? "opacity-75 cursor-not-allowed pr-12 bg-[var(--accent)] text-white shadow-lg shadow-[var(--accent)]/25"
+      : "hover:bg-[var(--accent)] hover:text-white hover:pr-12 hover:shadow-lg hover:shadow-[var(--accent)]/25 hover:scale-105",
   ].join(" ");
 
   const combinedClassName = `${baseClassName} ${className}`.trim();
@@ -46,7 +46,7 @@ export default function SubmitButton({
       <span
         className={[
           "transition-transform duration-300 ease-out",
-          !pending && "group-hover:-translate-x-1 2xl:group-hover:-translate-x-[0.25vw]",
+          !pending && "group-hover:-translate-x-1",
         ]
           .filter(Boolean)
           .join(" ")}
@@ -58,9 +58,9 @@ export default function SubmitButton({
           icon={faSpinner}
           className={[
             // Positioning
-            "absolute right-3 2xl:right-[0.75vw]",
+            "absolute right-3",
             // Sizing
-            "text-2xl 2xl:text-[1.5vw]",
+            "text-2xl",
             // Animation
             "animate-spin",
           ].join(" ")}
@@ -70,11 +70,11 @@ export default function SubmitButton({
           icon={faArrowRight}
           className={[
             // Positioning
-            "absolute right-3 2xl:right-[0.75vw]",
+            "absolute right-3",
             // Initial state
-            "opacity-0 translate-x-10 2xl:translate-x-[4vw]",
+            "opacity-0 translate-x-10",
             // Sizing
-            "text-2xl 2xl:text-[1.5vw]",
+            "text-2xl",
             // Transitions
             "transition-all duration-300 ease-out",
             // Hover effects
