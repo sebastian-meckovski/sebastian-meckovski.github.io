@@ -90,12 +90,12 @@ export default function Popup({
         // Positioning
         "fixed z-[1000]",
         // Sizing
-        "max-w-[95vw] sm:max-w-[50vw] 2xl:max-w-[25vw] max-h-[95vh]",
+        "max-w-[95vw] sm:max-w-md max-h-[95vh]",
         // Appearance
         "bg-[var(--background)] text-[var(--foreground)] shadow-2xl",
-        "rounded-2xl 2xl:rounded-[1vw] border border-solid border-[var(--foreground)]/20",
+        "rounded-2xl border border-solid border-[var(--foreground)]/20",
         // Spacing
-        "p-8 2xl:p-[1vw]",
+        "p-8",
         // Overflow
         "overflow-y-auto",
       ].join(" ")}
@@ -110,7 +110,7 @@ export default function Popup({
           // Positioning
           "absolute top-4 right-4",
           // Sizing
-          "h-[2.2rem] md:h-[2rem] 2xl:h-[1.6vw]",
+          "h-[2.2rem] md:h-[2rem]",
           // Colors
           "text-[var(--foreground)]",
           // Hover & active effects
